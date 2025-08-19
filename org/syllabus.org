@@ -3,6 +3,8 @@
 #+startup: overview hideblocks indent
 #+subtitle: DSC105 Introduction to Data Science - Syllabus - Fall 2025
 #+OPTIONS: toc:nil num:nil ^:nil: 
+#+attr_html: :width 400px :float nil:
+[[../img/cover.png]]
 * General Course Information
 
 - Course title: Introduction to data science
