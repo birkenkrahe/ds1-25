@@ -19,6 +19,7 @@
 #+attr_html: :width 500px
 [[../img/1_pferd.jpeg]]
 
+- *Challenge to students who know me to introduce me to new students!*
 - PhD: theoretical particle physics (mathematical data science)
 - Industry: Knowledge management & Cybersecurity
 - Research: see [[https://www.researchgate.net/profile/Marcus-Birkenkrahe/research][researchgate.net]], Google Scholar
@@ -53,8 +54,8 @@
 - All [[https://lyon.instructure.com/courses/3676/gradebook][grades]] should be visible in the gradebook (with delays).
 - Control your own [[https://lyon.instructure.com/courses/3676?view=notificationshttps://lyon.instructure.com/courses/2628?view=notifications][notifications]] (especially email).
 - Important course [[https://lyon.instructure.com/courses/3676/pages/course-resources][links]] on a page (see sidebar).
-- Attendance check in using the [[https://lyon.instructure.com/courses/3676/external_tools/371][aPlus+ Attendance app]].
-- Assignment overview using the [[https://lyon.instructure.com/calendar#view_name=month&view_start=2025-08-18][Calendar]] (add to GMail)
+- Attendance check in using the [[https://lyon.instructure.com/courses/3676/external_tools/371][aPlus+ Attendance app]] (DIY).
+- Assignment overview using the [[https://lyon.instructure.com/calendar#view_name=month&view_start=2025-08-18][Calendar]] (add to GMail).
 
 * Canvas calendar
 #+attr_html: :width 600px:
@@ -68,10 +69,10 @@
 #+attr_html: :width 450px
 [[../img/1_topics.jpg]]
 
-1) Getting started with literate programming (DataLab/Jupyter)
-2) Introductory R (and a little Python) programming
-3) Exploratory Data Analysis (EDA) using R (and Python)
-4) Plotting data with base R, ggplot2 and matplotlib
+1) Getting started with literate programming (DataLab/Jupyter).
+2) Introductory R (and a little Python) programming.
+3) Exploratory Data Analysis (EDA) using R (and Python).
+4) Plotting data with base R, ggplot2 and matplotlib.
 
 * Video lectures (old and new)
 #+attr_html: :width 400px
@@ -79,6 +80,7 @@
 
 Taste of R: Lectures using the R programming language (2021-2024) -
 take a look at these, if you're bored with or put off by Python[fn:1].
+
 #+begin_quote
 - [[https://www.youtube.com/playlist?list=PLwgb17bzeNygo8GU6SivwwjsQj9QabqAJ][Emacs + Org-mode + R]] (Tutorial videos Spring '22)
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXkLa45V6JeEhNZEXvsmUR1f][Introduction to R: installation and shell]]
@@ -179,6 +181,13 @@ IMRaD is the framework for all scientific publications:
 #+attr_html: :width 700px
 [[../img/1_litprog.png]]
 
+Even though we're not using Emacs + Org-mode + RSS, Datalab, which is
+based on Jupyter notebooks, still enables and encourages "literate
+programming".
+
+This means that you use interactive (REPL) computing to speed things
+up but you don't stop documenting your process and your progress.
+
 #+begin_quote
 Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Literate Programming Tools]]" (2023)
 
@@ -190,7 +199,7 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 * Using GitHub
 
 - GitHub is the top software development platform now owned (but not
-  ruined yet) by Microsoft.
+  ruined yet) by Microsoft (however: check the documentation).
 
 - The term 'Git' refers to the version control software of the same
   name. You can also use it as a central document repository.
@@ -204,6 +213,10 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 - Recommended: the [[https://docs.github.com/en/get-started/start-your-journey/hello-world][Hello World exercise]] at GitHub. This teaches you
   the typical software project development workflow.
 
+- You can get access to GitHub's AI-assistant CoPilot, which also runs
+  in VSCode and Jetbrains, if you submit your student credentials (ask
+  Matthew about the excruciating details).
+
 * Using Linux
 #+attr_html: :width 600px:
 [[../img/penguins.jpg]]
@@ -212,12 +225,25 @@ Linux is the world's most used operating system (the software between
 you and your computer, or your phone) based on 1970s Unix developed by
 Linus Torvalds (who also wrote the Git version control software).
 
-With some luck, we're going to get lots of Linux love this term: IT is
-working on a server with 50 virtual Linux boxes just for you and me!
+For the past year, I've experimented with providing a Linux VM to
+students via IT. However, they never sorted out access outside of Lyon
+104, and Window's Remote Desktop Control is a little nightmarish.
 
-While they sort us out, we're going to take a look at Google Cloud
-Shell, which is free for the time being and will allow us to spin up
-Linux + Emacs + R.
+You have two practical entry points to Linux:
+
+1) At no cost, and almost no effort, use Google Cloud Shell
+   (https://ide.cloud.google.com).
+   
+2) If you're on Windows, install WSL (Windows Subshell Linux) on the
+   Power Shell with =wsl --install=.
+
+3) If you're on a Mac, don't worry about it for now, you've got an OS
+   that's already close enough to Linux (Unix-based MacOS).
+
+4) If you're on a Mac or on Windows, consider switching to Linux for
+   good. There's no downside that I can think of and many upsides.
+
+You can ask me or one of the other students (e.g. Matthew) for help.
 
 * Tests (multiple-choice)
 #+attr_html: :width 600px
@@ -239,6 +265,8 @@ Linux + Emacs + R.
 - Register with DataCamp now if you haven't done it yet ([[https://lyon.instructure.com/courses/3676/pages/course-resources][links]]).
 - Complete chapter 1 of the course "Understanding Data Science",
   [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]] on the DataCamp platform (by Friday).
+- Read the [[https://lyon.instructure.com/courses/3676/assignments/49570][home assignment instructions]] carefully, especially my
+  remarks on how to work through online lessons and late submissions.
 
 * Next: Infrastructure Exercise
 

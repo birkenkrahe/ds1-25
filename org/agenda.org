@@ -1,0 +1,27 @@
+#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2025
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+
+* Week 0
+
+- [ ] Course overview incl. Syllabus and infrastructure
+- [ ] Introduction to our tools - R, DataCamp, DataLab
+- [ ] First DataCamp lesson is due next week already
+
+* Emacs + Org-mode + ESS or DataLab?
+
+| Criterion   | Emacs + Org + ESS                  | Jupyter (DataLab)            |
+|-------------+------------------------------------+------------------------------|
+| *CS students* | Benefit, will follow               | Comfortable in either        |
+| *Biologists*  | Likely unfamiliar; higher friction | Familiar User Interface      |
+| *Undeclared*  | Risk of alienation, esp. early on  | Visual feedback/low barrier  |
+| *Economists*  | Prefer notebook-style over Emacs   | Aligns with known econ tools |
+
+* Week 1
+
+- [ ] Introduction to data science [lecture - [[https://github.com/yjwen/org-reveal/][org-reveal]]]
+- [ ] Introduction to R.
+
+
