@@ -47,7 +47,8 @@ Next:
    You could prepare by:
    - Looking through your own (digital or analog) notes
    - Looking at the whiteboard screenshots (available in GDrive)
-   - Looking at the last lecture file on GitHub
+   - Looking at the last lecture file (on GitHub)
+   - Look at the Zoom recording (on Canvas)
    #+end_quote
 3. What do you already know about "R"?
    #+begin_quote

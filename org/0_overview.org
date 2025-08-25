@@ -115,9 +115,13 @@ sprint review]]).
 IMRaD is the framework for all scientific publications:
 #+begin_quote
 - Introduction (research question - what you want to find out)
+  Here you create and submit a research proposal
 - Method (how you want to do it)
+  Here you do a literature review and say how you're going to do it
 - Results (what you found out)
+  Here you turn in an abstract of your project
 - Discussion (what it means)
+  Here you present your results.
 
 ([[https://youtu.be/dip7UwZ3wUM][Video: Research Writing with IMRaD]])
 #+end_quote
