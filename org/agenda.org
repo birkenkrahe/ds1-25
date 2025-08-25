@@ -4,13 +4,13 @@
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
 
-* Week 0
+* DONE Week 0
 
-- [ ] Course overview incl. Syllabus and infrastructure
-- [ ] Introduction to our tools - R, DataCamp, DataLab
-- [ ] First DataCamp lesson is due next week already
+- [X] Course overview incl. Syllabus and infrastructure
+- [X] Introduction to our tools - R, DataCamp, DataLab
+- [X] First DataCamp lesson is due next week already
 
-* Emacs + Org-mode + ESS or DataLab?
+** Emacs + Org-mode + ESS or DataLab?
 
 | Criterion   | Emacs + Org + ESS                  | Jupyter (DataLab)            |
 |-------------+------------------------------------+------------------------------|
@@ -19,9 +19,171 @@
 | *Undeclared*  | Risk of alienation, esp. early on  | Visual feedback/low barrier  |
 | *Economists*  | Prefer notebook-style over Emacs   | Aligns with known econ tools |
 
-* Week 1
+* Week 1 - You've arrived on MaRs.
+#+attr_html: :width 400px :float nil:
+[[../img/mars.png]]
 
+Today:
+- [ ] Review: Last week
+- [ ] Continue: Course Overview - DataCamp/datalab demo
+- [ ] Compare: Jupyter notebook to Emacs + Org-mode + RSS
+- [ ] Compare: Google Colaboratory
+- [ ] Remember: DataCamp lesson deadline is Friday, 29 Aug, 1 pm
+
+Next:
 - [ ] Introduction to data science [lecture - [[https://github.com/yjwen/org-reveal/][org-reveal]]]
 - [ ] Introduction to R.
 
+* Review: Last week (0)
 
+1. Name 1-3 tools that we're going to use in this course.
+   #+begin_quote
+   1) GitHub - Course materials
+   2) DataCamp - Home assignment
+   3) Canvas - Tests
+   #+end_quote
+2. How could you prepare a little before coming to class?
+   #+begin_quote
+   You could prepare by:
+   - Looking through your own (digital or analog) notes
+   - Looking at the whiteboard screenshots (available in GDrive)
+   - Looking at the last lecture file on GitHub
+   #+end_quote
+3. What do you already know about "R"?
+   #+begin_quote
+   - High level programming language
+   - Focus on statistical functions
+   - Excels at visualization and data exploration
+   - The Canvas course resources contain a link to an excellent free
+     online tutorial for absolute beginners (and non-programmers)
+   #+end_quote
+4. What can you say about GitHub?
+   #+begin_quote
+   - A popular platform for software developers
+   - Based on Torvald's (Creator of Linux) version control program Git
+   - Data science students should register, create their own portfolio
+     and complete the "Hello World" program to better understand Git
+   #+end_quote
+5. What will you have to do to pass this class?
+   #+begin_quote
+   - Complete online tests (only in Canvas)
+   - Complete home assignments (mostly in DataCamp)
+   - Complete a project ("Sprint reviews", in GDrive)
+   - Pass a short one-on-one oral exam at the end of term ("Final
+     exam") - optional
+   #+end_quote
+
+* DataCamp / datalab demo
+
+1) Open ~datacamp.com~ and log in your (Lyon) account.
+
+2) Enter "R" in the search field at the top.
+
+3) Click on "Introduction to R" (should appear as the top result).
+
+4) In the course dashboard under "Resources" click on "Course Notes".
+
+5) This will bring you to an interactive ("Jupyter") notebook with one
+   command already run, =str(mtcars)=:
+   #+attr_html: :width 400px :float nil:
+   [[../img/datalab.png]]
+
+6) In the next block, try the AI assistant. Enter this prompt:
+   #+begin_quote
+   Build a scatterplot of miles-per-gallon as a function of weight
+   using mtcars.
+   #+end_quote
+   #+attr_html: :width 400px :float nil:
+   [[../img/datalab2.png]]
+
+7) If it looks right to you, =Accept= it - now you hcave an executable
+   code chunk.
+   #+attr_html: :width 400px :float nil:
+   [[../img/datalab3.png]]
+
+8) Run it with the =Play= button or with the keyboard command =CTRL +
+   ENTER= - the (minimally customized) scatterplot should appear:
+   #+attr_html: :width 400px :float nil:
+   [[../img/datalab4.png]]
+
+9) Create another text cell and enter:
+   #+begin_quote
+   Print the top of the data frame with `head()`.
+   #+end_quote
+   #+attr_html: :width 400px :float nil:
+
+10) Create another code cell, enter and run:
+    #+begin_example R
+    head(mtcars)
+    #+end_example
+
+* Compare: Emacs + Org-mode + RSS
+
+- This is how it works in Emacs:
+  #+begin_src R :session *R* :results output :exports both
+    str(mtcars) # structure of the mtcars data frame
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  'data.frame': 32 obs. of  11 variables:
+   $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+   $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+   $ disp: num  160 160 108 258 360 ...
+   $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+   $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+   $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+   $ qsec: num  16.5 17 18.6 19.4 17 ...
+   $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+   $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+   $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+   $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+  #+end_example
+
+- Interactive plot (no customization):
+  #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
+    plot(mtcars$mpg ~ mtcars$wt)
+  #+end_src
+
+  #+RESULTS:
+  [[file:plot.png]]
+
+- Top of data frame as a table:
+  #+begin_src R :session *R* :results output :exports both
+    head(mtcars)
+  #+end_src
+
+  #+RESULTS:
+  :                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+  : Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+  : Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+  : Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+  : Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+  : Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+  : Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+
+* Compare: Google Colaboratory
+
+1) Open Google Colab at =colab.research.google.com=
+2) Create a =new notebook=
+3) Run =str(mtcars)= - this should give an error
+4) Change =Runtime type= to R
+5) Enter the command again: =str(mtcars)= and run it.
+6) Plot miles-per-gallon vs. weight for all cars in =mtcars=. (You can
+   use CTRL-ALT-I for a new code chunk.)
+   #+begin_example R
+   plot(mtcars$wt,mtcars$mpg)
+   #+end_example
+7) Display the top of the data frame.
+   #+begin_example R
+   head(mtcars)
+   #+end_example
+8) Interestingly, Google Gemini gets this simple task completely wrong
+   (prompt"Display the top of the mtcars data frame")
+   #+attr_html: :width 400px :float nil:
+   [[../img/gemini.png]]
+9) It manages to explain and fix the error, but its new solution is
+   unnecessarily long (R does not require ~print~ here).
+   #+attr_html: :width 400px :float nil:
+   [[../img/gemini2.png]]
+   
