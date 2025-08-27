@@ -24,8 +24,9 @@
 [[../img/mars.png]]
 
 Today:
-- [ ] Review: Last week
-- [ ] Continue: Course Overview - DataCamp/datalab demo
+- [X] Review: Last week
+- [X] Continue: Course Overview - DataCamp/datalab demo
+- [ ] *Research mixer on Tuesday, September 30 @Lyon - tinyurl.com/res-mix*
 - [ ] Compare: Jupyter notebook to Emacs + Org-mode + RSS
 - [ ] Compare: Google Colaboratory
 - [ ] Remember: DataCamp lesson deadline is Friday, 29 Aug, 1 pm
@@ -34,7 +35,7 @@ Next:
 - [ ] Introduction to data science [lecture - [[https://github.com/yjwen/org-reveal/][org-reveal]]]
 - [ ] Introduction to R.
 
-* Review: Last week (0)
+** DONE Review: Last week (0)
 
 1. Name 1-3 tools that we're going to use in this course.
    #+begin_quote
@@ -74,7 +75,7 @@ Next:
      exam") - optional
    #+end_quote
 
-* DataCamp / datalab demo
+** DONE DataCamp / datalab demo
 
 1) Open ~datacamp.com~ and log in your (Lyon) account.
 
@@ -118,7 +119,7 @@ Next:
     head(mtcars)
     #+end_example
 
-* Compare: Emacs + Org-mode + RSS
+** Compare: Emacs + Org-mode + RSS
 
 - This is how it works in Emacs:
   #+begin_src R :session *R* :results output :exports both
@@ -163,7 +164,7 @@ Next:
   : Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
   : Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
-* Compare: Google Colaboratory
+** Compare: Google Colaboratory
 
 1) Open Google Colab at =colab.research.google.com=
 2) Create a =new notebook=
@@ -187,4 +188,59 @@ Next:
    unnecessarily long (R does not require ~print~ here).
    #+attr_html: :width 400px :float nil:
    [[../img/gemini2.png]]
+   
+** NEXT Review (Monday):
+#+attr_html: :width 400px :float nil:
+#+caption: Rugby scrum 
+[[../img/scrum.jpg]]
+
+1. Name at least three topics that are taught on DataCamp!
+   #+begin_quote
+   - Languages: R, Python, SQL, Julia
+   - Data dashboard/visualization applications: Tableau, Power BI, R Shiny
+   - Utilities: Shell, Git, AI, LLMs 
+   #+end_quote
+2. What is a "Jupyter notebook"?
+   #+begin_quote
+   A Jupyter notebook is an interactive application originally
+   designed for Julia, Python, and R, that enables literate
+   programming (mixing text, code, output to make programs more
+   readable for humans).
+   #+end_quote
+3. What's a sprint review?
+   #+begin_quote
+   A sprint review is a meeting where the project team (you) presents
+   their project prototype (whatever it is they have done so far, if
+   anything), takes questions from and asks questions to the client
+   (me), and explains what they're going to do in the next sprint.
+   #+end_quote
+4. What's the deliverable of your first sprint review?
+   #+begin_quote
+   The deliverable of your first sprint review on September 12, 2025,
+   is a *project proposal prototype* (which means that it doesn't have
+   to be perfect).
+   #+end_quote
+5. What's IMRaD?
+   #+begin_quote
+   IMRaD stands for the structure of a scientific communication
+   (presentation, paper, report) - *Introduction* (what did you want to
+   do?), *Method* (how did you do it?), *Results* (what did you find
+   out?), and *Discussion* (what do your findings mean?).
+
+   In our application of *Scrum*, we align IMRaD with four project
+   sprint reviews.
+   #+end_quote
+6. Can you remember one R command (from the last class)?
+   #+begin_src R :session *R* :results output :exports both
+     str(mtcars)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     head(mtcars)
+   #+end_src
+
+   #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
+     plot(x=mtcars$wt,y=mtcars$mpg)
+   #+end_src
+
    
