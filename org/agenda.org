@@ -26,10 +26,10 @@
 Today:
 - [X] Review: Last week
 - [X] Continue: Course Overview - DataCamp/datalab demo
-- [ ] *Research mixer on Tuesday, September 30 @Lyon - tinyurl.com/res-mix*
-- [ ] Compare: Jupyter notebook to Emacs + Org-mode + RSS
-- [ ] Compare: Google Colaboratory
-- [ ] Remember: DataCamp lesson deadline is Friday, 29 Aug, 1 pm
+- [X] *Research mixer on Tuesday, September 30 @Lyon - tinyurl.com/res-mix*
+- [X] Compare: Jupyter notebook to Emacs + Org-mode + RSS
+- [X] Compare: Google Colaboratory
+- [ ] *Remember: DataCamp lesson deadline is Friday, 29 Aug, 1 pm*
 
 Next:
 - [ ] Introduction to data science [lecture - [[https://github.com/yjwen/org-reveal/][org-reveal]]]
@@ -119,52 +119,106 @@ Next:
     head(mtcars)
     #+end_example
 
-** Compare: Emacs + Org-mode + RSS
+** DONE Research mixer - why you should do this
+#+attr_html: :width 400px :float nil:
+[[../img/research_mixer.png]]
 
-- This is how it works in Emacs:
-  #+begin_src R :session *R* :results output :exports both
-    str(mtcars) # structure of the mtcars data frame
-  #+end_src
+- Doing research is a great excuse to build a relationship with a
+  business: People love to help, especially techies!
 
-  #+RESULTS:
-  #+begin_example
-  'data.frame': 32 obs. of  11 variables:
-   $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
-   $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
-   $ disp: num  160 160 108 258 360 ...
-   $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
-   $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
-   $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
-   $ qsec: num  16.5 17 18.6 19.4 17 ...
-   $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
-   $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
-   $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
-   $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-  #+end_example
+- This is practical networking that can help you get an internship or
+  a job: You can put it on your resume, too!
 
-- Interactive plot (no customization):
-  #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
-    plot(mtcars$mpg ~ mtcars$wt)
-  #+end_src
+- Through research, you learn to update your knowledge, and you may
+  find out about interesting applications that define your career!
 
-  #+RESULTS:
-  [[file:plot.png]]
+- Science is at crossroads for multiple reasons: It's too bloated,
+  it's too expensive, it's getting too difficult, and there's AI.
 
-- Top of data frame as a table:
-  #+begin_src R :session *R* :results output :exports both
-    head(mtcars)
-  #+end_src
+** DONE Review (Monday):
+#+attr_html: :width 400px :float nil:
+#+caption: Rugby scrum
+[[../img/scrum.jpg]]
 
-  #+RESULTS:
-  :                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-  : Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-  : Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-  : Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-  : Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-  : Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-  : Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+1. Name at least three topics that are taught on DataCamp!
+   #+begin_quote
+   - Languages: R, Python, SQL, Julia
+   - Data dashboard/visualization apps: Tableau, Power BI, R Shiny
+   - Utilities: Shell, Git, AI, LLMs
+   #+end_quote
+2. What is a "Jupyter notebook"?
+   #+begin_quote
+   A Jupyter notebook is an interactive application originally
+   designed for Julia, Python, and R, that enables literate
+   programming (mixing text, code, output to make programs more
+   readable for humans).
+   #+end_quote
+3. What's a sprint review?
+   #+begin_quote
+   A sprint review is a meeting where the project team (you) presents
+   their project prototype (whatever it is they have done so far, if
+   anything), takes questions from and asks questions to the client
+   (me), and explains what they're going to do in the next sprint.
+   #+end_quote
+4. What's the deliverable of your first sprint review?
+   #+begin_quote
+   The deliverable of your first sprint review on September 12, 2025,
+   is a *project proposal prototype* (which means that it doesn't have
+   to be perfect). You can share a prototype of the prototype with me
+   before the sh** hits the fan!
+   #+end_quote
+5. What's IMRaD?
+   #+begin_quote
+   IMRaD stands for the structure of a scientific communication
+   (presentation, paper, report) - *Introduction* (what did you want to
+   do?), *Method* (how did you do it?), *Results* (what did you find
+   out?), and *Discussion* (what do your findings mean?).
 
-** Compare: Google Colaboratory
+   In our application of *Scrum*, we align IMRaD with four project
+   sprint reviews.
+   #+end_quote
+6. Can you remember one R command (from the last class)?
+   #+begin_src R :session *R* :results output :exports both
+     str(mtcars)  # structure of the mtcars data frame
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':        32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   #+end_example
+
+   #+begin_src R :session *R* :results output :exports both
+     head(mtcars)
+   #+end_src
+
+   #+RESULTS:
+   :                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+   : Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+   : Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+   : Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+   : Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+   : Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+   : Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+
+   #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
+     plot(x=mtcars$wt,y=mtcars$mpg)
+   #+end_src
+
+   #+RESULTS:
+   [[file:plot.png]]
+
+** DONE Compare: Google Colaboratory
 
 1) Open Google Colab at =colab.research.google.com=
 2) Create a =new notebook=
@@ -188,59 +242,234 @@ Next:
    unnecessarily long (R does not require ~print~ here).
    #+attr_html: :width 400px :float nil:
    [[../img/gemini2.png]]
-   
-** NEXT Review (Monday):
+
+** NEXT Review (Wednesday + DataCamp)
+
+Review questions based on class and the first DataCamp lesson. With
+necessary caveats based on years of professional and life experience.
+
+1. How does the notebook work with the R or Python console?
+   #+begin_quote
+   Both the notebook and the console are *front-ends* where you enter
+   commands. The notebook adds structure (code cells, text cells,
+   graphics). The console is just a command-line. In both cases, the
+   *back-end*, the R or Python interpreter (also called REPL -
+   Read-Eval-Print-Loop), does the actual work of running your code.
+
+   - Notebook = structured, richer front-end
+   - Console = plain text front-end (command-line, shell)
+   - REPL = back-end that executes
+   #+end_quote
+
+2. Can you access the REPL directly when you work in a notebook?
+   #+begin_quote
+   Not on Google Colab or DataCamp datalab. But when you work in Emacs
+   (like I do) then you can. This is very useful for debugging
+   (finding and fixing errors).
+   #+end_quote
+
+3. What then is the =terminal= that I can open in DataCamp datalab?
+   #+begin_quote
+   The =terminal= in datalab is a shell (CLI or command-line interface)
+   that allows you to talk with the operating system (in this case,
+   Linux). Let's look at that.
+   #+end_quote
+
+4. What kind of relationship is =str(mtcars)= or =head(mtcars,2)=?
+   #+begin_quote
+   These are *function applications*: a function (like ~str~ or ~head~) is
+   applied to an object (like the =mtcars= dataset). This is the same
+   idea as a mathematical functional relationship f(x).
+   #+end_quote
+
+5. What is the short formula for "data science"?
+   #+begin_quote
+   [RAW] *DATA* + [LITERATE] *CODE* + [APPLIED] *Stats* = [DECISION] *STORY*
+   #+end_quote
+
+6. What is the core purpose of data science (according to the lesson)?
+   #+begin_quote
+   DataCamp: Data science takes *raw data*, *cleans it*, and *uncovers
+   patterns* that help make better *predictions* and improve outcomes.
+
+   *Caveat:* Truly "raw" data do not exist (inside a
+   computer). "Cleaning" the data is always with regard to an expected
+   outcome or purpose. "Patterns" is still quite abstract - can you
+   think of examples for patterns? Are there any patterns around you?
+   #+end_quote
+
+7. Why is data science so important today? What did people used to do
+   in the past (without "data science")?
+   #+begin_quote
+   DataCamp: Because we generate more data than ever before through
+   online purchases, apps, social media, and smart devices, and this
+   data can be used to understand the world better.
+
+   *Caveat:* Or it could be because we're more and more out of touch
+   with people and things, and have begun to trust our machines more
+   than our intuition (or our elders). Perhaps it's less about
+   understanding and more about selling more stuff to strangers.
+   #+end_quote
+
+8. How do streaming services like Spotify or Netflix use data science?
+   #+begin_quote
+   DataCamp: They analyze your watching or listening habits with
+   machine learning algorithms to predict and recommend what you might
+   enjoy next.
+
+   *Caveat:* What is your personal experience with online
+   recommendations? Do they generally increase your enjoyment? Are
+   online devices capturing data from you without explicit approval?
+   #+end_quote
+
+9. How do recommendations systems on platforms like Amazon make
+   shopping feel personalized?
+   #+begin_quote
+   DataCamp: They analyze browsing history, past purchases, and trends
+   from similar shoppers to predict what you might need next.
+
+   *Caveat:* What does your browsing and purchasing history really say
+   about you as a person? How important is shopping in your life?
+   Where is "enjoyable shopping" on the list of your top priorities?
+   #+end_quote
+
+10. What is the main focus of a data analyst? Why would a business
+    need a data analyst?
+    #+begin_quote
+    DataCamp: Data analysts clean and organize "raw data", then create
+    charts, graphs, and dashboards to explain what's happening right
+    now. Businesses may need such a person because insights gained
+    from data may help managers make informed, evidence-based
+    decisions.
+
+    *Caveat*: What do you think how many decisions are made in business?
+    What does play a bigger role in a time-critical situation,
+    data-driven analysis or gut feeling, work and life experience?
+    #+end_quote
+
+** TODO Project proposal due in 2 weeks ("First Scrum sprint review")
 #+attr_html: :width 400px :float nil:
-#+caption: Rugby scrum 
-[[../img/scrum.jpg]]
+[[../img/first_review.png]]
 
-1. Name at least three topics that are taught on DataCamp!
-   #+begin_quote
-   - Languages: R, Python, SQL, Julia
-   - Data dashboard/visualization applications: Tableau, Power BI, R Shiny
-   - Utilities: Shell, Git, AI, LLMs 
-   #+end_quote
-2. What is a "Jupyter notebook"?
-   #+begin_quote
-   A Jupyter notebook is an interactive application originally
-   designed for Julia, Python, and R, that enables literate
-   programming (mixing text, code, output to make programs more
-   readable for humans).
-   #+end_quote
-3. What's a sprint review?
-   #+begin_quote
-   A sprint review is a meeting where the project team (you) presents
-   their project prototype (whatever it is they have done so far, if
-   anything), takes questions from and asks questions to the client
-   (me), and explains what they're going to do in the next sprint.
-   #+end_quote
-4. What's the deliverable of your first sprint review?
-   #+begin_quote
-   The deliverable of your first sprint review on September 12, 2025,
-   is a *project proposal prototype* (which means that it doesn't have
-   to be perfect).
-   #+end_quote
-5. What's IMRaD?
-   #+begin_quote
-   IMRaD stands for the structure of a scientific communication
-   (presentation, paper, report) - *Introduction* (what did you want to
-   do?), *Method* (how did you do it?), *Results* (what did you find
-   out?), and *Discussion* (what do your findings mean?).
+- Put your team mates' names, your topics and comments on the project
+  page in Canvas by Friday September 12, 11:59 pm.
 
-   In our application of *Scrum*, we align IMRaD with four project
-   sprint reviews.
-   #+end_quote
-6. Can you remember one R command (from the last class)?
-   #+begin_src R :session *R* :results output :exports both
-     str(mtcars)
-   #+end_src
+- Use the cancelled session on Wednesday, September 3, to meet as a
+  team and work out the proposal draft.
 
-   #+begin_src R :session *R* :results output :exports both
-     head(mtcars)
-   #+end_src
+- I have created a mock-up entry including a link to a GDrive folder
+  with a fake AI-generated proposal, which is not bad at all though:
+  it is specific, complete, and potentially interesting and relevant.
 
-   #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
-     plot(x=mtcars$wt,y=mtcars$mpg)
-   #+end_src
+- *Can you use AI to generate your proposal?* Yes, but 1) you have to be
+  say that and how you used AI, and 2) you need to be able to talk
+  about it freely and openly, i.e. you have to make it your own.
 
-   
+- It is actually easier, more rewarding, more likely to succeed, and
+  more instructive if you come up with your own topic and proposal.
+
+- In the project information table, *please follow my example*:
+  1) Full names of all team members!
+  2) Full title of topic (or topics if you have a choice) linked
+     directly to the proposal!
+  3) Link to your GDrive folder (make sure it is shared across Lyon)!
+     #+attr_html: :width 400px :float nil:
+     [[../img/sharing.png]]
+
+- For a similar student project from Fall 2024 that lead to a
+  published paper, see:
+  #+begin_quote
+  Del Gobbo, C., Birkenkrahe, M. (2025). Generative AI Tools in Higher
+  Education: A Case Study of Student Usage At A Small Liberal Arts College.
+  In: Proc. 19th Int. Technology, Education and Development Conf (INTED25),
+  3-4 March 2025, 315-324; URL: https://doi.org/10.21125/inted.2025.0142
+  #+end_quote
+
+*** Fake Proposal: Study Habits and Academic Performance
+#+attr_html: :width 400px :float nil:
+[[../img/fake.png]]
+
+A project for DSC 105 (Introduction to Data Science) 
+by Jim Jones, Jane Doe, and John James.
+
+This proposal was generated by ChatGPT-5. The references are real.
+
+**** Problem description
+
+We want to analyze the relationship between student study habits (time
+spent studying, study environment, use of groups, sleep, etc.)  and
+academic performance (exam/quiz scores, GPA). The idea is to identify
+which factors contribute most to success and whether there are
+patterns across students.
+
+**** Reason
+
+This problem is interesting because study habits are something every
+student can control, but it’s not always clear which strategies are
+most effective. The results could provide insights for us and our
+peers about how to optimize study time, sleep, and group work.
+
+**** Constraints
+
+- *Technical:* Collecting enough quality data may be difficult; survey
+  responses may be incomplete or inaccurate.
+- *Conceptual:* Correlation does not equal causation—this project can
+  suggest patterns but not prove what “causes” performance.
+- *Personal:* We will need to balance data collection with other
+  coursework, so we may not be able to gather a large dataset.
+
+**** Goals (and non-goals)
+
+- *Goals:*
+  1. Design and distribute a short survey, then collect at least 20
+     responses.
+  2. Clean and preprocess the data (handle missing values, normalize
+     hours).
+  3. Create summary statistics and visualizations (scatter plots,
+     boxplots, bar charts).
+  4. Build a simple predictive model (e.g., linear regression or
+     classification).
+  5. Write a short report and present findings.
+
+- *Non-goals:*
+  - We will not try to build a large-scale or professional predictive
+    system.
+  - We will not claim to establish causality between habits and
+    grades.
+  - We will not use highly complex machine learning methods (e.g.,
+    neural networks).
+
+**** Metrics
+
+The project will be successful if:
+- We collect at least 20 usable survey responses.
+- Our analysis produces at least three clear, interpretable
+  visualizations.
+- We identify at least two meaningful relationships or patterns (e.g.,
+  sleep correlates with higher GPA).
+- We can present a clear and concise report with recommendations.
+
+**** References
+
+1. Kuh GD, Kinzie J, Buckley JA, Bridges BK, Hayek JC.
+   *What Matters to Student Success: A Review of the Literature.*
+   National Postsecondary Education Cooperative; 2006.
+
+2. McGuire SY, McGuire S.
+   *Teach Yourself How to Learn: Strategies You Can Use to Ace Any Course at Any Level.*
+   Stylus Publishing; 2018.
+
+3. University of California, Berkeley. "Study Strategies."
+   Student Learning Center. Accessed August 2025.
+   https://slc.berkeley.edu/study-strategies
+
+**** Comments
+
+We considered doing a project on social media usage and its effect on
+grades, but decided on study habits because we can collect the data
+more easily and it feels more relevant to daily student life. Our main
+concern is participation—we hope enough classmates will respond
+honestly to the survey.
+
+
+
