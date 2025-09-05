@@ -19,7 +19,7 @@
 | *Undeclared*  | Risk of alienation, esp. early on  | Visual feedback/low barrier  |
 | *Economists*  | Prefer notebook-style over Emacs   | Aligns with known econ tools |
 
-* Week 1 - You've arrived on MaRs.
+* DONE Week 1: You've arrived on MaRs.
 #+attr_html: :width 400px :float nil:
 [[../img/mars.png]]
 
@@ -30,12 +30,13 @@ Today:
 - [X] Compare: Jupyter notebook to Emacs + Org-mode + RSS
 - [X] Compare: Google Colaboratory
 - [ ] *Remember: DataCamp lesson deadline is Friday, 29 Aug, 1 pm*
+- [ ] *First test available later today (complete by Friday 7 Sept)*
 
 Next:
 - [ ] Introduction to data science [lecture - [[https://github.com/yjwen/org-reveal/][org-reveal]]]
 - [ ] Introduction to R.
 
-** DONE Review: Last week (0)
+** Review: Last week (0)
 
 1. Name 1-3 tools that we're going to use in this course.
    #+begin_quote
@@ -75,7 +76,7 @@ Next:
      exam") - optional
    #+end_quote
 
-** DONE DataCamp / datalab demo
+** DataCamp / datalab demo
 
 1) Open ~datacamp.com~ and log in your (Lyon) account.
 
@@ -119,7 +120,7 @@ Next:
     head(mtcars)
     #+end_example
 
-** DONE Research mixer - why you should do this
+** Research mixer - why you should do this
 #+attr_html: :width 400px :float nil:
 [[../img/research_mixer.png]]
 
@@ -135,7 +136,7 @@ Next:
 - Science is at crossroads for multiple reasons: It's too bloated,
   it's too expensive, it's getting too difficult, and there's AI.
 
-** DONE Review (Monday):
+** Review (Monday):
 #+attr_html: :width 400px :float nil:
 #+caption: Rugby scrum
 [[../img/scrum.jpg]]
@@ -218,7 +219,7 @@ Next:
    #+RESULTS:
    [[file:plot.png]]
 
-** DONE Compare: Google Colaboratory
+** Compare: Google Colaboratory
 
 1) Open Google Colab at =colab.research.google.com=
 2) Create a =new notebook=
@@ -243,7 +244,7 @@ Next:
    #+attr_html: :width 400px :float nil:
    [[../img/gemini2.png]]
 
-** NEXT Review (Wednesday + DataCamp)
+** Review (Wednesday + DataCamp)
 
 Review questions based on class and the first DataCamp lesson. With
 necessary caveats based on years of professional and life experience.
@@ -347,7 +348,7 @@ necessary caveats based on years of professional and life experience.
     data-driven analysis or gut feeling, work and life experience?
     #+end_quote
 
-** TODO Project proposal due in 2 weeks ("First Scrum sprint review")
+** Project proposal due in 2 weeks ("First Scrum sprint review")
 #+attr_html: :width 400px :float nil:
 [[../img/first_review.png]]
 
@@ -471,5 +472,220 @@ more easily and it feels more relevant to daily student life. Our main
 concern is participation—we hope enough classmates will respond
 honestly to the survey.
 
+* Week 2: Data Collection and Storage & Infrastructure (Sep 5)
+#+attr_html: :width 600px :float nil:
+#+caption: Data infrastructure (Source: alcorfund.com)
+[[../img/infrastructure.png]]
 
+- [ ] Projects - deadline is looming.
+- [ ] Review - Data Collection and Storage & infrastructure
+- [ ] Introduction to data science ("[[file:1_datascience.org::Popularity contest][Popularity Contest]]")
+
+** Projects - 1st sprint review is coming!
+
+- All but four of you still have to fill in the project table in
+  Canvas.
+
+- You'll get (timely) feedback from me either via chat or in the
+  proposal document (if you let me edit it).
+
+- One group project so far was going out of scope: Don't bite off more
+  than you can chew. Remember: focus on data, and on what you know!
+
+** Review (Last Friday - Aug 29 & DataCamp lesson 2)
+
+You can find most of the answers either in the DataCamp lesson (I used
+the slides to prepare these), or on the Whiteboard screenshots from
+the past week.
+
+1. What's a REPL and how does it relate to data science?
+   #+begin_quote
+   REPL = Read-Eval-Print-Loop - interactive programming environment
+   that READs user input, EVALuates it, PRINTs the result, and LOOPs
+   back for another input.
+   #+end_quote
+   #+attr_html: :width 600px :float nil:
+   [[../img/repl.png]]
+   
+2. What's different when doing data science with C/C++ or with
+   R/Python?
+   #+begin_quote
+   C/C++ are compiled languages, while R/Python are interpreted
+   languages that can be used with a REPL.
+   #+end_quote
+
+3. What are web data (that are interesting to a data scientist)?
+   #+begin_quote
+   Web data are events (what the user did), timestamp (when he did
+   it), and user information (who he is). These data are enough to
+   create living process maps and identify web data flows.
+   #+end_quote
+   #+attr_html: :width 600px :float nil:
+   [[../img/process.png]]
+
+4. What's an API (in the context of data science)?
+   #+begin_quote
+   An API (Application Programming Interface) is a set of rules and
+   endpoints that lets programs request and exhange data with external
+   systems - e.g. Google Maps, a database of stocks, Twitter/X feeds.
+
+   See also: Kubernetes API Server (see Google Chat).
+   #+end_quote
+   #+begin_src R :session *R* :results output :exports both
+     ## Install if you don't already have it
+     ## install.packages("httr")
+     ## install.packages("jsonlite")
+
+     library(httr)
+     library(jsonlite)
+
+     ## Example: Get a random joke from the "Official Joke API"
+     url <- "https://official-joke-api.appspot.com/random_joke"
+
+     response <- GET(url)            # Send request
+     content <- content(response, "text")  # Get response as text
+     data <- fromJSON(content)       # Parse JSON into an R list
+
+     print(data$setup)               # Show joke setup
+     print(data$punchline)           # Show punchline
+   #+end_src
+
+   Example output:
+   #+begin_example
+   : [1] "What's the difference between a seal and a sea lion?"
+   : [1] "An ion! "
+   #+end_example
+
+5. What's the difference between qualitative and quantitative data?
+   Examples?
+   #+begin_quote
+   - *Quantitative data* represent a quantity (Lat. quantus - "how
+     much?"):
+     + They deal with (mathematical) numbers.
+     + They can be measured but not observed (directly).
+     + They are highly abstracted (via math).
+     + Examples: Height [in], price [$], percentage [%].
+
+   - *Qualitative data* represent a quality (Lat. qualis - "what
+     kind?"):
+     + They deal with (language) descriptions
+     + They can be observed but not measured (directly).
+     + They are lowly abstracted (via language).
+     + Examples: Tall, cheap, vague.
+   #+end_quote
+
+6. What's a relational database?
+   #+begin_quote
+   A relational database is software that allows you to store data in
+   tables (or relations) made up of rows (or records) and columns (or
+   fields) where:
+   - Each table holds data about one type of thing (e.g. "students")
+   - Relationships between tables are defined by keys (e.g. student ID)
+   - You can define, store, control, query and combine data using SQL.
+   #+end_quote
+
+7. What's a query language? What's an example?
+   #+begin_quote
+   A language to articulate data queries, for example querying a table
+   in a relational database management system using SQL, as in the
+   query: =SELECT customer_name FROM customers;=
+   #+end_quote
+
+8. What do you need to consider when storing data?
+   #+begin_quote
+   - *Location* (e.g. parallel storage solutions or the cloud, or locally)
+   - *Data category* (e.g. unstructured or tabular)
+   - *Retrieval* (e.g. NoSQL for document (collection-based), or SQL for
+     relational (table-based) databases.
+   #+end_quote
+
+9. What's the connection between structuredness of data and decision
+   complexity? Compare adding prices at a cash register with deciding
+   to sell your business.
+   #+begin_quote
+   The more complex (aka difficult, hard to describe, overwhelming) a
+   decision is, the less structured are the data that support it.
+   #+end_quote
+
+10. What are the top cloud providers in the world?
+    #+begin_quote
+    - Amazon with Amazon Web Services (as in "Amazon Prime") ~30-40%
+    - Microsoft with Azure (as in "Microsoft Windows") ~20-30%
+    - Alphabet with Google Cloud (as in "Google Cloud Shell") ~10-20%
+    #+end_quote
+
+11. What does it mean to "scale data storage"?
+    #+begin_quote
+    When collecting large amounts of different types data from multiple
+    sources, the "scaling" question is "how much, what type, and how
+    fast"? If an application (e.g. for storage) scales, it can store
+    small and (arbitrarily) large data volumes. To scale, technology
+    either has to be invented or adapted - with computers, scale always
+    comes at a price.
+
+    E.g. for databases, you can scale vertically (bigger servers), or
+    horizontally (more servers). What to do depends on your data.
+    #+end_quote
+
+12. What's a "data pipeline"?
+    #+begin_quote
+    A data pipeline is a workflow, a prescribed series of steps or
+    stages that is used to retrieve, load, and store data, to better
+    control individual steps and (ideally) automate the entire process.
+
+    The term "pipeline" is used whenever segments are combined so that
+    the output of the previous segment is the input of the next,
+    e.g. in the following shell command, which pipes the string into a
+    file and then counts the characters of the string:
+    #+end_quote
+    #+begin_src bash :results output
+      echo "Hello" | tee hello.txt |  wc -c
+      cat hello.txt
+    #+end_src
+
+13. What's "ETL" and how is it used (think of an example)?
+    #+begin_quote
+    - ETL stands for the "Extract", "Transform", "Load" data pipeline.
+    - Example: autonomous vehicle operation:
+      1. Retrieve real-time traffic data (e.g. "rain", "stop sign")
+      2. Transform retrieved data for analysis (e.g. create table)
+      3. Load transformed data into container (e.g. SQLite database)
+    - When an ETL pipeline is well set up, it can be automated. In the
+      case of automated vehicles, operation otherwise wouldn't be
+      possible.
+    #+end_quote
+
+** Bonus: Kubernetes ([[https://chat.google.com/room/AAAALkEATEU/TnlGXFrrgt4/TnlGXFrrgt4?cls=10][see Google Chat]])
+#+attr_html: :width 600px :float nil:
+[[../img/kubernetes.png]]
+
+[[https://kubernetes.io]["Kubernetes"]] (from the Greek word for "navigator" or "captain") is a
+container technology - applications (like a data notebook) are
+"containerized" so that the user doesn't have to worry about what's
+under the hood. This is a modern version of the infrastructure setup
+that I explained last week - just to show you how this looks like in
+the wild:
+
+- Kubernetes "API Server" is the front desk where your request
+  goes. Now, the system will take care of your request (e.g. for data
+  analysis) using any available resources (GPUs, CPUs, RAM etc.)
+- The "Kubelet" is the local manager of your resources. It uses the
+  "Pod Sandbox".
+- Your models, data pipelines, or notebooks are packaged as Docker
+  images (compressed) so that they can be reproduced. They are fetched
+  from the "Image Registry".
+- Each of your requests undergoes "Pod stages" (that's the job
+  lifecycle)
+- When you stop or the job/request is finished, the container is
+  terminated, and volumes (memory) is released.
+
+For data scientists, this setup means: Scalability (run 1 or 1000
+experiments), reproducibility (environment is containerized and
+identical across runs), resource efficiency (scheduled), isolation
+(jobs don't compete with one another), and automation (cleanup).
+
+* Week 3: Introduction to R (Sep 8, 10, 12)
+* Week 4: Expo (Sep 15, 17, 19)
+#+attr_html: :width 200px :float nil:
+[[../img/expo.png]]
 
