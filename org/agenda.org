@@ -472,14 +472,13 @@ more easily and it feels more relevant to daily student life. Our main
 concern is participation—we hope enough classmates will respond
 honestly to the survey.
 
-* Week 2: Data Collection and Storage & Infrastructure (Sep 5)
+* DONE Week 2: Data Collection and Storage & Infrastructure (Sep 5)
 #+attr_html: :width 600px :float nil:
 #+caption: Data infrastructure (Source: alcorfund.com)
 [[../img/infrastructure.png]]
 
-- [ ] Projects - deadline is looming.
-- [ ] Review - Data Collection and Storage & infrastructure
-- [ ] Introduction to data science ("[[file:1_datascience.org::Popularity contest][Popularity Contest]]")
+- [X] Projects - deadline is looming.
+- [X] Review - Data Collection and Storage & infrastructure
 
 ** Projects - 1st sprint review is coming!
 
@@ -521,6 +520,7 @@ the past week.
    create living process maps and identify web data flows.
    #+end_quote
    #+attr_html: :width 600px :float nil:
+   #+caption: Process mining diagram (order process)
    [[../img/process.png]]
 
 4. What's an API (in the context of data science)?
@@ -684,7 +684,178 @@ experiments), reproducibility (environment is containerized and
 identical across runs), resource efficiency (scheduled), isolation
 (jobs don't compete with one another), and automation (cleanup).
 
-* Week 3: Introduction to R (Sep 8, 10, 12)
+* Week 3: Guest lecture & Introduction to R (Sep 8, 10, 12)
+#+attr_html: :width 300px :float nil:
+[[../img/troxel2.png]]
+
+- [X] Test 2 is live (known review questions) - by Sept 14
+- [X] Presentation this Wednesday - Brandon Smith
+- [X] Monday: Finish Introduction to Data Science
+- [ ] By Friday: Review DataCamp lesson / Start with R
+- [ ] By Friday: First sprint review due!
+- [ ] By Sunday: Install R on your PC (submit screenshot to Canvas)
+
+** DONE Introduction to data science (continued)
+
+- [X] Data science skill set
+- [X] IT vs. data science skills stack
+- [X] Data science use cases
+
+** NEXT Guest presentation: Data science and Software Engineering in Space
+
+- Prepare some questions for our speaker.
+- Think about data transfer, use of data in space.
+- Which programming languages will be most useful?
+- Consider doing an internship with this or another company.
+
+** Introduction to R
+
+- [ ] Why are we using R?
+- [ ] Obtaining and installing R from CRAN
+- [ ] Running R scripts on the command-line
+
+** Linux vs. Windows vs. MacOS for Data Science
+
+| Aspect               | Windows                                                                 | macOS                                                                 | Linux                                                                 |
+|-----------------------+------------------------------------------------------------------------+------------------------------------------------------------------------+----------------------------------------------------------------------|
+| Ease of Setup         | Familiar UI, easy install of mainstream tools (Anaconda, RStudio, VS Code). Some ML libraries harder due to dependency issues. | Smooth setup, especially for Python/R. Comes with Unix-like terminal. Package management via Homebrew. | Steeper learning curve, but most flexible. Native package managers (apt, yum, pacman). Great for reproducibility. |
+| Ecosystem & Compatibility | Wide commercial software support (Excel, PowerBI, Tableau). Some scientific tools first optimized here. | Good support for both productivity tools and developer tools. MATLAB, R, Python, and Julia work well. | Best support for open-source data science tools (TensorFlow, PyTorch, R, Julia). Most cloud/cluster systems run Linux. |
+| Programming Environment | PowerShell improving, but still weaker than Bash/Zsh. WSL2 provides Linux environment inside Windows. | Unix-based terminal (zsh/bash) works well for scripting and automation. | Native Unix environment; preferred by many data scientists for scripting, automation, HPC. |
+| Performance           | Can run heavy workloads with GPU (CUDA support strong). WSL2 adds overhead. | Stable performance, good optimization for Apple Silicon (M1/M2 chips). GPU support weaker (esp. NVIDIA CUDA). | Excellent performance, especially for servers and clusters. Best environment for GPU and HPC tasks. |
+| Package Management    | Conda and pip work, but dependency management sometimes messy.          | Homebrew + Conda/pip make installations cleaner.                       | apt/yum/pacman + Conda/pip. Reproducible environments easier (e.g., Docker). |
+| Machine Learning/AI   | Best CUDA GPU support for deep learning. WSL2 makes Linux tools accessible. | Limited CUDA support (NVIDIA GPUs rare). Apple Silicon ML acceleration still maturing. | Native CUDA/cuDNN, best support for ML frameworks, common in research/production. |
+| Collaboration         | Widely used in business. Easy integration with Microsoft tools (Excel, Teams). | Popular in academia and industry. Plays well with both business and dev environments. | Dominant in academia, research labs, and cloud environments. Matches production servers. |
+| Cost & Licensing      | Paid license, but widely available in workplaces.                      | Expensive hardware, but OS updates free.                               | Free and open source. Many distributions available. |
+| Best Fit For          | Data scientists in business/enterprise settings needing Microsoft ecosystem. | Users who want a balance of usability and Unix power (good for mixed productivity + coding). | Researchers, engineers, and power users needing control, reproducibility, and alignment with production/cloud. |
+
+** Review (Wednesday)
+
+1. What kind of data science is required if you have many decisions to
+   make and have big data available?
+   #+begin_quote
+   Drawing on Cassie Kozyrkov's infographic from the lecture, this
+   means that you need "machine learning".
+   #+end_quote   
+2. What kind of data science is required if you don't have any
+   decisions to make and are just curious, or if you have a few
+   decisions but not much data?
+   #+begin_quote
+   Drawing on Cassie Kozyrkov's infographic from the lecture, this
+   means that you need "data analysis".
+   #+end_quote
+
+3. What is ~Rscript~?
+   #+begin_quote
+   Rscript is an alternative front-end (user-facing application) for
+   use in R scripts (programs). =Rscript --help= gives usage, =man
+   Rscript= provides a manual page for ~Rscript(1)~.
+   #+end_quote
+4. What is CRAN?
+   #+begin_quote
+   CRAN is the Comprehensive R Archive Network that provides access to
+   R software, packages, and documentation. An equivalent for Python
+   is PyPI, the Python package index.
+   #+end_quote
+5. When you download R to a Windows computer from CRAN, which format
+   does it have?
+   #+begin_quote
+   The R download for Windows from CRAN is a precompiled binary - you
+   download the .exe installer first and then unpack it to the PC.
+   #+end_quote
+6. What are "vector", "list", and "data frame" in R?
+   #+begin_quote
+   Vector, list and data frame are special data structures in R -
+   so-called containers to manage data collections.
+   #+end_quote
+
+** Review (DataCamp) "Preparation, Exploration, Visualization"
+
+Open datacamp.com/datalab. Make sure you're logged in the "Lyon
+College Fall 2025" workspace (infinite number of notebooks for you).
+
+Incidentally, this is what I suggest you do whenever you go through a
+DataCamp lesson - especially when it is code-heavy like this one.
+
+1. What needs to be done in this dataset?
+   #+begin_example
+   Name Age Size Country
+   1    Sara  27 1.77 Belgium
+   2     Lis  30 5.58     USA
+   3 Hadrien  NA 1.80      FR
+   4     Lis  30 5.58     USA
+   #+end_example
+
+2. What is the purpose of removing duplicates in a dataset?
+   #+begin_quote
+   To ensure that each observation (row) is unique.
+   #+end_quote
+
+3. What are methods to handle missing values?
+   #+begin_quote
+   *Impute* (replace intelligently, e.g. by an average), drop, or keep.
+   #+end_quote
+
+4. What is the main goal of EDA?
+   #+begin_quote
+   The main goal of Exploratory Data Analysis (EDA) is to explore the
+   data, formulate hypotheses, and assess characteristics, e.g. about
+   correlation, trends, patterns. It happens after data preparation.
+   #+end_quote
+
+5. What does *Anscombe's quartet* illustrate in the context of EDA?
+   #+begin_quote
+   The Anscombe quartet shows the importance of visualizing data even
+   if the statistical properties are very similar.
+   #+end_quote
+
+6. What does 'Knowing your data' mean? Which R functions that you know
+   already deliver this?
+   #+begin_quote
+   1. Preview data values (=head=)
+   2. View structure (=str=)
+   3. Descriptive stats (=summary=)
+   4. Visualize (=plot=)
+   5. Look for correlations (=cor=)
+   6. Look for outliers (=boxplot=)
+   #+end_quote
+
+7. Which picture or photo do you know that's "worth a thousand words"?
+   #+attr_html: :width 400px:
+   #+caption: 16-year old German soldier crying when he is captured, WWII
+   [[../img/hitler_youth_crying.jpg]]
+
+   - Others that came to my mind instantly:
+     #+begin_quote
+     - [[https://www.witf.io/wp-content/uploads/2020/02/iwo-jima-rosenthal-520748-1-1920x1080.jpg][Battle of Iwo Jima]] (1945)
+     - [[https://www.gannett-cdn.com/-mm-/f40f3606fa7f520417c0c9e02d7aa7a371d004ba/r=x513&c=680x510/local/-/media/USATODAY/USATODAY/2013/04/28/war-icons-003-4_3.jpg][Saigon Execution]] (1968)
+     - [[https://www.njspotlightnews.org/wp-content/uploads/sites/123/2024/07/Donald-Trump-assassination-attempt-July-13-2024.jpg][Trump assassination]] (2024)
+     #+end_quote
+
+8. What are dashboards in data science, and what are they good for? 
+   #+begin_quote
+   - Dashboards group relevant information in one place
+   - Real-time information helps viewers to keep track
+   - Dashboards can be customized to different data needs
+   - Dashboards can easily be overwhelming (design issues)
+   - Interactive dashboards can help extract features
+   #+end_quote
+
+9. What are dashboards definitely not good for?
+   #+begin_quote
+   - Data preparation, cleaning and transformation
+   - Explorative Data Analysis (because they are fixed)
+   #+end_quote
+
+10. What is "labeling" in data visualizations, and why is it important?
+    #+begin_quote
+    Labeling helps viewers understand what each axis, title, and legend
+    represents. Units and data sources are also important.
+    #+end_quote
+
+You can check my notebook later: [[https://tinyurl.com/datacamp-review-3][tinyurl.com/datacamp-review-3]] (This
+opens to the =notebook.ipynb= file. Open the files (on the right) to
+open the notebook that I uploaded (auto-generated by ChatGPT btw).
+
 * Week 4: Expo (Sep 15, 17, 19)
 #+attr_html: :width 200px :float nil:
 [[../img/expo.png]]
