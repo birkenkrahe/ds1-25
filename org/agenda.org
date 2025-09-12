@@ -789,7 +789,10 @@ DataCamp lesson - especially when it is code-heavy like this one.
    4     Lis  30 5.58     USA
    #+end_example
 
-   
+   Get the data from the web:
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+
+   #+end_src
 
 2. What is the purpose of removing duplicates in a dataset?
    #+begin_quote
