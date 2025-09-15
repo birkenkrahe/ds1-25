@@ -1058,6 +1058,8 @@ your career path.
   3) I asked for a section-by-section critique draft.
   4) I copied the draft and edited it for content.
   5) I think the feedback is now more structured than before.
+  6) I know that the feedback is now no longer 100% mine.
+  7) I won't be able to do this for the 2nd sprint review.
 
   I'm going to demonstrate to you how much more time you will have to
   spend when you opt to enroll stupid generative AI for a creative
