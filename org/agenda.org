@@ -1521,7 +1521,7 @@ AUC/ROC is an evaluation method for binary classification model:
    #+end_src
 
    #+RESULTS:
-   :  [1] "Mazda RX4 Wag"       "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
+   :  [1] "Mazda RX4"           "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
    :  [6] "Duster 360"          "Merc 240D"           "Merc 230"            "Merc 280"            "Merc 280C"          
    : [11] "Merc 450SE"          "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"  "Lincoln Continental"
    : [16] "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
