@@ -1421,6 +1421,8 @@ AUC/ROC is an evaluation method for binary classification model:
   #+attr_html: :width 600px:
   [[../img/litmap2025.png]]
 
+- Check out my GDrive folder: [[https://tinyurl.com/2nd-sprint-demo][tinyurl.com/2nd-sprint-demo]]
+  
 - Deadline (hard): Friday, October 10, 2025.
 
 ** TODO Review (Wednesday)
