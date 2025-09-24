@@ -1569,6 +1569,15 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - Real researchers use conferences, proceedings, events, social media,
   journals, books, but most importantly human experts to find papers.
 
+- Don't discard the "Audio Overview" in NotebookLM - you can customize
+  it by type and with a specific prompt.
+  #+attr_html: :width 600px :float nil:
+  [[../img/audio_overview.png]]
+
+- You can now see another summary of my own research as a video
+  overview (4 min), an audio overview (1:35 min), and papers at:
+  [[https://tinyurl.com/research-mixer-2025][tinyurl.com/research-mixer-2025]] (default: 'long deep dive").
+
 ** IN PROGRESS Introduction to R
 
 - [X] Why we are using R
@@ -1577,6 +1586,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - [ ] R packages
 - [ ] Light data exploration with R
 - [ ] Customizing R at startup
+
 
 ** Review (R console)
 
