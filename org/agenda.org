@@ -1557,7 +1557,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - We will discuss my sample solution next week.
 
 
-** TODO On finding a literature review ([[https://chat.google.com/room/AAAALkEATEU/_zJhcqiKsiM/md-ig0qyGaM?cls=10][Google Chat post]])
+** DONE On finding a literature review ([[https://chat.google.com/room/AAAALkEATEU/_zJhcqiKsiM/md-ig0qyGaM?cls=10][Google Chat post]])
 
 - Online literature searches are never 100% successful.
 
@@ -1569,33 +1569,15 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - Real researchers use conferences, proceedings, events, social media,
   journals, books, but most importantly human experts to find papers.
 
-- Don't discard the "Audio Overview" in NotebookLM - you can customize
-  it by type and with a specific prompt.
-  #+attr_html: :width 600px :float nil:
-  [[../img/audio_overview.png]]
 
-- You can now see another summary of my own research as a video
-  overview (4 min), an audio overview (1:35 min), and papers at:
-  [[https://tinyurl.com/research-mixer-2025][tinyurl.com/research-mixer-2025]] (default: 'long deep dive").
+** DONE Review (R console)
 
-** IN PROGRESS Introduction to R
-
-- [X] Why we are using R
-- [X] The R console
-- [ ] R display options
-- [ ] R packages
-- [ ] Light data exploration with R
-- [ ] Customizing R at startup
-
-
-** Review (R console)
-
-1. Why would you use with R on the command-line?
+1. Why would you use  R on the command-line?
    #+begin_quote
    Command-line R is the most flexible, portable, and reproducible way
    to use R, especially in Linux and research workflows. Allows remote
-   and headless (no GUI) use and integration of Unix tools
-   (pipeline, text processing, pattern matching, etc.).
+   and *headless* (no GUI) use and integration of Unix tools (pipeline,
+   text processing, pattern matching, etc.).
    #+end_quote
 
 2. Why don’t people use R or Python for everything?  
@@ -1604,7 +1586,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    mobile, embedded, etc.); there’s no one-size-fits-all.
    #+end_quote
 
-3. How can you check where the R and Rscript executables live on a
+3. How can you check where the ~R~ and ~Rscript~ executables live on a
    Unix-like system?
    #+begin_src bash :results output
      which Rscript
@@ -1622,7 +1604,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    times for user, system, and total time elapsed.
    #+end_quote
    #+begin_src bash :results output
-     echo "str(mtcars)" > test.R
+     echo "str(mtcars)" > test.R  # creating a test file
      R CMD BATCH test.R
    #+end_src
 
@@ -1643,5 +1625,47 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    #+end_quote
 
 
-** NEXT Review (Environment, display options, packages)
+** NEXT Review (Environment)
+
+1. What does the function ~getwd()~ do in R?
+   #+begin_quote
+   ~getwd()~ shows the current working directory where R reads and
+   writes files.
+   #+end_quote
+
+2. How do you change the working directory in R?
+   #+begin_quote
+   Use the ~setwd()~ function with either a relative or absolute path.
+   #+end_quote
+
+3. What is the difference between a relative path and an absolute path in R?
+   #+begin_quote
+   Relative paths are given from the current location (e.g., =..=),
+   while absolute paths start from the computer's root directory
+   (e.g., =/home/user=).
+   #+end_quote
+
+4. How can you run a shell command such as ~pwd~ from inside R?  
+   #+begin_quote
+   Use the ~system()~ function, e.g., ~system('pwd')~.
+   #+end_quote
+   
+5. What does the R command ~system("ls -la | wc -l")~ do? What is this
+   kind of command called?
+   #+begin_quote
+   This Unix *pipeline* command lists all files in the directory and
+   then counts the number of lines in the listing.
+   #+end_quote
+   
+
+
+** IN PROGRESS Introduction to R
+
+- [X] Why we are using R
+- [X] The R console
+- [ ] The R environment
+- [ ] R display options
+- [ ] R packages
+- [ ] Light data exploration with R
+- [ ] Customizing R at startup
 
