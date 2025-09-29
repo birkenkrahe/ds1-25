@@ -1525,7 +1525,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 
 *
 
-* Week 5: More and more R (Sep 22, 24, 26)
+* DONE Week 5: More and more R (Sep 22, 24, 26)
 #+attr_html: :width 150px: 
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]
@@ -1568,7 +1568,6 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   
 - Real researchers use conferences, proceedings, events, social media,
   journals, books, but most importantly human experts to find papers.
-
 
 ** DONE Review (R console)
 
@@ -1625,45 +1624,161 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    #+end_quote
 
 
-** NEXT Review (Environment)
+** NEXT Review: Weekly Snack Budget Assignment
 
-1. What does the function ~getwd()~ do in R?
+- A few of you put all the code into one code block. If you do that,
+  you're not using the full power of the notebook. 
+
+- When the assignment provides sample input and sample output, you
+  need to reproduce these values exactly. In this example:
+  #+attr_html: :width 600px :float nil:
+  [[../img/assignment.png]]
+
+- I have subtracted 1 point for incomplete submission this time.
+  
+- Reproducing data/code/results and testing programs is a key activity
+  in the life of every data scientist (> 50% of your time.
+
+- My sample solution is available at [[https://tinyurl.com/weekly-snacks][tinyurl.com/weekly-snacks]].
+
+- For late submissions you can get 50% of the points. If you waited
+  until 2 hours before the due date, you've left it too late. You
+  should find time to attempt an assignment as early as you can.
+
+- If an assignment is due Monday, don't expect me to reply on Sunday.
+
+- If you use commands not covered in class or DataCamp, I will query
+  you.
+
+- If you used AI to complete your assignment, you need to say it in
+  the preamble and identify how exactly you used it.
+
+- Examples:   
+  #+begin_quote
+  What does the ~cat~ command do (in R, on the shell)? 
+  #+end_quote
+
+  #+begin_src R :session *R* :results output :exports both
+    x <- 100
+    print(cat("Print ", x)) # `cat` prints a NULL character
+    print(cat("Print ", x, '\n')) 
+  #+end_src
+
+  #+RESULTS:
+  : Print  100 
+  : NULL
+
+  #+begin_quote
+  Do you have to use ~if~ and ~else~ to check if the =total= budget is
+  =within_budget=?
+  #+end_quote
+
+  #+begin_src R :session *R* :results output :exports both
+    x <- 100
+    greater100 <- x > 0
+    greater100
+  #+end_src
+
+  #+RESULTS:
+  : [1] TRUE
+
+  #+begin_quote
+  What does the ~mode~ command do? How is it different from ~class~?
+  #+end_quote
+  
+  #+begin_src R :session *R* :results output :exports both
+    x <- 100
+    mode(x)   # storage mode
+    class(x)  # object class mode
+  #+end_src
+
+  #+RESULTS:
+  : [1] "numeric"
+  : [1] "numeric"
+
+  #+begin_quote
+  What does ~typeof~ do? How is it different from ~mode~ and ~class~?
+  #+end_quote  
+
+  #+begin_src R :session *R* :results output :exports both
+    typeof(x)  ## R internal storage mode of an object
+  #+end_src
+
+  #+RESULTS:
+  : [1] "double"
+
+** TODO Review (Environment)
+
+1. Why do you need to cite software that you used in your references?
    #+begin_quote
-   ~getwd()~ shows the current working directory where R reads and
+   You need to cite software that you used in order to make your
+   research *replicable*.
+   #+end_quote
+
+2. What does the function ~getwd()~ do in R?
+   #+begin_quote
+   ~getwd()~ shows the *current working directory* where R reads and
    writes files.
    #+end_quote
 
-2. How do you change the working directory in R?
+3. How do you change the working directory in R?
    #+begin_quote
-   Use the ~setwd()~ function with either a relative or absolute path.
+   Use the ~setwd()~ function with either a *relative* or *absolute path*.
    #+end_quote
 
-3. What is the difference between a relative path and an absolute path in R?
+4. What is the difference between a relative path and an absolute path
+   in R?
    #+begin_quote
-   Relative paths are given from the current location (e.g., =..=),
-   while absolute paths start from the computer's root directory
-   (e.g., =/home/user=).
+   *Relative* paths are given from the *current* location (e.g., =..=),
+   while *absolute* paths start from the computer's *root* or home
+   directory (e.g., =/home/user=, or =C:\Users\=).
    #+end_quote
-
-4. How can you run a shell command such as ~pwd~ from inside R?  
+   
+5. How can you run a *shell* command such as ~pwd~ from *inside R*?  
    #+begin_quote
    Use the ~system()~ function, e.g., ~system('pwd')~.
    #+end_quote
-   
-5. What does the R command ~system("ls -la | wc -l")~ do? What is this
+
+6. What does the R command ~system("ls -la | wc -l")~ do? What is this
    kind of command called?
    #+begin_quote
-   This Unix *pipeline* command lists all files in the directory and
-   then counts the number of lines in the listing.
+   This Unix *pipeline* command lists all files in the directory (=ls=)
+   and then counts the number of lines in the listing (=wc=). Here, =-la=
+   and =-l= are command *flags* or *options* that modify the behavior.
    #+end_quote
-   
 
+7. Can you also run single R commands like ~str~ on ~mtcars~ on the
+   command-line? Tip: check the man page for ~Rscript~.
+   #+begin_src bash :results output :exports both
+     Rscript -e 'str(mtcars)'
+     Rscript -e 'print("hello")'
+   #+end_src
+
+8. Can you run an R command inside a shell command inside an R
+   command? 
+   #+begin_src R :session *R* :results output :exports both
+     ## From inside R run Rscript on the shell on an R print() function
+     system("Rscript -e \'print(\"hello\")\'") # special signs are escaped
+   #+end_src
+   
+9. Can you run an R command inside a shell command inside an R
+   command inside a shell command? 
+   #+begin_src R :session *R* :results output :exports both
+     ## From inside R run Rscript on the shell on an R system() function
+     ## Inside the system() function, run the shell command `pwd`.
+     system("Rscript -e \'system(\"pwd\")\'") 
+   #+end_src
+
+10. What's the command to quit or exit the R console?
+    #+begin_quote
+    The command to quit or exist is ~quit()~ or ~q()~.
+    #+end_quote
 
 ** IN PROGRESS Introduction to R
 
 - [X] Why we are using R
 - [X] The R console
-- [ ] The R environment
+- [X] The R environment
 - [ ] R display options
 - [ ] R packages
 - [ ] Light data exploration with R
