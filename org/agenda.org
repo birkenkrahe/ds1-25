@@ -1624,6 +1624,8 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    #+end_quote
 
 
+* Week 6: More and more and more R (Sep 29, Oct 1, Oct 3)
+
 ** NEXT Review: Weekly Snack Budget Assignment
 
 - A few of you put all the code into one code block. If you do that,
@@ -1667,6 +1669,21 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   #+RESULTS:
   : Print  100 
   : NULL
+
+  #+begin_quote
+  What does the ~paste~ command do? (Different from ~cat~ and ~print~)?
+  #+end_quote
+
+  #+begin_src R :session *R* :results output :exports both
+    foo <- "I am"
+    bar <- "concatenated"
+    paste(foo, bar,x)
+    print(paste(foo,bar,x)) # adds nothing: last result is always printed
+  #+end_src
+
+  #+RESULTS:
+  : [1] "I am concatenated 100"
+  : [1] "I am concatenated 100"
 
   #+begin_quote
   Do you have to use ~if~ and ~else~ to check if the =total= budget is
