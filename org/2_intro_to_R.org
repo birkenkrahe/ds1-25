@@ -712,7 +712,7 @@ shell that I use on my Linux computer (and that most MacOS users
 will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 #+end_notes
 
-* R display ~options~
+* NEXT R display ~options~
 #+NAME: fig:cli-6
 #+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
@@ -922,21 +922,23 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
   installed.packages() |> tail()  # bottom of the list
   #+end_example
 
-  To illustrate the pipe, this is easier:
+- To illustrate the pipe, this is easier:
   #+begin_src R :session *R* :results output
     mtcars |> head(n=3)
     mtcars |> tail(n=3)
   #+end_src
 
-  #+RESULTS:
-  :                mpg cyl disp  hp drat    wt  qsec vs am gear carb
-  : Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-  : Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-  : Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-  :                mpg cyl disp  hp drat   wt qsec vs am gear carb
-  : Ferrari Dino  19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
-  : Maserati Bora 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
-  : Volvo 142E    21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
+- You can check if a package is installed with =installed.packages()=:
+  #+begin_example
+  R> installed.packages()   <--- a little hard to search
+  R> installed.packages() -> ip
+  R> ip["MASS","Version"]  
+  #+end_example
+
+- Or on the shell before entering R:
+  #+begin_src bash :results output :exports both
+    Rscript -e 'installed.packages()["MASS","Version"]'
+  #+end_src
 
 - To update packages: ~update.packages()~ (this can take a while and
   you'll have to confirm updates - run it and =cancel=.)
