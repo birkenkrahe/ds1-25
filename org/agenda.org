@@ -1625,6 +1625,14 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 
 * Week 6: R options and packages (Sep 29, Oct 1, Oct 3)
 
+- [ ] Don't forget test 5 (deadline Sunday). Test 6 live today.
+
+- [ ] Don't forget home assignment 2 (deadline Monday).
+
+- [ ] Don't forget the 2nd DataCamp lesson on R (vectors) by Sunday.
+
+- [ ] Don't forget the 2nd sprint review deadline (by next Friday).
+
 ** DONE Review: Weekly Snack Budget Assignment
 
 - A few of you put all the code into one code block. If you do that,
