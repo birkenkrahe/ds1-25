@@ -712,7 +712,7 @@ shell that I use on my Linux computer (and that most MacOS users
 will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 #+end_notes
 
-* NEXT R display ~options~
+* R display ~options~
 #+NAME: fig:cli-6
 #+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
@@ -1038,7 +1038,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
   : character(0)
   : [1] "character"
 
-* Explore data (lightly)
+* PRACTICE Explore data (lightly)
 
 - When you've loaded a data set, you should take a look at it.
 
@@ -1100,7 +1100,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 - There is a lot you can see in data even if you're not able to plot
   them yet.
 
-* Practice: R package commands
+* PRACTICE R package commands (~MASS~ version)
 
 *Open an R console (=M-x R=) to enter the following commands.*
 
@@ -1118,100 +1118,6 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
    #+begin_src R :session *R* :results output :exports both
      data(package="MASS")  # must look at the help(data)
    #+end_src
-
-   #+RESULTS:
-   #+begin_example
-   Data sets in package ‘MASS’:
-
-   Aids2                         Australian AIDS Survival Data
-   Animals                       Brain and Body Weights for 28 Species
-   Boston                        Housing Values in Suburbs of Boston
-   Cars93                        Data from 93 Cars on Sale in the USA in 1993
-   Cushings                      Diagnostic Tests on Patients with Cushing's Syndrome
-   DDT                           DDT in Kale
-   GAGurine                      Level of GAG in Urine of Children
-   Insurance                     Numbers of Car Insurance claims
-   Melanoma                      Survival from Malignant Melanoma
-   OME                           Tests of Auditory Perception in Children with OME
-   Pima.te                       Diabetes in Pima Indian Women
-   Pima.tr                       Diabetes in Pima Indian Women
-   Pima.tr2                      Diabetes in Pima Indian Women
-   Rabbit                        Blood Pressure in Rabbits
-   Rubber                        Accelerated Testing of Tyre Rubber
-   SP500                         Returns of the Standard and Poors 500
-   Sitka                         Growth Curves for Sitka Spruce Trees in 1988
-   Sitka89                       Growth Curves for Sitka Spruce Trees in 1989
-   Skye                          AFM Compositions of Aphyric Skye Lavas
-   Traffic                       Effect of Swedish Speed Limits on Accidents
-   UScereal                      Nutritional and Marketing Information on US Cereals
-   UScrime                       The Effect of Punishment Regimes on Crime Rates
-   VA                            Veteran's Administration Lung Cancer Trial
-   abbey                         Determinations of Nickel Content
-   accdeaths                     Accidental Deaths in the US 1973-1978
-   anorexia                      Anorexia Data on Weight Change
-   bacteria                      Presence of Bacteria after Drug Treatments
-   beav1                         Body Temperature Series of Beaver 1
-   beav2                         Body Temperature Series of Beaver 2
-   biopsy                        Biopsy Data on Breast Cancer Patients
-   birthwt                       Risk Factors Associated with Low Infant Birth Weight
-   cabbages                      Data from a cabbage field trial
-   caith                         Colours of Eyes and Hair of People in Caithness
-   cats                          Anatomical Data from Domestic Cats
-   cement                        Heat Evolved by Setting Cements
-   chem                          Copper in Wholemeal Flour
-   coop                          Co-operative Trial in Analytical Chemistry
-   cpus                          Performance of Computer CPUs
-   crabs                         Morphological Measurements on Leptograpsus Crabs
-   deaths                        Monthly Deaths from Lung Diseases in the UK
-   drivers                       Deaths of Car Drivers in Great Britain 1969-84
-   eagles                        Foraging Ecology of Bald Eagles
-   epil                          Seizure Counts for Epileptics
-   farms                         Ecological Factors in Farm Management
-   fgl                           Measurements of Forensic Glass Fragments
-   forbes                        Forbes' Data on Boiling Points in the Alps
-   galaxies                      Velocities for 82 Galaxies
-   gehan                         Remission Times of Leukaemia Patients
-   genotype                      Rat Genotype Data
-   geyser                        Old Faithful Geyser Data
-   gilgais                       Line Transect of Soil in Gilgai Territory
-   hills                         Record Times in Scottish Hill Races
-   housing                       Frequency Table from a Copenhagen Housing Conditions Survey
-   immer                         Yields from a Barley Field Trial
-   leuk                          Survival Times and White Blood Counts for Leukaemia Patients
-   mammals                       Brain and Body Weights for 62 Species of Land Mammals
-   mcycle                        Data from a Simulated Motorcycle Accident
-   menarche                      Age of Menarche in Warsaw
-   michelson                     Michelson's Speed of Light Data
-   minn38                        Minnesota High School Graduates of 1938
-   motors                        Accelerated Life Testing of Motorettes
-   muscle                        Effect of Calcium Chloride on Muscle Contraction in Rat
-                                 Hearts
-   newcomb                       Newcomb's Measurements of the Passage Time of Light
-   nlschools                     Eighth-Grade Pupils in the Netherlands
-   npk                           Classical N, P, K Factorial Experiment
-   npr1                          US Naval Petroleum Reserve No. 1 data
-   oats                          Data from an Oats Field Trial
-   painters                      The Painter's Data of de Piles
-   petrol                        N. L. Prater's Petrol Refinery Data
-   phones                        Belgium Phone Calls 1950-1973
-   quine                         Absenteeism from School in Rural New South Wales
-   road                          Road Accident Deaths in US States
-   rotifer                       Numbers of Rotifers by Fluid Density
-   ships                         Ships Damage Data
-   shoes                         Shoe wear data of Box, Hunter and Hunter
-   shrimp                        Percentage of Shrimp in Shrimp Cocktail
-   shuttle                       Space Shuttle Autolander Problem
-   snails                        Snail Mortality Data
-   steam                         The Saturated Steam Pressure Data
-   stormer                       The Stormer Viscometer Data
-   survey                        Student Survey Data
-   synth.te                      Synthetic Classification Problem
-   synth.tr                      Synthetic Classification Problem
-   topo                          Spatial Topographic Data
-   waders                        Counts of Waders at 15 Sites in South Africa
-   whiteside                     House Insulation: Whiteside's Data
-   wtloss                        Weight Loss Data from an Obese Patient
-   #+end_example
    
 4) On the R shell, open the =help= for the data set =Boston= in =MASS= - how
    many rows (observations) and columns (variables) does it have?
@@ -1250,8 +1156,8 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
    #+begin_src R :session *R* :results output :exports both
      str(Boston)
    #+end_src
-
-   #+RESULTS:
+ 
+  #+RESULTS:
    #+begin_example
    'data.frame':	506 obs. of  14 variables:
     $ crim   : num  0.00632 0.02731 0.02729 0.03237 0.06905 ...
@@ -1324,6 +1230,207 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     :  [1] ".GlobalEnv"        "ESSR"              "package:stats"     "package:graphics" 
     :  [5] "package:grDevices" "package:utils"     "package:datasets"  "package:methods"  
     :  [9] "Autoloads"         "package:base"
+
+* PRACTICE R package commands (~dplyr~ version)
+
+*Open an R console (Run > Terminal) to enter the following commands.*
+
+1) [Install the ~dplyr~ package with =install.packages= IF NOT DONE YET]
+   #+begin_example R
+   install.packages("dplyr")
+   #+end_example
+
+2) Load the =dplyr= package into your current R session
+   #+begin_src R :session *R* :results none :exports both
+     library(dplyr)
+   #+end_src
+
+3) List all data sets in =dplyr=:
+   #+begin_src R :session *R* :results output :exports both
+     data(package="dplyr")
+   #+end_src
+
+   #+RESULTS:
+   : Data sets in package ‘dplyr’:
+   : 
+   : band_instruments            Band membership
+   : band_instruments2           Band membership
+   : band_members                Band membership
+   : starwars                    Starwars characters
+   : storms                      Storm tracks data
+
+4) Open the ~help~ for the data set =starwars= in ~dplyr~ - how many rows
+   (observations) and columns (variables) does it have?
+   #+begin_example R
+     help(starwars)
+   #+end_example
+
+5) Load the data set ~starwars~ into your current R session and display
+   its dimensions with ~dim~.
+   #+begin_src R :session *R* :results output :exports both
+     data(starwars)
+     dim(starwars)
+   #+end_src
+
+   #+RESULTS:
+   : [1] 87 14
+
+6) The ~help~ information talks about a ~tibble~ - whatever that is. Turn
+   the =starwars= "tibble" into a proper ~data.frame~ with the command
+   ~as.data.frame~, and show its first 10 lines and 6 columns only:
+   #+begin_src R :session *R* :results output :exports both
+     as.data.frame(starwars) -> starwars_df # save tibble as data.frame
+     starwars_df[1:10,1:6]
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   name height mass    hair_color  skin_color eye_color
+   1      Luke Skywalker    172   77         blond        fair      blue
+   2               C-3PO    167   75          <NA>        gold    yellow
+   3               R2-D2     96   32          <NA> white, blue       red
+   4         Darth Vader    202  136          none       white    yellow
+   5         Leia Organa    150   49         brown       light     brown
+   6           Owen Lars    178  120   brown, grey       light      blue
+   7  Beru Whitesun Lars    165   75         brown       light      blue
+   8               R5-D4     97   32          <NA>  white, red       red
+   9   Biggs Darklighter    183   84         black       light     brown
+   10     Obi-Wan Kenobi    182   77 auburn, white        fair blue-gray
+   #+end_example
+
+7) List all packages that are currently loaded in your R session:
+   #+begin_src R :session *R* :results output :exports both
+     search()
+   #+end_src
+
+   #+RESULTS:
+   :  [1] ".GlobalEnv"         "package:data.table" "package:dplyr"      "package:MASS"      
+   :  [5] "ESSR"               "package:stats"      "package:graphics"   "package:grDevices" 
+   :  [9] "package:utils"      "package:datasets"   "package:methods"    "Autoloads"         
+   : [13] "package:base"
+   
+8) List all R objects that are currently loaded (what do you expect?)
+   #+begin_src R :session *R* :results output :exports both
+     ls()
+   #+end_src
+
+   #+RESULTS:
+   :  [1] "bar"          "foo"          "greater100"   "iter"         "loaded"       "myfunc"      
+   :  [7] "old.o"        "op"           "p"            "starwards_df" "starwars"     "starwars_df" 
+   : [13] "x"            "y"
+
+9) Display the structure of the data frame ~starwars_df~ - include only
+   the first 11 columns:
+   #+begin_src R :session *R* :results output :exports both
+     str(starwars_df[,1:11])
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':	87 obs. of  11 variables:
+    $ name      : chr  "Luke Skywalker" "C-3PO" "R2-D2" "Darth Vader" ...
+    $ height    : int  172 167 96 202 150 178 165 97 183 182 ...
+    $ mass      : num  77 75 32 136 49 120 75 32 84 77 ...
+    $ hair_color: chr  "blond" NA NA "none" ...
+    $ skin_color: chr  "fair" "gold" "white, blue" "white" ...
+    $ eye_color : chr  "blue" "yellow" "red" "yellow" ...
+    $ birth_year: num  19 112 33 41.9 19 52 47 NA 24 57 ...
+    $ sex       : chr  "male" "none" "none" "male" ...
+    $ gender    : chr  "masculine" "masculine" "masculine" "masculine" ...
+    $ homeworld : chr  "Tatooine" "Tatooine" "Naboo" "Tatooine" ...
+    $ species   : chr  "Human" "Droid" "Droid" "Human" ...
+   #+end_example
+   
+10) Display the first *three* rows of the first 6 columns of ~starwars~
+    and of =starwars_df=:
+    #+begin_src R :session *R* :results output :exports both
+      head(starwars[,1:6],n=3)
+      head(starwars_df[,1:6],n=3)      
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    # A tibble: 3 × 6
+      name           height  mass hair_color skin_color  eye_color
+      <chr>           <int> <dbl> <chr>      <chr>       <chr>    
+    1 Luke Skywalker    172    77 blond      fair        blue     
+    2 C-3PO             167    75 <NA>       gold        yellow   
+    3 R2-D2              96    32 <NA>       white, blue red
+    name height mass hair_color  skin_color eye_color
+    1 Luke Skywalker    172   77      blond        fair      blue
+    2          C-3PO    167   75       <NA>        gold    yellow
+    3          R2-D2     96   32       <NA> white, blue       red
+    #+end_example
+
+11) Add an R object with the command =x = 2= and then remove it with
+    =rm(x)=. Check the list on either side of the command with =ls()=.
+    #+begin_src R :session *R* :results output :exports both
+      x = 2
+      ls()
+      rm(x)
+    #+end_src
+
+    #+RESULTS:
+    : [1] "x"
+
+12) Check loaded object list with ~ls()~, remove ~starwars~ and
+    =starwars_df= with ~rm~, then remove all loaded objects with
+    ~rm(list=ls())~:
+    #+begin_src R :session *R* :results output :exports both
+      ls()
+      rm(starwars)
+      rm(starwars_df)
+      ls()
+      rm(list=ls())
+    #+end_src
+
+    #+RESULTS:
+    :  [1] "bar"          "foo"          "greater100"   "iter"         "loaded"       "myfunc"      
+    :  [7] "old.o"        "op"           "p"            "starwards_df" "x"            "y"
+    : Warning message:
+    : In rm(starwars) : object 'starwars' not found
+    : Warning message:
+    : In rm(starwars_df) : object 'starwars_df' not found
+    : [1] "bar"          "foo"          "greater100"   "iter"         "loaded"       "myfunc"      
+    :  [7] "old.o"        "op"           "p"            "starwards_df" "x"            "y"
+
+13) List loaded packages. Then detach the ~dplyr~ package, and list the
+    loaded packages again.
+    #+begin_src R :session *R* :results output :exports both
+      library(dplyr)
+      search()
+      detach("package:dplyr")
+      search()
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+
+    Attaching package: ‘dplyr’
+
+    The following objects are masked from ‘package:data.table’:
+
+        between, first, last
+
+    The following object is masked from ‘package:MASS’:
+
+        select
+
+    The following objects are masked from ‘package:stats’:
+
+        filter, lag
+
+    The following objects are masked from ‘package:base’:
+
+        intersect, setdiff, setequal, union
+    [1] ".GlobalEnv"         "package:dplyr"      "package:data.table" "package:MASS"      
+     [5] "ESSR"               "package:stats"      "package:graphics"   "package:grDevices" 
+     [9] "package:utils"      "package:datasets"   "package:methods"    "Autoloads"         
+    [13] "package:base"
+    [1] ".GlobalEnv"         "package:data.table" "package:MASS"       "ESSR"              
+     [5] "package:stats"      "package:graphics"   "package:grDevices"  "package:utils"     
+     [9] "package:datasets"   "package:methods"    "Autoloads"          "package:base"
+    #+end_example
 
 * Saving your workspace
 

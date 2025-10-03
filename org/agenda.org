@@ -1525,7 +1525,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 
 *
 
-* DONE Week 5: More and more R (Sep 22, 24, 26)
+* DONE Week 5: The R environment (Sep 22, 24, 26)
 #+attr_html: :width 150px: 
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]
@@ -1623,10 +1623,9 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    - Enter =q()= followed by =y= or =n= to quit the R console.
    #+end_quote
 
+* Week 6: R options and packages (Sep 29, Oct 1, Oct 3)
 
-* Week 6: More and more and more R (Sep 29, Oct 1, Oct 3)
-
-** NEXT Review: Weekly Snack Budget Assignment
+** DONE Review: Weekly Snack Budget Assignment
 
 - A few of you put all the code into one code block. If you do that,
   you're not using the full power of the notebook. 
@@ -1724,7 +1723,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   #+RESULTS:
   : [1] "double"
 
-** TODO Review (Environment)
+** DONE Review (Environment)
 
 1. Why do you need to cite software that you used in your references?
    #+begin_quote
@@ -1791,13 +1790,123 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
     The command to quit or exist is ~quit()~ or ~q()~.
     #+end_quote
 
+** DONE Review: R display options
+
+In R, the graphic display options are stored in ~options~.
+
+Open a new workbook in DataCamp datalab.
+
+Open a terminal. Open R.
+
+1. How would you show this "~options~" object?
+   #+begin_src R :session *R* :results output :exports both
+     str(options())    #  <--- str() is a generic function
+     options()         #  <--- not `options` (unknown)
+   #+end_src
+2. How would you extract the display options value for the ~prompt~?
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     options()$prompt  # <--- access the list element `prompt`
+   #+end_src
+3. How would you find out what type of object this ~options~ is?
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     class(options())  #  <--- not class(options)
+   #+end_src
+4. How would you find out more about this object?
+   #+begin_example
+     help(options)   <--- produces the man page
+   #+end_example
+
+** NEXT Review: R packages
+
+1. Where does R get its packages from?
+   #+begin_quote
+   From ~options$repos~. Typically, this is https://cloud.r-project.org,
+   which will pick a CRAN mirror closest to you.
+   #+end_quote
+
+2. What is a mirror site?
+   #+begin_quote
+   A website (typically for downloading software) that is identical to
+   a central site like https://cloud.r-project.org on CRAN.
+   #+end_quote
+
+3. What are the steps to install an R package, for example ~data.table~?
+   #+begin_quote
+   - Find out if the package is already installed with
+     ~installed.packages()~
+   - If it's not there, install it with ~install.packages("data.table")~
+   - If it cannot be installed, check ~options$repos~ to see where R is
+     trying to get it from.
+   - If ~repos~ is OK (e.g. ~cloud.r-project.org~), check at CRAN if your
+     package perhaps requires a different version of R.
+   - If that's the case, ~install.packages("remotes")~ and then use
+     ~install_version~ from the ~remotes~ package.
+   #+end_quote
+
+4. What are the steps to be able to use a package like ~MASS~ in your R
+   session?
+   #+begin_quote
+   1) Install it (~install.packages~)
+   2) Load it (~library~)
+   3) Use it (~search~)
+   #+end_quote
+
+5. What's an "R session"?
+   #+begin_quote
+   An R session is a running instance of the R software that loads R
+   environment variables and enables you to run R commands
+   interactively on a console to complete statistical computing tasks.
+   #+end_quote
+
+6. What is "base R"?
+   #+begin_quote
+   Base R is the software that contains R's core functions and
+   packages that come with R by default without installing anything
+   extra. Included are tools for data types, statistics, graphics, and
+   programming.
+   #+end_quote
+
+7. What does the message ~"Save workspace image? [y/n/c]"~ at the end of
+   an R session mean - after entering ~q()~.
+   #+begin_quote
+   R is asking whether to save the objects of the current session
+   (e.g. variables you defined, packages you loaded) in memory into a
+   (binary) file ~.RData~.
+   #+end_quote
+
+8. What is a "generic function", what are examples of generic
+   functions in R?
+   #+begin_quote
+   A generic function adapts to different objects that you feed
+   it. E.g. ~str~ works with ~data.frame~, dates, vectors, lists.
+   #+end_quote
+   #+begin_src R :session *R* :results output :exports both
+     str(c(1,2,3))
+     str(mtcars)
+     str(as.Date("2025-10-03"))
+   #+end_src
+
+9. How can you see all currently available datasets?
+   #+begin_src R :session *R* :results output :exports both
+     data()
+   #+end_src
+
+10. How can you see all currently available datasets for a specific
+    package that you installed, e.g. ~MASS~?
+    #+begin_src R :session *R* :results output :exports both
+      data(package="MASS")
+    #+end_src
+
 ** IN PROGRESS Introduction to R
 
 - [X] Why we are using R
 - [X] The R console
 - [X] The R environment
-- [ ] R display options
+- [X] R display options
 - [ ] R packages
+- [ ] "Tidyverse" vs. Base R
 - [ ] Light data exploration with R
 - [ ] Customizing R at startup
 
+** TODO Arithmetic in R
+** TODO Vectors in R
