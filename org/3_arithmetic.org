@@ -71,18 +71,11 @@ value - more on this below) - see figure:
 
 #+end_notes
 
-* Practice: Formula Translator
+* PRACTICE  Formula Translator
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
-- For the practice exercises, create a new Org-mode file.
-
-- Make sure your file contains this in the top line:
-  #+begin_example
-  #+PROPERTY: header-args:R :session *R* :results output
-  #+end_example
-
-- If you enter this line for the first time, run it with =C-c C-c=.
+- For the practice exercises, create a new notebook.
 
 ** Formula translator I
 
@@ -127,8 +120,6 @@ value - more on this below) - see figure:
 
 - Note: ~-2~ is interpreted as ~-1 * 2~
 
-- Use your Org-mode file so that you can fix errors more easily!
-
 ** Solution II
 
 [[../img/4_fig_formula.png]]
@@ -145,7 +136,7 @@ numbers in eq. (4), because the number ~-2~ e.g. is interpreted by R as
 the operation ~-1 * 2~.
 #+end_notes
 
-** Formula Translator V
+** Formula Translator III
 
 - What does ~(-1)^(1/2)~ return?
 - Use a function to compute this last command
@@ -184,9 +175,36 @@ or run ~?complex~).
 
 *Do you know how to compute these without library functions?*[fn:1]
 
-*Do you remember how these functions are defined?*[fn:2]
+#+begin_notes
+I've recently been reminded [[https://bigthink.com/13-8/math-thinking/][through this article]] how important it may
+be to be able to do computations without the help of machines. Here
+are [[https://gauravvjn.quora.com/4-ways-to-calculate-Square-Root-without-using-inbuilt-functions-in-C-language-Interview-Puzzle][4 ways]] to compute ~sqrt~ in C (though not very fast). In general: 1)
+using logarithms and exponentials (sqrt(x)=e^{0.5 \times ln(x)}), 2) using
+successive approximate numerical methods like [[https://mathworld.wolfram.com/NewtonsIteration.html][Newton's iteration]], 3)
+using modified long division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Square_Roots_Manually_sub][prime factorization]]), 4) [[https://www.mathworks.com/help/fixedpoint/ug/implement-fixed-point-square-root-using-lookup-table.html][looking it up
+in a table]] (source: [[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
+#+end_notes
 
-*Are logarithm, exponential function and \pi connected somehow?*[fn:3]
+*Do you remember how these functions are defined?*
+
+#+begin_notes
+The square root of x is the number that returns x when the square root
+is squared: For example, sqrt(4) = sqrt(2^2) = 2. The logarithm of x to
+the base b is the power of b that returns x: log_10(100) = log_10(10^2) =
+2, and log_2(4) = log_2(2^2) = 2. The exponential (power) function is the
+inverse of the logarithm: log_10(10^1) = 1 (b=10),
+log(e)=log_e(e)=log_e(e^1)=1 (b=e), and log_2(2^1)=1 (b=2).
+#+end_notes
+
+*Are logarithm, exponential function and \pi connected somehow?*
+
+#+begin_notes
+Logarithm and exponential are the inverse of one another, and the
+exponential function e and \pi are connected via this beautiful,
+mysterious formula by Euler: e^{i\pi} + 1 = 0 or more general e^ix =
+cos(x) + sin(x), where i is the imaginary unit, i^2 = -1. Used in
+physics and engineering for example to analyse oscillatory systems.
+#+end_notes
 
 * Logarithmic transformation
 #+ATTR_HTML: :width 500px
@@ -289,7 +307,7 @@ values is not defined and leads to =NaN=.
 - For now, we only care about the fact that $e$ is the base of the
   natural logarithm, denoted as ~ln~ or log_e(x).
 
-* Practice: logarithms and constants
+* PRACTICE Logarithms and constants
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -340,7 +358,7 @@ See figure below:
 
 #+end_notes
 
-* Practice: =exp= vs. =log=
+* PRACTICE =exp= vs. =log=
 
 Verify this for ~x=10~, ~x=2.718282~, and ~x=0~ using R:
 
@@ -375,7 +393,7 @@ Solution:
 #+begin_quote
 To compare e.g. in selection statements (=if=), always use =identical=
 #+end_quote
-* Practice: mathematical constants
+* PRACTICE Mathematical constants
 
 Think about the mathematical packages you have to load.
 
@@ -442,7 +460,7 @@ of 10.
 
 - ~exp(1)~ = e = ~271828182845e-11~ = 271828182845\times10^{-11}
 
-* Practice: e-notation
+* PRACTICE E-notation
 
 Look at the ~help~ for the ~options~ function if necessary.
 
@@ -544,7 +562,7 @@ to improve readability. Extra bits are stored by R
    example.
 #+end_notes
 
-* Practice: special numbers
+* PRACTICE Special numbers
 
 Execute the following expressions in an R code block - before running
 it with ~C-c C-c~, think about the likely output!
@@ -608,7 +626,7 @@ Solution:
 
 #+end_notes
 
-* Practice: special functions
+* PRACTICE Special functions
 
 Open an R console or an R chunk in Org-mode:
 
@@ -653,7 +671,7 @@ stay away from saving time by using the short versions of these
 values.
 #+end_notes
 
-* Practice: logical values
+* PRACTICE Logical values
 
 - Tasks:
   1) Print ~TRUE~
@@ -697,7 +715,7 @@ In the last command, we generated a ~FALSE~ value by comparing two
 
 #+end_notes
 
-* Practice: logical operators
+* PRACTICE Logical operators
 
 1) Check equality of ~sqrt(2)^2~ and ~2~ using a logical operator.
 2) Check that "1 is equal 2 or 1 is not equal 1" is ~FALSE~.
@@ -774,27 +792,3 @@ rounding error in the example in the figure actually?
 - <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
   <<pemdas>>
 
-* Footnotes
-
-[fn:1]I've recently been reminded [[https://bigthink.com/13-8/math-thinking/][through this article]] how important
-it may be to be able to do computations without the help of
-machines. Here are [[https://gauravvjn.quora.com/4-ways-to-calculate-Square-Root-without-using-inbuilt-functions-in-C-language-Interview-Puzzle][4 ways]] to compute ~sqrt~ in C (though not very
-fast). In general: 1) using logarithms and exponentials
-(sqrt(x)=e^{0.5 \times ln(x)}), 2) using successive approximate
-numerical methods like [[https://mathworld.wolfram.com/NewtonsIteration.html][Newton's iteration]], 3) using modified long
-division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Square_Roots_Manually_sub][prime factorization]]), 4) [[https://www.mathworks.com/help/fixedpoint/ug/implement-fixed-point-square-root-using-lookup-table.html][looking it up in a table]] (source:
-[[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
-
-[fn:2] The square root of x is the number that returns x when the
-square root is squared: For example, sqrt(4) = sqrt(2^2) = 2. The
-logarithm of x to the base b is the power of b that returns x:
-log_10(100) = log_10(10^2) = 2, and log_2(4) = log_2(2^2) = 2. The
-exponential (power) function is the inverse of the logarithm:
-log_10(10^1) = 1 (b=10), log(e)=log_e(e)=log_e(e^1)=1 (b=e), and log_2(2^1)=1
-(b=2).
-
-[fn:3]Logarithm and exponential are the inverse of one another, and
-the exponential function e and \pi are connected via this beautiful,
-mysterious formula by Euler: e^{i\pi} + 1 = 0 or more general e^ix =
-cos(x) + sin(x), where i is the imaginary unit, i^2 = -1. Used in
-physics and engineering for example to analyse oscillatory systems.
