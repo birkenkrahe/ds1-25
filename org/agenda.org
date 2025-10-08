@@ -1623,17 +1623,17 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    - Enter =q()= followed by =y= or =n= to quit the R console.
    #+end_quote
 
-* Week 6: R options and packages (Sep 29, Oct 1, Oct 3)
+* DONE Week 6: R options and packages (Sep 29, Oct 1, Oct 3)
 
-- [ ] Don't forget test 5 (deadline Sunday). Test 6 live today.
+- [X] Don't forget test 5 (deadline Sunday). Test 6 live today.
 
-- [ ] Don't forget home assignment 2 (deadline Monday).
+- [X] Don't forget home assignment 2 (deadline Monday).
 
-- [ ] Don't forget the 2nd DataCamp lesson on R (vectors) by Sunday.
+- [X] Don't forget the 2nd DataCamp lesson on R (vectors) by Sunday.
 
-- [ ] Don't forget the 2nd sprint review deadline (by next Friday).
+- [X] Don't forget the 2nd sprint review deadline (by next Friday).
 
-** DONE Review: Weekly Snack Budget Assignment
+** Review: Weekly Snack Budget Assignment
 
 - A few of you put all the code into one code block. If you do that,
   you're not using the full power of the notebook. 
@@ -1731,7 +1731,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   #+RESULTS:
   : [1] "double"
 
-** DONE Review (Environment)
+** Review (Environment)
 
 1. Why do you need to cite software that you used in your references?
    #+begin_quote
@@ -1798,7 +1798,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
     The command to quit or exist is ~quit()~ or ~q()~.
     #+end_quote
 
-** DONE Review: R display options
+** Review: R display options
 
 In R, the graphic display options are stored in ~options~.
 
@@ -1824,7 +1824,7 @@ Open a terminal. Open R.
      help(options)   <--- produces the man page
    #+end_example
 
-** NEXT Review: R packages
+** Review: R packages
 
 1. Where does R get its packages from?
    #+begin_quote
@@ -1889,15 +1889,158 @@ Open a terminal. Open R.
    it. E.g. ~str~ works with ~data.frame~, dates, vectors, lists.
    #+end_quote
    #+begin_src R :session *R* :results output :exports both
-     str(c(1,2,3))
-     str(mtcars)
-     str(as.Date("2025-10-03"))
+     str(c(1,2,3))  # structure of vector
+     str(mtcars)    # structure of a built-in data.frame
+     str(as.Date("2025-10-03")) # structure of today's date
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+    num [1:3] 1 2 3
+   'data.frame':	32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   Date[1:1], format: "2025-10-03"g
+   #+end_example
+
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     methods(str)
+     methods(headg)
+   #+end_src
+
+   #+RESULTS:
+   : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*     str.POSIXt*    
+   : see '?methods' for accessing help and source code
+   : [1] head.array*      head.data.frame* head.default*    head.ftable*     head.function*   head.matrix     
+   : see '?methods' for accessing help and source code
 
 9. How can you see all currently available datasets?
    #+begin_src R :session *R* :results output :exports both
      data()
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Data sets in package ‘datasets’:
+
+   AirPassengers                   Monthly Airline Passenger Numbers 1949-1960
+   BJsales                         Sales Data with Leading Indicator
+   BJsales.lead (BJsales)          Sales Data with Leading Indicator
+   BOD                             Biochemical Oxygen Demand
+   CO2                             Carbon Dioxide Uptake in Grass Plants
+   ChickWeight                     Weight versus age of chicks on different diets
+   DNase                           Elisa assay of DNase
+   EuStockMarkets                  Daily Closing Prices of Major European Stock Indices, 1991-1998
+   Formaldehyde                    Determination of Formaldehyde
+   HairEyeColor                    Hair and Eye Color of Statistics Students
+   Harman23.cor                    Harman Example 2.3
+   Harman74.cor                    Harman Example 7.4
+   Indometh                        Pharmacokinetics of Indomethacin
+   InsectSprays                    Effectiveness of Insect Sprays
+   JohnsonJohnson                  Quarterly Earnings per Johnson & Johnson Share
+   LakeHuron                       Level of Lake Huron 1875-1972
+   LifeCycleSavings                Intercountry Life-Cycle Savings Data
+   Loblolly                        Growth of Loblolly pine trees
+   Nile                            Flow of the River Nile
+   Orange                          Growth of Orange Trees
+   OrchardSprays                   Potency of Orchard Sprays
+   PlantGrowth                     Results from an Experiment on Plant Growth
+   Puromycin                       Reaction Velocity of an Enzymatic Reaction
+   Seatbelts                       Road Casualties in Great Britain 1969-84
+   Theoph                          Pharmacokinetics of Theophylline
+   Titanic                         Survival of passengers on the Titanic
+   ToothGrowth                     The Effect of Vitamin C on Tooth Growth in Guinea Pigs
+   UCBAdmissions                   Student Admissions at UC Berkeley
+   UKDriverDeaths                  Road Casualties in Great Britain 1969-84
+   UKgas                           UK Quarterly Gas Consumption
+   USAccDeaths                     Accidental Deaths in the US 1973-1978
+   USArrests                       Violent Crime Rates by US State
+   USJudgeRatings                  Lawyers' Ratings of State Judges in the US Superior Court
+   USPersonalExpenditure           Personal Expenditure Data
+   UScitiesD                       Distances Between European Cities and Between US Cities
+   VADeaths                        Death Rates in Virginia (1940)
+   WWWusage                        Internet Usage per Minute
+   WorldPhones                     The World's Telephones
+   ability.cov                     Ability and Intelligence Tests
+   airmiles                        Passenger Miles on Commercial US Airlines, 1937-1960
+   airquality                      New York Air Quality Measurements
+   anscombe                        Anscombe's Quartet of 'Identical' Simple Linear Regressions
+   attenu                          The Joyner-Boore Attenuation Data
+   attitude                        The Chatterjee-Price Attitude Data
+   austres                         Quarterly Time Series of the Number of Australian Residents
+   beaver1 (beavers)               Body Temperature Series of Two Beavers
+   beaver2 (beavers)               Body Temperature Series of Two Beavers
+   cars                            Speed and Stopping Distances of Cars
+   chickwts                        Chicken Weights by Feed Type
+   co2                             Mauna Loa Atmospheric CO2 Concentration
+   crimtab                         Student's 3000 Criminals Data
+   discoveries                     Yearly Numbers of Important Discoveries
+   esoph                           Smoking, Alcohol and (O)esophageal Cancer
+   euro                            Conversion Rates of Euro Currencies
+   euro.cross (euro)               Conversion Rates of Euro Currencies
+   eurodist                        Distances Between European Cities and Between US Cities
+   faithful                        Old Faithful Geyser Data
+   fdeaths (UKLungDeaths)          Monthly Deaths from Lung Diseases in the UK
+   freeny                          Freeny's Revenue Data
+   freeny.x (freeny)               Freeny's Revenue Data
+   freeny.y (freeny)               Freeny's Revenue Data
+   infert                          Infertility after Spontaneous and Induced Abortion
+   iris                            Edgar Anderson's Iris Data
+   iris3                           Edgar Anderson's Iris Data
+   islands                         Areas of the World's Major Landmasses
+   ldeaths (UKLungDeaths)          Monthly Deaths from Lung Diseases in the UK
+   lh                              Luteinizing Hormone in Blood Samples
+   longley                         Longley's Economic Regression Data
+   lynx                            Annual Canadian Lynx trappings 1821-1934
+   mdeaths (UKLungDeaths)          Monthly Deaths from Lung Diseases in the UK
+   morley                          Michelson Speed of Light Data
+   mtcars                          Motor Trend Car Road Tests
+   nhtemp                          Average Yearly Temperatures in New Haven
+   nottem                          Average Monthly Temperatures at Nottingham, 1920-1939
+   npk                             Classical N, P, K Factorial Experiment
+   occupationalStatus              Occupational Status of Fathers and their Sons
+   precip                          Annual Precipitation in US Cities
+   presidents                      Quarterly Approval Ratings of US Presidents
+   pressure                        Vapor Pressure of Mercury as a Function of Temperature
+   quakes                          Locations of Earthquakes off Fiji
+   randu                           Random Numbers from Congruential Generator RANDU
+   rivers                          Lengths of Major North American Rivers
+   rock                            Measurements on Petroleum Rock Samples
+   sleep                           Student's Sleep Data
+   stack.loss (stackloss)          Brownlee's Stack Loss Plant Data
+   stack.x (stackloss)             Brownlee's Stack Loss Plant Data
+   stackloss                       Brownlee's Stack Loss Plant Data
+   state.abb (state)               US State Facts and Figures
+   state.area (state)              US State Facts and Figures
+   state.center (state)            US State Facts and Figures
+   state.division (state)          US State Facts and Figures
+   state.name (state)              US State Facts and Figures
+   state.region (state)            US State Facts and Figures
+   state.x77 (state)               US State Facts and Figures
+   sunspot.month                   Monthly Sunspot Data, from 1749 to "Present"
+   sunspot.year                    Yearly Sunspot Data, 1700-1988
+   sunspots                        Monthly Sunspot Numbers, 1749-1983
+   swiss                           Swiss Fertility and Socioeconomic Indicators (1888) Data
+   treering                        Yearly Treering Data, -6000-1979
+   trees                           Diameter, Height and Volume for Black Cherry Trees
+   uspop                           Populations Recorded by the US Census
+   volcano                         Topographic Information on Auckland's Maunga Whau Volcano
+   warpbreaks                      The Number of Breaks in Yarn during Weaving
+   women                           Average Heights and Weights for American Women
+
+
+   Use ‘data(package = .packages(all.available = TRUE))’
+   to list the data sets in all *available* packages.
+   #+end_example
 
 10. How can you see all currently available datasets for a specific
     package that you installed, e.g. ~MASS~?
@@ -1905,16 +2048,152 @@ Open a terminal. Open R.
       data(package="MASS")
     #+end_src
 
-** IN PROGRESS Introduction to R
+    #+RESULTS:
+    #+begin_example
+    Data sets in package ‘MASS’:
+
+    abbey                           Determinations of Nickel Content
+    accdeaths                       Accidental Deaths in the US 1973-1978
+    Aids2                           Australian AIDS Survival Data
+    Animals                         Brain and Body Weights for 28 Species
+    anorexia                        Anorexia Data on Weight Change
+    bacteria                        Presence of Bacteria after Drug Treatments
+    beav1                           Body Temperature Series of Beaver 1
+    beav2                           Body Temperature Series of Beaver 2
+    biopsy                          Biopsy Data on Breast Cancer Patients
+    birthwt                         Risk Factors Associated with Low Infant Birth Weight
+    Boston                          Housing Values in Suburbs of Boston
+    cabbages                        Data from a cabbage field trial
+    caith                           Colours of Eyes and Hair of People in Caithness
+    Cars93                          Data from 93 Cars on Sale in the USA in 1993
+    cats                            Anatomical Data from Domestic Cats
+    cement                          Heat Evolved by Setting Cements
+    chem                            Copper in Wholemeal Flour
+    coop                            Co-operative Trial in Analytical Chemistry
+    cpus                            Performance of Computer CPUs
+    crabs                           Morphological Measurements on Leptograpsus Crabs
+    Cushings                        Diagnostic Tests on Patients with Cushing's Syndrome
+    DDT                             DDT in Kale
+    deaths                          Monthly Deaths from Lung Diseases in the UK
+    drivers                         Deaths of Car Drivers in Great Britain 1969-84
+    eagles                          Foraging Ecology of Bald Eagles
+    epil                            Seizure Counts for Epileptics
+    farms                           Ecological Factors in Farm Management
+    fgl                             Measurements of Forensic Glass Fragments
+    forbes                          Forbes' Data on Boiling Points in the Alps
+    GAGurine                        Level of GAG in Urine of Children
+    galaxies                        Velocities for 82 Galaxies
+    gehan                           Remission Times of Leukaemia Patients
+    genotype                        Rat Genotype Data
+    geyser                          Old Faithful Geyser Data
+    gilgais                         Line Transect of Soil in Gilgai Territory
+    hills                           Record Times in Scottish Hill Races
+    housing                         Frequency Table from a Copenhagen Housing Conditions Survey
+    immer                           Yields from a Barley Field Trial
+    Insurance                       Numbers of Car Insurance claims
+    leuk                            Survival Times and White Blood Counts for Leukaemia Patients
+    mammals                         Brain and Body Weights for 62 Species of Land Mammals
+    mcycle                          Data from a Simulated Motorcycle Accident
+    Melanoma                        Survival from Malignant Melanoma
+    menarche                        Age of Menarche in Warsaw
+    michelson                       Michelson's Speed of Light Data
+    minn38                          Minnesota High School Graduates of 1938
+    motors                          Accelerated Life Testing of Motorettes
+    muscle                          Effect of Calcium Chloride on Muscle Contraction in Rat Hearts
+    newcomb                         Newcomb's Measurements of the Passage Time of Light
+    nlschools                       Eighth-Grade Pupils in the Netherlands
+    npk                             Classical N, P, K Factorial Experiment
+    npr1                            US Naval Petroleum Reserve No. 1 data
+    oats                            Data from an Oats Field Trial
+    OME                             Tests of Auditory Perception in Children with OME
+    painters                        The Painter's Data of de Piles
+    petrol                          N. L. Prater's Petrol Refinery Data
+    phones                          Belgium Phone Calls 1950-1973
+    Pima.te                         Diabetes in Pima Indian Women
+    Pima.tr                         Diabetes in Pima Indian Women
+    Pima.tr2                        Diabetes in Pima Indian Women
+    quine                           Absenteeism from School in Rural New South Wales
+    Rabbit                          Blood Pressure in Rabbits
+    road                            Road Accident Deaths in US States
+    rotifer                         Numbers of Rotifers by Fluid Density
+    Rubber                          Accelerated Testing of Tyre Rubber
+    ships                           Ships Damage Data
+    shoes                           Shoe wear data of Box, Hunter and Hunter
+    shrimp                          Percentage of Shrimp in Shrimp Cocktail
+    shuttle                         Space Shuttle Autolander Problem
+    Sitka                           Growth Curves for Sitka Spruce Trees in 1988
+    Sitka89                         Growth Curves for Sitka Spruce Trees in 1989
+    Skye                            AFM Compositions of Aphyric Skye Lavas
+    snails                          Snail Mortality Data
+    SP500                           Returns of the Standard and Poors 500
+    steam                           The Saturated Steam Pressure Data
+    stormer                         The Stormer Viscometer Data
+    survey                          Student Survey Data
+    synth.te                        Synthetic Classification Problem
+    synth.tr                        Synthetic Classification Problem
+    topo                            Spatial Topographic Data
+    Traffic                         Effect of Swedish Speed Limits on Accidents
+    UScereal                        Nutritional and Marketing Information on US Cereals
+    UScrime                         The Effect of Punishment Regimes on Crime Rates
+    VA                              Veteran's Administration Lung Cancer Trial
+    waders                          Counts of Waders at 15 Sites in South Africa
+    whiteside                       House Insulation: Whiteside's Data
+    wtloss                          Weight Loss Data from an Obese Patient
+    #+end_example
+
+** Introduction to R
 
 - [X] Why we are using R
 - [X] The R console
 - [X] The R environment
 - [X] R display options
-- [ ] R packages
-- [ ] "Tidyverse" vs. Base R
-- [ ] Light data exploration with R
+- [X] R packages
+- [X] "Tidyverse" vs. Base R
+- [X] Light data exploration with R
 - [ ] Customizing R at startup
 
+* Week 7: Arithmetic in R
+
+** DONE About the last assignment
+
+- Last exercise: The point was to realize how the shell,
+  the console, and stdout work together.
+
+- If you fail: fail early so that you can talk to me. And
+  if you forgot - submit what you have.
+
+** NEXT Projects Submission (from the assignment)
+
+*Deliverables for the 2nd sprint*
+
+1. Find at least one scholarly article directly relevant to your
+   project. Preferably find a literature review article (a paper that
+   surveys many others).
+2. Build a litmap for your chosen scholarly article using
+   litmaps.com. Download the litmap to your GDrive repo.
+3. Upload your sources (articles, websites, etc.) to NotebookLM.
+   Update your project proposal according to the feedback that you
+   received, and to any other insights that you might have had. Upload
+   it to NotebookLM. Add the new references and upload that text to
+   NotebookLM as well.
+4. Write a detailed prompt to generate a NotebookLM video that contains:
+   1) Your project’s motivation and question (from Sprint 1).
+   2) The literature you found and what it tells you.
+   3) The methodology you will use going forward.
+   Upload the prompt to GDrive.
+5. Upload the video to your team’s shared Google Drive.
+6. Share your NotebookLM project with me as the process owner at
+   birkenkrahe@lyon.edu.
+7. Submit the video here in Canvas for grading.
+8. Post your video link to the shared class Google Chat thread.
+
 ** TODO Arithmetic in R
-** TODO Vectors in R
+
+- [ ] Please Excuse My Dear Aunt Sally (operator precedence)
+- [ ] Mathematical functions and formula translation
+- [ ] Logarithmic transformation, exp vs log
+- [ ] Scientific notation and how to get rid of it.
+- [ ] Special numbers and special functions in R
+- [ ] Logical values and operators in R
+
+  
