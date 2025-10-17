@@ -2196,11 +2196,19 @@ Open a terminal. Open R.
 - [ ] Special numbers and special functions in R
 - [ ] Logical values and operators in R
 
-* Week 8: 2nd sprint review / Special numbers & functions / vectors (Oct 13,15,17)
+* IN PROGRESS Week 8: 2nd sprint review / Special numbers & functions / vectors (Oct 13,15,17)
 #+attr_html: :width 400px :float nil:
 [[../img/homecomingR.png]]
 
-** Review: 2nd sprint review
+- [X] 2nd sprint review
+- [ ] DataCamp lesson: ~factor~ vectors (important!)
+- [ ] Quick review: exp vs. log
+- [ ] Special values and special functions in R 
+- [ ] Logical values and logical functions in R
+- [ ] Popquiz: Vectors and matrices
+- [ ] Home assignment: Vectors and factors
+
+** DONE Review: 2nd sprint review
 #+attr_html: :width 400px :float nil:
 [[../img/notebook.png]]
 
@@ -2333,15 +2341,19 @@ GDrive. *You may need to update the link to your GDrive in Canvas.*
 
 - What's up with Bruno Frey? https://en.wikipedia.org/wiki/Bruno_Frey
 
+g** NEXT Review: ~factor~ data structure in R
+#+attr_html: :width 400px :float nil:
+[[../img/factor.png]]
 
-** Special values and special functions in R
- 
-** Logical values and logical functions in R
-
-** Vectors!
+** TODO Vectors!
 #+attr_html: :width 400px :float nil:
 #+caption: Rocket launch: vectors!
 [[../img/rocket.png]]
 
+- [ ] We'll look at the popquiz answers together. Grade yourself.
+
+- [ ] You have a home assignment for vectors and factors.
+
+- [ ] Next week, we'll cover vector/matrix/factor systematically.
 
 
