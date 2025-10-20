@@ -2417,11 +2417,162 @@ Some important attributes:
 | ~class~     | Object’s class                    | =class(lm(y ~ x))=             |
 | ~tsp~       | Time series parameters            | =ts(1:10, start=2000, freq=4)= |
 
+* Week 9: Exploring ~factor~ vectors, ~plot~ and ~hist~
+#+attr_html: :width 400px :float nil:
+#+caption: Pearson's first histogram (1895)
+[[../img/pearson.png]]
 
-* Week 9: Exploring vectors and factors & plotting
-
-- [ ] Base R revisited
-- [ ] Example: Going down the ~Nile~
-- [ ] Plotting ~Nile~, ~mtcars~ and ~ToothGrowth~
+- [ ] DataCamp review: Factors (popquiz)
+- [ ] Base R revisited (lecture)
+- [ ] Example: Going down the ~Nile~ (code along)
+- [ ] Plotting ~Nile~, ~mtcars~ and ~ToothGrowth~ (code along)
 - [ ] Histograms, line plots, scatter plots
+- [ ] Current DataCamp assignment: Data frames (important!)
+
+** DataCamp review: Factors (-> Test)
+
+*How long do you think is the DataCamp lesson on Factors?*
+#+begin_quote
+Answer: 2 pages (printout provided) - 1,000 words.
+#+end_quote
+
+*Work quickly through these questions - 10 minutes - then discussion.*
+
+1. What is a ~factor~ in R? Example? Which functions can check this?
+   #+begin_quote
+   A data type used to store categorical variables (finite set of
+   possible values). A ~factor~ is a special kind of vector. Let's look
+   at ~ToothGrowth$supp~ using ~attributes~, ~str~, ~is.vector~ and ~is.factor~.
+   #+end_quote
+
+2. What is the main difference between a categorical and a continuous
+   variable? Examples?
+   #+begin_quote
+   Categorical variables have a limited number of categories;
+   continuous variables can take infinitely many values.
+
+   A simple categorical variable is =sex=. There are only two biological
+   sexual categories, ="male"= and ="female"=. The number of males and
+   females is not boudned but it is not continous, it's a discrete
+   numeric variable (a count). Real-valued measurements of males and
+   females (=height=, =weight=, =income=) are continuous. 
+   #+end_quote
+
+3. How do you create a factor from a ~character~ vector? Example?
+   #+begin_src R :session *R* :results output :exports both
+     c("Italy","Germany","France","Austria","Italy") -> roundtrip
+     roundtrip
+     factor(roundtrip) 
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Italy"   "Germany" "France"  "Austria" "Italy"
+   : [1] Italy   Germany France  Austria Italy  
+   : Levels: Austria France Germany Italy
+
+4. What are ~factor~ ~levels~? Example? 
+   #+begin_quote
+   The distinct categories or unique values that make up a factor.
+   #+end_quote
+
+   #+begin_src R :session *R* :results output :exports both
+     levels(factor(roundtrip)) # sorted alphabetically, not ordered
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Austria" "France"  "Germany" "Italy"
+
+5. What's going on here?
+   #+begin_src R :session *R* :results output :exports both
+     factor("male","female")
+   #+end_src
+
+   #+RESULTS:
+   : [1] <NA>
+   : Levels: female
+
+   #+begin_quote
+     When you check ~help(factor)~ you see that the 2nd argument is
+     ~levels~, and the ~factor~ element is ="male"=. When R checks for a
+     level "female", it cannot find it and assigns NA to the factor.
+   #+end_quote
+
+6. What is the difference between *nominal* and *ordinal* factors?
+   Examples?
+   #+begin_quote
+   Nominal factors have no natural order; ordinal factors have an
+   inherent order.
+   #+end_quote
+
+   #+begin_src R :session *R* :results output :exports both
+     sex <- factor(c("male","female","male","male")) # nominal factor 
+     sex
+     quality <- factor(c("bad","good"), ordered=TRUE) # ordinal factor
+     quality
+   #+end_src
+
+   #+RESULTS:
+   : [1] male   female male   male  
+   : Levels: female male
+   : [1] bad  good
+   : Levels: bad < good
+
+7. How do you rename factor levels in R?
+   #+begin_src R :session *R* :results output :exports both
+     (factor(roundtrip) -> roundtripFactor)
+     levels(roundtripFactor) <- c("AT","F","D","IT")
+     roundtripFactor     
+   #+end_src
+
+   #+RESULTS:
+   : [1] Italy   Germany France  Austria Italy  
+   : Levels: Austria France Germany Italy
+   : [1] IT D  F  AT IT
+   : Levels: AT F D IT
+   
+8. What function gives you a quick summary of the contents of a
+   factor?
+   #+begin_src R :session *R* :results output :exports both
+     summary(roundtripFactor)
+     summary(roundtrip)     
+   #+end_src
+
+   #+RESULTS:
+   : AT  F  D IT 
+   :  1  1  1  2
+   : Length     Class      Mode 
+   :         5 character character
+   
+9. Can you compare elements of an unordered (nominal) factor using `>`
+   or `<`?
+   #+begin_quote
+   No, R will warn that the comparison is not meaningful.
+   #+end_quote
+   #+begin_src R :session *R* :results output :exports both
+     sex[1] < sex[2] # male is not less than female
+     quality[1] < quality[2] # bad is less than good
+   #+end_src
+
+   #+RESULTS:
+   : [1] NA
+   : Warning message:
+   : In Ops.factor(sex[1], sex[2]) : ‘<’ not meaningful for factors
+   : [1] TRUE
+   
+10. How do turn an existing ~factor~ into an ordinal one?
+    #+begin_src R :session *R* :results output :exports both
+      foo <- c("low","medium","high")
+      factor(foo,ordered=TRUE)
+      factor(foo,ordered=TRUE) -> bar
+      levels(bar) <- c("low","medium","high")
+      bar
+    #+end_src
+
+    #+RESULTS:
+    : [1] low    medium high  
+    : Levels: high < low < medium
+    : [1] medium high   low   
+    : Levels: low < medium < high
+    
+
 
