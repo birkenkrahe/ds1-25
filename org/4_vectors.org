@@ -1,0 +1,978 @@
+#+TITLE: VECTORS in R - Creation and Plotting
+#+AUTHOR: Introduction to data science (DSC 105) Fall 2024
+#+startup: hideblocks indent overview inlineimages entitiespretty
+#+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
+#+options: toc:1
+* What will you learn?
+#+attr_html: :width 500px
+[[../img/5_workhorse.jpg]]
+
+After this lesson, you should be able to:
+
+- Understand assignment in R
+- Creating vectors, sequences and repetitions
+- Sorting and measuring vector length
+- Subsetting and extracting vector elements
+- Vectorizing (rescaling)
+- Classes and logical vectors
+
+/Most sections are accompanied by YouTube videos./
+
+* Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
+#+attr_html: :width 400px
+[[../img/5_berlin.png]]
+
+- R is a functional, object-oriented language
+
+- There are usually many different ways to achive the same result
+
+- Different solutions differ in: performance, clarity, ease of use
+
+- PERFORMANCE: important for large data sets only
+
+- CLARITY: essential when communicating methods, code, results
+
+- EASE OF USE: determines the fun you have when programming
+
+[[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][[Watch YouTube Playlist Vectors Part I​]​]]
+
+#+begin_notes
+R is a functional, object-oriented language: everything's an object,
+and functions rule, as you already know. Because functions rule, there
+are usually many different ways to achieve the same result. They often
+differ in terms of performance, ease of use, and clarity. Performance
+becomes important when you work with truly large data sets, otherwise
+not so much. Ease of use to some extent determines the fun you do or
+don't have when using the language. Clarity is essential when
+communicating your methods (including your code) and your results to
+others. This is not a nice to have. Views of different packages (like
+the Tidyverse) differ massively regarding all of these.
+#+end_notes
+
+/Image: The instructor during COVID in his Berlin appartamento (1912)./
+
+* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][(video)​]]
+
+Code along:
+1. Open Linux
+2. Open Emacs
+3. Open an .org file
+4. Create R block (<s TAB R)
+5. Start R console
+-----
+- You can use ~<-~ or ~=~ for assignment of values to variables
+- Use ~<-~ for objects, and ~=~ to assign function parameters
+- Object names must start with a letter and avoid reserved words
+
+  1) Create an object ~foo~ that stores the value 3^2 \times 4^{1/8} and
+     display it.
+     #+begin_src R
+       foo <- 3**2 * 4**(1/8)
+       foo
+     #+end_src
+
+     #+RESULTS:
+     : [1] 10.70286
+
+  2) Overwrite ~foo~ with itself divided by 2.33. Print the result to
+     the screen.
+     #+begin_src R
+       foo / 2.33 -> foo
+       foo
+     #+end_src
+
+     #+RESULTS:
+     : [1] 4.593504
+
+  3) Experiment with different formats and types - look all
+     functions that you don't know up using ~help~:
+
+     1. Create a new object ~bar~ with the value -8.2 \times 10^{-13} using
+        scientific ("e") notation and print it to the console.
+
+        #+begin_src R :session *R* :results output :exports both :noweb yes
+          bar <- -8.2e-13
+          bar
+        #+end_src
+
+        #+RESULTS:
+        : [1] -8.2e-13
+
+     2. Print ~bar~ again, but this time *without* scientific notation,
+        using the ~format~ function. Save the result in ~barf~
+        #+begin_src R :session *R* :results output :exports both :noweb yes
+          format(bar, scientific = FALSE) -> barf
+          barf
+        #+end_src
+
+        #+RESULTS:
+        : [1] "-0.00000000000082"
+
+     3. Check the data type of ~barf~ with the ~class~ function.
+        #+begin_src R :session *R* :results output :exports both :noweb yes
+          class(barf)
+        #+end_src
+
+        #+RESULTS:
+        : [1] "character"
+
+     4. Convert ~barf~ back to a number with the ~as.numeric~ function.
+        #+begin_src R
+          barf |> as.numeric()  # using a pipe
+          as.numeric(barf) -> barf
+          is.numeric(barf)
+        #+end_src
+
+        #+RESULTS:
+        : [1] -8.2e-13
+        : [1] TRUE
+
+        #+begin_src R
+          bar <- -8.2e-13
+          bar
+          barf <- format(bar, scientific=FALSE)
+          barf
+          class(barf)
+          as.numeric(barf)
+        #+end_src
+
+  4) Print the result of multiplying ~foo~ and ~bar~ to the console.
+
+     #+begin_src R
+       foo * bar
+     #+end_src
+
+     #+RESULTS:
+     : [1] -3.766673e-12
+
+  5) Check all variables created in the current session so far with
+     ~ls~, then delete them with ~rm~, and check that they're all gone.
+     #+begin_src R
+       ls()
+       rm(bar)  # remove a single object
+       ls()
+       rm(list=ls())   # empty the entire list
+       ls()
+     #+end_src
+
+     #+RESULTS:
+     : [1] "barf" "foo"
+     : Warning message:
+     : In rm(bar) : object 'bar' not found
+     : [1] "barf" "foo"
+     : character(0)
+
+* Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
+
+- We need vectors to handle multiple items in R ('collection')
+- Vectors contain observations or measurements of a single variable
+- Each vector can have only one data type - e.g. ~numeric~ [fn:1]
+
+1) Three examples of such collections for vectors using this class:
+   - numbers, e.g. the heights of students in this class
+   - text, e.g. the names of students of this class
+   - logical values, e.g. sex of students of this class
+
+2) Define sample vectors ~s_heights~, ~s_names~ and ~s_male~ using the ~c~
+   function. Sample names: Gavin (181), Braden (179), Kelli (167),
+   Donna (166).
+
+   #+begin_src R :results output
+     (s_heights <- c(181,179,167,166))
+     s_names <- c("Gavin","Braden","Kelli","Donna")
+     s_male <- c(TRUE,TRUE,FALSE,FALSE)
+   #+end_src
+
+   #+RESULTS:
+   : [1] 181 179 167 166
+
+3) Print the vectors.
+   #+begin_src R
+     s_heights
+     s_names
+     s_male
+   #+end_src
+
+   #+RESULTS:
+   : [1] 181 179 167 166
+   : [1] "Gavin"  "Braden" "Kelli"  "Donna"
+   : [1]  TRUE  TRUE FALSE FALSE
+
+#+begin_notes
+*Solution:*
+1) the *heights* of every student of this class, in cm.
+2) the first *names* of every student of this class (strings).
+3) observations, if a student is male or not male (male means ~TRUE~).
+
+Let's put some wood behind the arrow and define sample vectors for these:
+#+end_notes
+
+Example code: The three vectors for names, heights, and sex
+#+begin_src R :session
+  s_heights <- c(180, 181, 158, 175, 179, 168)
+  s_names <- c("Vincent", "Natalija", "Adrian", "Andres", "Helena")
+  s_male <- c(TRUE, FALSE, TRUE, TRUE, FALSE)
+  s_heights
+  s_names
+  s_male
+#+end_src
+
+* R object ~class~
+#+attr_latex: :width 400px
+[[../img/5_class.jpg]]
+
+- The function ~class~ (check the help) returns the R object type
+
+- Object type is not the same as data type or storage type
+
+- Besides types there are also data structures (like ~vector~)
+
+- Let's check the class for our three vectors with student data
+
+#+begin_notes
+In order to check what R thinks about your observation or data type,
+you can use the function ~class~. Look at the help page for details
+and enter the examples at the bottom of the help page.
+
+Let's call ~class~ for our three sample vectors:
+#+end_notes
+
+With pipes:
+#+begin_src R
+  s_heights |> class()
+  s_names |> class()
+  s_male |> class()
+#+end_src
+
+#+RESULTS:
+: [1] "numeric"
+: [1] "character"
+: [1] "logical"
+
+#+begin_src R :session :results output
+  class(s_heights) # what type vector is this?
+  class(s_names)   # what type vector is this?
+  class(s_male)    # what type vector is this?
+#+end_src
+* Creating vectors [[https://youtu.be/Ov6SIrpY_io][(video)]]
+
+Code along.
+
+- The function to create a vector, or "combine values", is ~c()~:
+  #+begin_src R
+    myvec <- c(1,3,1,42)
+    myvec
+    class(myvec)
+    is.vector(myvec)
+    as.character(myvec)
+  #+end_src
+
+  #+RESULTS:
+  : [1]  1  3  1 42
+  : [1] "numeric"
+  : [1] TRUE
+  : [1] "1"  "3"  "1"  "42"
+
+  #+begin_src R :session
+    myvec <- c(1,3,1,42) # combine integers as vector
+    myvec                # prints 1 3 1 42
+    class(myvec)         # determine the data type - "numeric"
+  #+end_src
+
+- Vector elements can be calculations or previously stored items:
+  #+begin_src R
+    foo <- 32.1
+    myvec2 <- c(3, -3, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44,foo)
+    myvec2
+  #+end_src
+
+  #+RESULTS:
+  : [1]    3.000000   -3.000000    3.450000 1000.000000    8.000000    2.201271   32.100000
+
+  #+begin_src R
+    options(digits=2)
+    myvec2
+  #+end_src
+
+  #+RESULTS:
+  : [1]    3.0   -3.0    3.5 1000.0    8.0    2.2   32.1
+
+  #+begin_src R :session :results output
+    foo <- 32.1
+    myvec2 <- c(3, -3, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, foo)
+    myvec2
+  #+end_src
+
+- Vector elements can even be vectors themselves:
+  #+begin_src R
+    myvec3 <- c(myvec,myvec2)
+    myvec3
+    (myvec4 <- c(myvec2,myvec))
+  #+end_src
+
+  #+RESULTS:
+  :  [1]    1.0    3.0    1.0   42.0    3.0   -3.0    3.5 1000.0    8.0    2.2   32.1
+  :  [1]    3.0   -3.0    3.5 1000.0    8.0    2.2   32.1    1.0    3.0    1.0   42.0
+
+  #+begin_src R :session :results output
+    myvec3 <- c(myvec, myvec2)
+    myvec3
+    class(myvec3)
+  #+end_src
+
+- In the resulting output, the two vectors were put side by side. The
+  new vector now has 11 = 4 + 7 elements.
+
+- *What about missing values*, ~NA~, and non-numbers, ~NaN~, and what
+  about the special values ~Inf~ and ~-Inf~ - can you have these in
+  vectors, too? Can you think about a way to test this?
+  #+begin_src R
+    specvec <- c(NA, NaN)
+    class(specvec)
+  #+end_src
+
+  #+RESULTS:
+  : [1] "numeric"
+
+  #+begin_src R
+    is.na(specvec)
+    is.nan(specvec)
+  #+end_src
+
+  #+RESULTS:
+  : [1] TRUE TRUE
+  : [1] FALSE  TRUE
+
+  #+begin_src R
+    (specvec2 <- c(specvec, Inf, -Inf))
+    is.finite(specvec2)   # output is logical!
+    is.infinite(specvec2)   # output is logical!
+    class(specvec2)
+  #+end_src
+
+  #+RESULTS:
+  : [1]   NA  NaN  Inf -Inf
+  : [1] FALSE FALSE FALSE FALSE
+  : [1] FALSE FALSE  TRUE  TRUE
+  : [1] "numeric"
+
+
+#+begin_src R
+  specvec <- c(NA, NaN) # a vector with a NA and a NaN
+  class(specvec)
+  is.nan(specvec)  # testing for NaN values
+  is.na(specvec)   # testing for NA values
+  specvec1 <- c(specvec, Inf, -Inf) # a new vector with Inf, Inf
+  is.finite(specvec1)  # testing for finiteness
+  is.infinite(specvec1)  # testing for infiniteness
+  class(specvec1)
+#+end_src
+
+* NEXT Base R - what's that again?
+
+- Open a datalab workbook, give it a title, and code along!
+
+- R (i.e. "[[https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf][Base R]]") includes a number of built-in datasets
+  #+attr_html: :width 700px
+  [[../img/baseR.png]]
+
+- Do you remember how to find pre-loaded R datasets?
+  #+begin_src R :session *R* :results output :exports both
+    data()
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  Data sets in package ‘.’:
+
+  AND                          
+  snake_river_visits           
+  test_scores_art              
+  test_scores_english          
+  test_scores_geography        
+  test_scores_spanish          
+
+  Data sets in package ‘datasets’:
+
+  AirPassengers                Monthly Airline Passenger Numbers 1949-1960
+  BJsales                      Sales Data with Leading Indicator
+  BJsales.lead (BJsales)       Sales Data with Leading Indicator
+  BOD                          Biochemical Oxygen Demand
+  CO2                          Carbon Dioxide Uptake in Grass Plants
+  ChickWeight                  Weight versus age of chicks on different diets
+  DNase                        Elisa assay of DNase
+  EuStockMarkets               Daily Closing Prices of Major European Stock Indices,
+                               1991-1998
+  Formaldehyde                 Determination of Formaldehyde
+  HairEyeColor                 Hair and Eye Color of Statistics Students
+  Harman23.cor                 Harman Example 2.3
+  Harman74.cor                 Harman Example 7.4
+  Indometh                     Pharmacokinetics of Indomethacin
+  InsectSprays                 Effectiveness of Insect Sprays
+  JohnsonJohnson               Quarterly Earnings per Johnson & Johnson Share
+  LakeHuron                    Level of Lake Huron 1875-1972
+  LifeCycleSavings             Intercountry Life-Cycle Savings Data
+  Loblolly                     Growth of Loblolly Pine Trees
+  Nile                         Flow of the River Nile
+  Orange                       Growth of Orange Trees
+  OrchardSprays                Potency of Orchard Sprays
+  PlantGrowth                  Results from an Experiment on Plant Growth
+  Puromycin                    Reaction Velocity of an Enzymatic Reaction
+  Seatbelts                    Road Casualties in Great Britain 1969-84
+  Theoph                       Pharmacokinetics of Theophylline
+  Titanic                      Survival of passengers on the Titanic
+  ToothGrowth                  The Effect of Vitamin C on Tooth Growth in Guinea Pigs
+  UCBAdmissions                Student Admissions at UC Berkeley
+  UKDriverDeaths               Road Casualties in Great Britain 1969-84
+  UKgas                        UK Quarterly Gas Consumption
+  USAccDeaths                  Accidental Deaths in the US 1973-1978
+  USArrests                    Violent Crime Rates by US State
+  USJudgeRatings               Lawyers' Ratings of State Judges in the US Superior Court
+  USPersonalExpenditure        Personal Expenditure Data
+  UScitiesD                    Distances Between European Cities and Between US Cities
+  VADeaths                     Death Rates in Virginia (1940)
+  WWWusage                     Internet Usage per Minute
+  WorldPhones                  The World's Telephones
+  ability.cov                  Ability and Intelligence Tests
+  airmiles                     Passenger Miles on Commercial US Airlines, 1937-1960
+  airquality                   New York Air Quality Measurements
+  anscombe                     Anscombe's Quartet of 'Identical' Simple Linear
+                               Regressions
+  attenu                       The Joyner-Boore Attenuation Data
+  attitude                     The Chatterjee-Price Attitude Data
+  austres                      Quarterly Time Series of the Number of Australian
+                               Residents
+  beaver1 (beavers)            Body Temperature Series of Two Beavers
+  beaver2 (beavers)            Body Temperature Series of Two Beavers
+  cars                         Speed and Stopping Distances of Cars
+  chickwts                     Chicken Weights by Feed Type
+  co2                          Mauna Loa Atmospheric CO2 Concentration
+  crimtab                      Student's 3000 Criminals Data
+  discoveries                  Yearly Numbers of Important Discoveries
+  esoph                        Smoking, Alcohol and (O)esophageal Cancer
+  euro                         Conversion Rates of Euro Currencies
+  euro.cross (euro)            Conversion Rates of Euro Currencies
+  eurodist                     Distances Between European Cities and Between US Cities
+  faithful                     Old Faithful Geyser Data
+  fdeaths (UKLungDeaths)       Monthly Deaths from Lung Diseases in the UK
+  freeny                       Freeny's Revenue Data
+  freeny.x (freeny)            Freeny's Revenue Data
+  freeny.y (freeny)            Freeny's Revenue Data
+  gait                         Hip and Knee Angle while Walking
+  infert                       Infertility after Spontaneous and Induced Abortion
+  iris                         Edgar Anderson's Iris Data
+  iris3                        Edgar Anderson's Iris Data
+  islands                      Areas of the World's Major Landmasses
+  ldeaths (UKLungDeaths)       Monthly Deaths from Lung Diseases in the UK
+  lh                           Luteinizing Hormone in Blood Samples
+  longley                      Longley's Economic Regression Data
+  lynx                         Annual Canadian Lynx trappings 1821-1934
+  mdeaths (UKLungDeaths)       Monthly Deaths from Lung Diseases in the UK
+  morley                       Michelson Speed of Light Data
+  mtcars                       Motor Trend Car Road Tests
+  nhtemp                       Average Yearly Temperatures in New Haven
+  nottem                       Average Monthly Temperatures at Nottingham, 1920-1939
+  npk                          Classical N, P, K Factorial Experiment
+  occupationalStatus           Occupational Status of Fathers and their Sons
+  penguins                     Measurements of Penguins near Palmer Station, Antarctica
+  penguins_raw (penguins)      Measurements of Penguins near Palmer Station, Antarctica
+  precip                       Annual Precipitation in Selected US Cities
+  presidents                   Quarterly Approval Ratings of US Presidents
+  pressure                     Vapor Pressure of Mercury as a Function of Temperature
+  quakes                       Locations of Earthquakes off Fiji
+  randu                        Random Numbers from Congruential Generator RANDU
+  rivers                       Lengths of Major North American Rivers
+  rock                         Measurements on Petroleum Rock Samples
+  sleep                        Student's Sleep Data
+  stack.loss (stackloss)       Brownlee's Stack Loss Plant Data
+  stack.x (stackloss)          Brownlee's Stack Loss Plant Data
+  stackloss                    Brownlee's Stack Loss Plant Data
+  state.abb (state)            US State Facts and Figures
+  state.area (state)           US State Facts and Figures
+  state.center (state)         US State Facts and Figures
+  state.division (state)       US State Facts and Figures
+  state.name (state)           US State Facts and Figures
+  state.region (state)         US State Facts and Figures
+  state.x77 (state)            US State Facts and Figures
+  sunspot.m2014 (sunspot.month)
+                               Monthly Sunspot Data, from 1749 to "Present"
+  sunspot.month                Monthly Sunspot Data, from 1749 to "Present"
+  sunspot.year                 Yearly Sunspot Data, 1700-1988
+  sunspots                     Monthly Sunspot Numbers, 1749-1983
+  swiss                        Swiss Fertility and Socioeconomic Indicators (1888) Data
+  treering                     Yearly Tree-Ring Data, -6000-1979
+  trees                        Diameter, Height and Volume for Black Cherry Trees
+  uspop                        Populations Recorded by the US Census
+  volcano                      Topographic Information on Auckland's Maunga Whau Volcano
+  warpbreaks                   The Number of Breaks in Yarn during Weaving
+  women                        Average Heights and Weights for American Women
+
+
+  Use ‘data(package = .packages(all.available = TRUE))’
+  to list the data sets in all *available* packages.
+  #+end_example
+
+- One of these datasets is ~Nile~. Do you remember how to get
+  information on such a dataset (or on any R object)?
+  #+begin_src R :session *R* :results output :exports both
+    str(Nile)  # try also: help(Nile) on the R console
+  #+end_src
+
+  #+RESULTS:
+  :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+
+- What are the four environment functions to remember?
+  #+begin_example R
+    ls() # List user-defined or -loaded objects (variables, functions, datasets)
+    search() # loaded function or data packages
+    data() # lists available datasets
+    installed.packages() # all installed packages - though `library` is easier
+  #+end_example
+
+- Display installed packages as a data frame, save and check the result:
+  1) Call ~installed.packages()~
+  2) Convert the result to a ~data.frame~ with ~as.data.frame()~
+  3) Check its structure with ~str()~
+  4) Capture the output (stdout) in a file with ~capture.output()~
+  5) Print the top 10 lines of the result in R with ~system()~.
+     
+  #+begin_src R :session *R* :results output :exports both
+    installed.packages() |> as.data.frame() |> str() |> capture.output(file="packages.txt")
+    system("head -n 10 packages.txt")
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  'data.frame':	59 obs. of  16 variables:
+   $ Package              : chr  "askpass" "BH" "cli" "curl" ...
+   $ LibPath              : chr  "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.5" "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.5" "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.5" "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.5" ...
+   $ Version              : chr  "1.2.1" "1.87.0-1" "3.6.5" "7.0.0" ...
+   $ Priority             : chr  NA NA NA NA ...
+   $ Depends              : chr  NA NA "R (>= 3.4)" "R (>= 3.0.0)" ...
+   $ Imports              : chr  "sys (>= 2.1)" NA "utils" NA ...
+   $ LinkingTo            : chr  NA NA NA NA ...
+   $ Suggests             : chr  "testthat" NA "callr, covr, crayon, digest, glue (>= 1.6.0), grDevices,\nhtmltools, htmlwidgets, knitr, methods, processx, ps "| __truncated__ "spelling, testthat (>= 1.0.0), knitr, jsonlite, later,\nrmarkdown, httpuv (>= 1.4.4), webutils" ...
+   $ Enhances             : chr  NA NA NA NA ...
+  #+end_example
+
+- Sometimes you only want to list the packages. Save 
+  
+  #+begin_src R :session *R* :results output :exports both
+    as.data.frame(installed.packages()) -> packages
+    packages$Package
+  #+end_src
+
+  #+RESULTS:
+  : [1] "askpass"    "BH"         "cli"        "curl"       "data.table" "dplyr"      "gapminder" 
+  :  [8] "generics"   "glue"       "httr"       "jsonlite"   "lifecycle"  "magrittr"   "mime"      
+  : [15] "NLP"        "openssl"    "pillar"     "pkgconfig"  "R6"         "Rcpp"       "rlang"     
+  : [22] "slam"       "sys"        "tibble"     "tidyselect" "tm"         "utf8"       "vctrs"     
+  : [29] "withr"      "xml2"       "base"       "boot"       "class"      "cluster"    "codetools" 
+  : [36] "compiler"   "datasets"   "foreign"    "graphics"   "grDevices"  "grid"       "KernSmooth"
+  : [43] "lattice"    "MASS"       "Matrix"     "methods"    "mgcv"       "nlme"       "nnet"      
+  : [50] "parallel"   "rpart"      "spatial"    "splines"    "stats"      "stats4"     "survival"  
+  : [57] "tcltk"      "tools"      "utils"
+
+- How many packages are installed on your system?
+  #+begin_src R :session *R* :results output :exports both
+    length(packages$Package)
+  #+end_src
+
+  #+RESULTS:
+  : [1] 137
+
+* Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
+#+attr_html: :width 600px
+[[../img/nile.png]]
+
+- What data structure (type of R object) is ~Nile~?
+
+- ~Nile~ contains a so-called "time series", a sequence of numbers that
+  correspond to measurements of the annual flow (in billion - 10⁸ -
+  cubic meters) of the river Nile at [[https://en.wikipedia.org/wiki/Aswan][Aswan]], measured between
+  1871-1970.
+
+- For a full characterization, you need more than one function:
+  #+begin_src R :session
+    class(Nile)  # what type of dataset is this? (R object class)
+    typeof(Nile)  # this is the storage type (machine)
+    mode(Nile)  # this is the data type
+  #+end_src
+
+- How can we print this dataset, or parts of it, on the screen?
+  #+begin_src R :session
+    str(Nile)   # show dataset structure
+    head(Nile)  # show first few elements
+    Nile        # this prints the whole dataset
+  #+end_src
+
+  #+begin_notes
+  Because we don't know yet how to look at sub-vectors or individual
+  vector elements, we cannot directly check what type the elements of
+  ~Nile~ have, but the output seems to suggest that the Nile flow is
+  measured in integer numbers.
+
+  You can also see from the print output of ~Nile~ how row labels work:
+  there are 15 numbers per row, and the second row starts with the
+  16th number, indicated by ~[16]~.
+  #+end_notes
+
+* Plotting the nile [[https://youtu.be/c_BvsnKU7T4][(video)]]
+
+- Plotting is often a good entry into exploring data
+
+- ~Nile~ is a numeric vector of a single, continuous variable over time
+
+- To visualize such data, *histograms* or *line plots* are useful
+
+- What you're really after is a picture of a *value distribution*.
+
+- Why are /histograms/ called "histograms"?
+  #+begin_quote
+  The word is derived from the Greek 'histos' (upright, like a
+  column), and 'gramma' (drawing). Introduced by Pearson.
+  #+end_quote
+
+- How can you find out more about plotting a histogram in R?
+
+  #+begin_notes help(hist)
+  *HELP:* You know of course what to do at this point: call for help
+  using ~?hist~. Skip to the ~Examples~ section at the end, where you find
+  the command ~hist(islands)~. This creates a histogram of another
+  dataset, ~islands~. With the help of ~?islands~, you find out quickly
+  that this is a "named vector of 48 elements". Never mind what this
+  means, but you can enter the command, which will generate a
+  plot. This is a histogram: it plots frequency of the data and
+  distributes them into bins[fn:2]. Let's get back to the river Nile.
+
+  Like most R functions, ~hist~ has many options. If you execute
+  ~hist(Nile)~, you get the same type of graph as in the example except
+  that we know what the data are (annual Nile flow measurements in ~10⁸
+  m³~, or 100,000,000 (100 million) of cubic metres.
+
+  If you run ~example(Nile)~ you get a number of interesting plots, too.
+  #+end_notes
+
+* Plotting the histogram
+
+- Let's plot the histogram of ~Nile~
+  #+begin_src R :exports both :session :results output graphics file :file ../img/histNile.png
+    hist(Nile)
+  #+end_src
+
+- *Can you interpret the plot given what you know about the data?* For
+  example, what is the meaning of the longest bar in the histogram?
+  #+begin_quote
+  The longest bar represents the flow recordings with the highest
+  counts in the period of observation (1870-1970). They correspond to
+  flow volumes between 800 and 900 mio cubic meters of Nile water.
+  #+end_quote
+
+- Add the argument ~breaks=20~ to the ~hist~ function call. Change the
+  file name in the code block header if you want to create a new PNG file
+  #+begin_src R :exports both :session :results output graphics file :file ../img/Nile2.png
+    hist(Nile, breaks=20)
+  #+end_src
+
+  #+RESULTS:
+  [[file:Nile2.png]]
+
+- What's the new insight?
+  #+begin_quote
+  The flow interval that occurred the most lies actually between 800
+  and 825 bio cubic meters of Nile water.
+  #+end_quote
+
+- Some of you might already know how to put both of these plots on one
+  page using the =par= function:
+  #+begin_src R :file ../img/Nile3.png :session *R* :results file graphics output :exports both
+    par(mfrow=c(1,2),pty='s')
+    hist(Nile,main="binwidth = 'Sturges'")  # check ?nclass.Sturges
+    hist(Nile,breaks=20,main="binwidth = 20",ylab="")
+  #+end_src
+
+* Plotting the line plot
+
+Since ~Nile~ is a time series, every data point has a time label.
+
+You can easily plot the evolution of the date over time with ~plot~.
+
+A line plot is useful to visualize two continuous numeric variables.
+
+This leads to a so-called /line plot/
+#+begin_src R :exports both :session :results output graphics file :file ../img/lineNile.png
+  plot(Nile)
+#+end_src
+
+#+RESULTS:
+[[file:../img/lineNile.png]]
+
+- *Can you interpret the plot given what you know about the data?*
+  #+begin_quote
+  The line plot shows the change of water flow through the Nile in mio
+  cubic metres over a period of 100 years from 1870 to 1970.
+  #+end_quote
+
+- Is =hist= a generic function?
+  - Try to make a histogram of ~mtcars~.
+  - Check out the structure of ~mtcars~ to see the column vector data types.
+  - Make a histogram of ~mtcars$mpg~:
+
+- Non-graphical data (structure):
+  #+begin_src R :session *R* :results output :exports both
+    str(mtcars)
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  'data.frame':	32 obs. of  11 variables:
+   $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+   $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+   $ disp: num  160 160 108 258 360 ...
+   $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+   $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+   $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+   $ qsec: num  16.5 17 18.6 19.4 17 ...
+   $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+   $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+   $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+   $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+  #+end_example
+
+- What do you notice regarding histograms?
+  #+begin_quote
+  All variables/columns/features can be plotted as histograms!
+  #+end_quote  
+
+- Graphical data (histogram): plot the =mpg= vector
+  #+begin_src R :results graphics output file :file ../img/histmtcars.png
+    hist(mtcars$mpg)
+  #+end_src
+
+  #+RESULTS:
+  [[file:histmtcars.png]]
+
+- What is the most frequent miles-per-gallon performance?
+  #+begin_quote
+  The highest count are cars with 15-20 mpg.
+  #+end_quote
+
+- Plot the =cyl= vector as a histogram.
+  #+begin_src R :file ../img/cylHist.png :session *R* :results file graphics output :exports both
+    hist(mtcars$cyl, breaks=3)
+  #+end_src
+
+  #+RESULTS:
+  [[file:cylHist.png]]
+
+- A better plot type is the bar plot (because =cyl= is a categorical
+  variable):
+  #+begin_src R :file ../img/cylBar.png :session *R* :results file graphics output :exports both
+    barplot(table(mtcars$cyl))
+  #+end_src
+
+  #+RESULTS:
+  [[file:cylBar.png]]
+
+- Print the =table= argument to see what =barplot= has to work with:
+  #+begin_src R
+    table(mtcars$cyl)
+  #+end_src
+  
+- Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
+  built-in dataset, using =str=:
+  #+begin_src R
+    str(ToothGrowth)
+  #+end_src
+
+- You get this result because...
+  #+begin_quote
+  ...you can only generate a histogram for a single, continous,
+  numeric variable, and not for a discrete, categorical variable.
+  #+end_quote
+  
+
+- Let's try to create a histogram of the ~supp~ =factor= vector (what
+  result do you expect?)
+  #+begin_example R
+    hist(ToothGrowth)
+  #+end_example
+
+- Solution:
+  1) Save the =factor= in an object =tgs=
+     #+begin_src R
+       tgs <- ToothGrowth$supp
+       tgs
+     #+end_src
+
+  2) Turn =factor= into numbers
+     #+begin_src R :graphics
+       tgs <- as.numeric(tgs)
+       tgs
+     #+end_src
+
+  3) Plot the the values as a (fancy) histogram:
+     #+begin_src R :results graphics output file :file ../img/tghist.png
+       hist(tgs,
+            breaks = 2,
+            col = "purple",
+            border = "white",
+            xlab = "Supply type (orange juice/vitamin C)")
+     #+end_src
+
+     #+RESULTS:
+     [[file:tghist.png]]
+
+- Again, a barplot is more meaningful (because =supp= is categorical):
+  #+begin_src R :file ../img/bartg.png :session *R* :results file graphics output :exports both
+    barplot(table(tgs),
+            names.arg=c("Orange Juice","Vitamin C"),
+            main="ToothGrowth dataset - supply breakdown")
+  #+end_src
+
+  #+RESULTS:
+  [[file:bartg.png]]
+
+For these and other settings, check out =help(hist)=, and =example(hist)=
+for the examples listed at the end of the documentation (see next
+section).
+
+* Plotting the scatter plot
+
+- Check out the structure of =ToothGrowth= again.
+  #+begin_src R
+    str(ToothGrowth)
+  #+end_src
+
+  #+RESULTS:
+  : 'data.frame':	60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
+- Make a =plot= of the =len= variable (tooth length of the guinea pigs):
+  #+begin_src R :file ../img/tg1.png :session *R* :results file graphics output :exports both
+    plot(ToothGrowth$len)
+  #+end_src
+
+  #+RESULTS:
+  [[file:tg1.png]]
+
+- Make a new vector by sorting the =len= variable with =sort=
+  #+begin_src R
+    l <- ToothGrowth$len
+    l
+    sort(l) -> l_sorted
+    l_sorted
+  #+end_src
+
+  #+RESULTS:
+  : [1]  4.2 11.5  7.3  5.8  6.4 10.0 11.2 11.2  5.2  7.0 16.5 16.5 15.2 17.3 22.5 17.3 13.6 14.5
+  : [19] 18.8 15.5 23.6 18.5 33.9 25.5 26.4 32.5 26.7 21.5 23.3 29.5 15.2 21.5 17.6  9.7 14.5 10.0
+  : [37]  8.2  9.4 16.5  9.7 19.7 23.3 23.6 26.4 20.0 25.2 25.8 21.2 14.5 27.3 25.5 26.4 22.4 24.5
+  : [55] 24.8 30.9 26.4 27.3 29.4 23.0
+  : [1]  4.2  5.2  5.8  6.4  7.0  7.3  8.2  9.4  9.7  9.7 10.0 10.0 11.2 11.2 11.5 13.6 14.5 14.5
+  : [19] 14.5 15.2 15.2 15.5 16.5 16.5 16.5 17.3 17.3 17.6 18.5 18.8 19.7 20.0 21.2 21.5 21.5 22.4
+  : [37] 22.5 23.0 23.3 23.3 23.6 23.6 24.5 24.8 25.2 25.5 25.5 25.8 26.4 26.4 26.4 26.4 26.7 27.3
+  : [55] 27.3 29.4 29.5 30.9 32.5 33.9
+
+- Now plot the new vector  
+    #+begin_src R :file ../img/tg2.png :session *R* :results file graphics output :exports both
+    plot(sort(l_sorted))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/tg2.png]]
+
+- What happens to this scatterplot if you use the =supp= variable for =x=
+  to plot the =len= variable as =y= (plot =len= as a function of =supp=)?
+  #+begin_src R :file ../img/tg3.png :session *R* :results file graphics output :exports both
+    plot(x=ToothGrowth$supp,ToothGrowth$len)
+  #+end_src
+
+  #+RESULTS:
+  [[file:tg3.png]]
+
+- What's happening here?
+  #+begin_quote
+  This type of plot is called boxplot and it is used to compare two
+  (numeric) value distributions, in this case the tooth lengths of the
+  two observation groups of guinea pigs (Orange Juice and Vitamin C).
+  #+end_quote
+
+- What do we learn?
+  #+begin_quote
+  The scatterplot is useful to plot two (or more) numeric vectors -
+  like =mpg= and =wt= for =mtcars=.
+  #+end_quote
+
+* Asking for help
+#+attr_latex: :width 400px
+[[../img/5_help.jpg]]
+
+- When you see a new function or dataset, look it up
+
+- Use fuzzy help search (~??~) or regular help (~?~, ~help~)
+
+- Scroll down to check out (and run) the ~examples~
+
+- Get an overview of the available options
+
+#+begin_notes
+In the following, I won't waste more space with the obvious: whenever
+I mention a new function or dataset, or keyword, look the
+corresponding help up immediately. More often than not, you will take
+something away from it - at the very minimum an example. Over time,
+you'll understand things even though you don't know how you possibly
+could: this is because you've begun to develop a habit by using a
+system of learning - looking up the help content - and the more you
+look at help pages, the more you recognize known concepts.
+#+end_notes
+
+* Summary with examples
+
+- R is a functional language in which everything's an object.
+- R functions differ in: performance (speed), ease-of-use and
+  clarity.
+- To assign values to objects, use the ~<-~ operator.
+- To assign values to arguments in functions, use the ~=~ operator.
+- The elements of a numeric, character or logical vector are
+  numbers, letters or truth values.
+- A vector can have arithmetic calculations or vectors as elements.
+- A histogram distributes data by frequency across evenly spaced
+  bins.
+
+  *R CODE EXAMPLES:*
+  | ~x <- 5~                               | assign ~5~ to object ~x~                 |
+  | ~x <- x+1~                             | overwrite ~x~ (new value)              |
+  | ~c(1,2,3,4)~                           | define (numerical) vector            |
+  | ~class(bar)~                           | check type of object ~bar~             |
+  | ~hist(x,breaks=foo)~                   | histogram of dataset ~x~ with ~foo~ bins |
+  | ~names(x)~                             | return names of vector ~x~ (or ~NULL~)   |
+  | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class  |
+
+* References
+
+- <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
+
+- <<davies>> Tilman M. Davies (2016). [[https://nostarch.com/bookofr][The Book of R. (No Starch
+  Press).]]
+
+- <<irizarry>> Rafael A. Irizarry (2020). [[https://rafalab.github.io/dsbook/][Introduction to Data Science]]
+  (also: CRC Press, 2019).
+
+- <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
+  <<pemdas>>
+
+* Footnotes
+
+[fn:1]Note: If a vector contains different data types, R coerces the
+vector elements to conform to one type, as we will see later. A data
+type that can hold any type of value is called a ~list~.
+
+[fn:2]The [[https://en.wikipedia.org/wiki/Histogram][Wikipedia entry for "histogram"]] is not bad as a start, lots
+of examples and you'll soon find out how to make these yourself! The
+origin of the name "histogram" is not clear - it was probably invented
+by Pearson, who introduced this type of graph, and is short for
+"HISTorical diaGRAM".
+

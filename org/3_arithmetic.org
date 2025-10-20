@@ -390,6 +390,15 @@ Solution:
   print(log_exp)
 #+end_src
 
+#+RESULTS:
+: [1] 10.000000000000000  2.718281828459045  0.000000000000000
+: [1] FALSE
+: [1] TRUE
+: [1] 10.000000000000002  2.718281828459045  0.000000000000000
+: [1] 10.000000000000000  2.718281828459045  0.000000000000000
+: [1] 10.000000000000002  2.718281828459045  0.000000000000000
+: [1] 10.000000000000000  2.718281828459045  0.000000000000000
+
 #+begin_quote
 To compare e.g. in selection statements (=if=), always use =identical=
 #+end_quote
@@ -657,6 +666,7 @@ Solution:
    1.7976931348623157e+308.
 2) Subtract 2 from ~sqrt(2)^2~. The answer is: ~4.440892e-16~.
 #+end_notes
+
 
 * Logical values and operators
 #+attr_html: :width 300px
