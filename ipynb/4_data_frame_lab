@@ -1,0 +1,427 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Space Objects DataFrame Analysis\n",
+    "**Author**: [Student Name]\n",
+    "\n",
+    "I pledge that this work is my own, completed in accordance with course guidelines.\n",
+    "\n",
+    "## Instructions\n",
+    "For this exercise, you need the knowledge from the DataCamp lesson on `data.frame` objects and the plotting practice from class. For the last question, you need to look up a help page.\n",
+    "\n",
+    "**Goal**: Demonstrate your understanding of R data frames by creating, inspecting, subsetting, sorting, and visualizing data about space objects.\n",
+    "\n",
+    "**Tasks**:\n",
+    "- Complete all tasks in this DataLab R notebook.\n",
+    "- Add short comments in code cells to explain your output.\n",
+    "- Answer questions in text blocks where specified.\n",
+    "- Save the notebook as `Space_Objects_DataFrame.ipynb`.\n",
+    "- Share the DataLab link in Canvas.\n",
+    "\n",
+    "## Data\n",
+    "Use the following table of eight space objects, also available as a CSV file at: [tinyurl.com/space-objects-csv](https://tinyurl.com/space-objects-csv)\n",
+    "\n",
+    "| object      | type      | diameter_km | composition | rings | hazard_level |\n",
+    "|-------------|-----------|-------------|-------------|-------|--------------|\n",
+    "| Jupiter     | Planet    | 139820      | Gas         | TRUE  | 8            |\n",
+    "| Europa      | Moon      | 3122        | Ice         | FALSE | 4            |\n",
+    "| Ceres       | Asteroid  | 946         | Rock        | FALSE | 5            |\n",
+    "| Titan       | Moon      | 5150        | Ice         | FALSE | 6            |\n",
+    "| Mars        | Planet    | 6792        | Rock        | FALSE | 7            |\n",
+    "| Enceladus   | Moon      | 504         | Ice         | FALSE | 3            |\n",
+    "| Io          | Moon      | 3643        | Rock        | FALSE | 9            |\n",
+    "| Saturn      | Planet    | 116460      | Gas         | TRUE  | 10           |\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 1. Create Vectors\n",
+    "\n",
+    "Create SIX vectors of equal length describing the eight space objects shown in the table above."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 2. Combine into a Data Frame\n",
+    "\n",
+    "Combine the vectors into a data frame called `space_objects_df` and print the data frame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 3. Inspect the Data Frame\n",
+    "\n",
+    "Perform the following inspections on the data frame."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3.1 Display First Four Rows\n",
+    "\n",
+    "Use `head` to display only the first four rows of the data frame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3.2 Display Last Four Rows\n",
+    "\n",
+    "Use `tail` to display the last four rows of the data frame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3.3 Show Structure\n",
+    "\n",
+    "Show the structure of the data frame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3.4 Summary Statistics\n",
+    "\n",
+    "Print summary statistics of the data frame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 3.5 Questions\n",
+    "\n",
+    "Answer the following questions:\n",
+    "1. What is the average hazard level?\n",
+    "2. What data type is `rings`?\n",
+    "3. Is the object `type` a categorical variable?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Answers**:\n",
+    "1. \n",
+    "2. \n",
+    "3. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 4. Select and Print\n",
+    "\n",
+    "Perform the following selections and print the results."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 4.1 Composition of \"Titan\"\n",
+    "\n",
+    "Select and print the composition of the object \"Titan\"."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 4.2 Full Record for the 5th Object\n",
+    "\n",
+    "Select and print the full record for the 5th space object."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 4.3 `diameter_km` Column by Three Methods\n",
+    "\n",
+    "Select and print the `diameter_km` column using three methods: by index, by name, and with the accessor operator `$`."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### By Index"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### By Name"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Using Accessor Operator `$`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 5. Subset for One Feature\n",
+    "\n",
+    "Create a new data frame `ringed_df` containing only space objects that have rings using the `subset` function."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 6. Filter by Condition\n",
+    "\n",
+    "Create a new data frame `hazardous_ringed` that contains only space objects with rings that also have a hazard level above 6."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 7. Sort\n",
+    "\n",
+    "Sort `space_objects_df` by `diameter_km` from smallest to largest and store the result in `sorted_objects`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 8. Histogram\n",
+    "\n",
+    "Make a histogram of space object diameters. Add a title and axis labels."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 8.1 Questions\n",
+    "\n",
+    "Answer the following questions:\n",
+    "1. What kind of variable is `diameter_km`?\n",
+    "2. What kind of histogram would you get if you plotted the `object` values instead?\n",
+    "3. What is the default binwidth?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Answers**:\n",
+    "1. \n",
+    "2. \n",
+    "3. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 9. Scatter/Line Plot\n",
+    "\n",
+    "Plot `diameter_km` (y-axis) against `hazard_level` (x-axis) using `plot()`. Add a title, axis labels, and connect points with lines (`type = \"b\"`)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### 9.1 Questions\n",
+    "\n",
+    "Answer the following questions:\n",
+    "1. Would it be better to connect the points with a line (`type=\"l\"`)? Why or why not?\n",
+    "2. Should the measuring units be added to the \"Hazard Level\" label? Why or why not?\n",
+    "3. Could you just plot with x = hazard level? Why or why not?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Answers**:\n",
+    "1. \n",
+    "2. \n",
+    "3. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## 10. Combined Filtering and Labeling\n",
+    "\n",
+    "Create a new data frame `large_hazardous` containing only space objects with a diameter larger than 5000 km and with a hazard level above 6. Then make a scatter plot of their diameter vs. hazard level and label the points with their names using the `text` function. Refer to the help page (`?text`) to understand the `pos` parameter."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Submission Notes\n",
+    "\n",
+    "- Save this notebook as `Space_Objects_DataFrame.ipynb`.\n",
+    "- Replace `[Student Name]` with your name in the author field.\n",
+    "- Share the DataLab link in Canvas."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "R",
+   "language": "R",
+   "name": "ir"
+  },
+  "language_info": {
+   "codemirror_mode": "r",
+   "file_extension": ".r",
+   "mimetype": "text/x-r-source",
+   "name": "R",
+   "pygments_lexer": "r",
+   "version": "4.0.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
