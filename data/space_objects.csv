@@ -1,0 +1,9 @@
+object,type,diameter_km,composition,rings,hazard_level
+Jupiter,Planet,139820,Gas,TRUE,8
+Europa,Moon,3122,Ice,FALSE,4
+Ceres,Asteroid,946,Rock,FALSE,5
+Titan,Moon,5150,Ice,FALSE,6
+Mars,Planet,6792,Rock,FALSE,7
+Enceladus,Moon,504,Ice,FALSE,3
+Io,Moon,3643,Rock,FALSE,9
+Saturn,Planet,116460,Gas,TRUE,10
