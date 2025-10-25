@@ -1,0 +1,9 @@
+creature,type,height_m,element,wings,danger_level
+Dragon,Beast,6.0,Fire,True,10
+Unicorn,Spirit,1.8,Magic,False,3
+Phoenix,Spirit,1.2,Fire,True,7
+Troll,Humanoid,2.5,Earth,False,6
+Mermaid,Aquatic,1.6,Water,False,4
+Centaur,Humanoid,2.2,Earth,False,5
+Griffin,Beast,1.7,Air,True,8
+Giant,Humanoid,4.5,Earth,False,9
