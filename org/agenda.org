@@ -2595,7 +2595,7 @@ Answer: 2 pages (printout provided) - 1,000 words.
 - Line and scatter plots using different built-in datasets.
 
 - Download the starter code, upload it to datalab & code along:
-  [[https://tinyurl.com/plotting-practice-ipynb][tinyurl.com/plotting-practice-ipynb]]
+  [[https://tinyurl.com/plotting-practice-nb][tinyurl.com/plotting-practice-nb]]
 
 ** DataCamp review practice: data frames (Wed)
 
