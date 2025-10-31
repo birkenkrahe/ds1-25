@@ -1,4 +1,4 @@
-g#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
+#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2025
 #+STARTUP: overview hideblocks indent entitiespretty:
@@ -2575,31 +2575,43 @@ Answer: 2 pages (printout provided) - 1,000 words.
     : Levels: low < medium < high
     
 * Week 10: Line and scatter ~plot~, and ~data.frame~
-#+attr_html: :width 400px :float nil: 
+#+attr_html: :width 600px :float nil: 
+[[../img/islands.jpg]]
 
-** Sprint review coming up (Nov 14)
+** DONE Sprint review coming up (Nov 14)
 
-- [ ] The next sprint review is coming up in a few weeks (Nov 14).
+- [X] The next sprint review is coming up in a few weeks (Nov 14).
 
-- [ ] There will be no class on Nov 12 - push your projects forward!
+- [X] There will be no class on Nov 12 - push your projects forward!
 
-** Bonus practice: Islands analysis (subsetting vectors / dot plot)
+** DONE Bonus practice: Islands analysis (subsetting vectors/dot plot)
 
 - [ ] Bonus points and practice at home: Complete and upload URL to
   your datalab notebook: [[https://tinyurl.com/islands-analysis-ipynb][tinyurl.com/islands-analysis-ipynb]] - this is
   very similar to the ~Nile~ example in class - it adds one plot type,
   the dot plot. Details in the starter code ("Islands analysis").
 
-** Code along: Continuing our journey to making plots (Mon)
+** DONE Code along: Continuing our journey to making plots (Mon)
 
 - Line and scatter plots using different built-in datasets.
 
 - Download the starter code, upload it to datalab & code along:
   [[https://tinyurl.com/plotting-practice-nb][tinyurl.com/plotting-practice-nb]]
 
-** DataCamp review practice: data frames (Wed)
+** IN PROGRESS Review practice: plotting vectors lab (Wed/Fri)
 
-- Data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]]
+- Vector operations and plotting for different built-in datasets
+  
+- Get the starter code here: [[https://tinyurl.com/vectors-plotting-ipynb][tinyurl.com/vectors-plotting-ipynb]]
+
+- Download to PC, upload to datalab
+
+- Submit URL to completed datalab notebook to Canvas.
+
+
+** NEXT DataCamp review practice: data frames (Fri)
+
+- Data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]] - "Space Objects"
 
   + Do *not* "tell [the] AI what to do" but try it yourself.
   + We will go through the exercise together at the end of class.
@@ -2607,16 +2619,4 @@ Answer: 2 pages (printout provided) - 1,000 words.
   
 - A new home exercise is available (deadline Nov 4). It is based
   on the in-class practice exercise.
-
-** Review practice: plotting vectors lab (Fri)
-
-- Vector operations and plotting for different built-in datasets
-  
-- Submit when finished: [[https://tinyurl.com/vectors-plotting-ipynb][tinyurl.com/vectors-plotting-ipynb]]
-
-  
-
-
-
-
 
