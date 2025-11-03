@@ -1502,19 +1502,19 @@ AUC/ROC is an evaluation method for binary classification model:
 
    #+RESULTS:
    #+begin_example
-    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"  
-    [6] "Valiant"             "Duster 360"          "Merc 240D"           "Merc 230"            "Merc 280"           
-   [11] "Merc 280C"           "Merc 450SE"          "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
-   [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"     
-   [21] "Toyota Corona"       "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"          "Pontiac Firebird"   
-   [26] "Fiat X1-9"           "Porsche 914-2"       "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
+    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"
+    [6] "Valiant"             "Duster 360"          "Merc 240D"           "Merc 230"            "Merc 280"
+   [11] "Merc 280C"           "Merc 450SE"          "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"
+   [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"
+   [21] "Toyota Corona"       "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"          "Pontiac Firebird"
+   [26] "Fiat X1-9"           "Porsche 914-2"       "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"
    [31] "Maserati Bora"       "Volvo 142E"
-   [1] "Mazda RX4"           "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
-    [6] "Duster 360"          "Merc 240D"           "Merc 230"            "Merc 280"            "Merc 280C"          
+   [1] "Mazda RX4"           "Datsun 710"          "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"
+    [6] "Duster 360"          "Merc 240D"           "Merc 230"            "Merc 280"            "Merc 280C"
    [11] "Merc 450SE"          "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"  "Lincoln Continental"
-   [16] "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
-   [21] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"          "Pontiac Firebird"    "Fiat X1-9"          
-   [26] "Porsche 914-2"       "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"      
+   [16] "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"      "Toyota Corona"
+   [21] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"          "Pontiac Firebird"    "Fiat X1-9"
+   [26] "Porsche 914-2"       "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"
    [31] "Volvo 142E"
    #+end_example
 
@@ -1526,7 +1526,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 *
 
 * DONE Week 5: The R environment
-#+attr_html: :width 150px: 
+#+attr_html: :width 150px:
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]
 
@@ -1535,7 +1535,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - [X] Next lesson: "Introduction to R: Basics" (Sept 28)
 - [X] Home assignment: Weekly snack budget (Sept 29)
 - [X] Systematic introduction to R
-  
+
 ** DONE Programming assignment explanation
 
 - The assignment tests assignment, calculation, output, data type
@@ -1565,7 +1565,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 
 - More important than anything: You need to be able to identify which
   *literature search strategy* you employed during your project.
-  
+
 - Real researchers use conferences, proceedings, events, social media,
   journals, books, but most importantly human experts to find papers.
 
@@ -1579,7 +1579,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    text processing, pattern matching, etc.).
    #+end_quote
 
-2. Why don’t people use R or Python for everything?  
+2. Why don’t people use R or Python for everything?
    #+begin_quote
    Different languages excel at different tasks (systems, real-time,
    mobile, embedded, etc.); there’s no one-size-fits-all.
@@ -1611,7 +1611,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    #+begin_quote
    - You can get help on the program ~Rscript~ on the command-line with
      =man Rscript=.
-     
+
    - You can get help on the built-in dataset ~mtcars~ on the R console
      with =?mtcars= or =help(mtcars)=.
    #+end_quote
@@ -1623,7 +1623,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    - Enter =q()= followed by =y= or =n= to quit the R console.
    #+end_quote
 
-* DONE Week 6: R options and packages 
+* DONE Week 6: R options and packages
 
 - [X] Don't forget test 5 (deadline Sunday). Test 6 live today.
 
@@ -1636,7 +1636,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 ** Review: Weekly Snack Budget Assignment
 
 - A few of you put all the code into one code block. If you do that,
-  you're not using the full power of the notebook. 
+  you're not using the full power of the notebook.
 
 - When the assignment provides sample input and sample output, you
   need to reproduce these values exactly. In this example:
@@ -1644,7 +1644,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   [[../img/assignment.png]]
 
 - I have subtracted 1 point for incomplete submission this time.
-  
+
 - Reproducing data/code/results and testing programs is a key activity
   in the life of every data scientist (> 50% of your time.
 
@@ -1662,19 +1662,19 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 - If you used AI to complete your assignment, you need to say it in
   the preamble and identify how exactly you used it.
 
-- Examples:   
+- Examples:
   #+begin_quote
-  What does the ~cat~ command do (in R, on the shell)? 
+  What does the ~cat~ command do (in R, on the shell)?
   #+end_quote
 
   #+begin_src R :session *R* :results output :exports both
     x <- 100
     print(cat("Print ", x)) # `cat` prints a NULL character
-    print(cat("Print ", x, '\n')) 
+    print(cat("Print ", x, '\n'))
   #+end_src
 
   #+RESULTS:
-  : Print  100 
+  : Print  100
   : NULL
 
   #+begin_quote
@@ -1709,7 +1709,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
   #+begin_quote
   What does the ~mode~ command do? How is it different from ~class~?
   #+end_quote
-  
+
   #+begin_src R :session *R* :results output :exports both
     x <- 100
     mode(x)   # storage mode
@@ -1722,7 +1722,7 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
 
   #+begin_quote
   What does ~typeof~ do? How is it different from ~mode~ and ~class~?
-  #+end_quote  
+  #+end_quote
 
   #+begin_src R :session *R* :results output :exports both
     typeof(x)  ## R internal storage mode of an object
@@ -1757,8 +1757,8 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    while *absolute* paths start from the computer's *root* or home
    directory (e.g., =/home/user=, or =C:\Users\=).
    #+end_quote
-   
-5. How can you run a *shell* command such as ~pwd~ from *inside R*?  
+
+5. How can you run a *shell* command such as ~pwd~ from *inside R*?
    #+begin_quote
    Use the ~system()~ function, e.g., ~system('pwd')~.
    #+end_quote
@@ -1779,18 +1779,18 @@ https://www.datacamp.com/datalab/w/3d575f61-3463-4b1c-b213-b0b4cb47d7c8/edit
    #+end_src
 
 8. Can you run an R command inside a shell command inside an R
-   command? 
+   command?
    #+begin_src R :session *R* :results output :exports both
      ## From inside R run Rscript on the shell on an R print() function
      system("Rscript -e \'print(\"hello\")\'") # special signs are escaped
    #+end_src
-   
+
 9. Can you run an R command inside a shell command inside an R
-   command inside a shell command? 
+   command inside a shell command?
    #+begin_src R :session *R* :results output :exports both
      ## From inside R run Rscript on the shell on an R system() function
      ## Inside the system() function, run the shell command `pwd`.
-     system("Rscript -e \'system(\"pwd\")\'") 
+     system("Rscript -e \'system(\"pwd\")\'")
    #+end_src
 
 10. What's the command to quit or exit the R console?
@@ -1897,7 +1897,7 @@ Open a terminal. Open R.
    #+RESULTS:
    #+begin_example
     num [1:3] 1 2 3
-   'data.frame':	32 obs. of  11 variables:
+   'data.frame':        32 obs. of  11 variables:
     $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
     $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
     $ disp: num  160 160 108 258 360 ...
@@ -1918,9 +1918,9 @@ Open a terminal. Open R.
    #+end_src
 
    #+RESULTS:
-   : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*     str.POSIXt*    
+   : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*     str.POSIXt*
    : see '?methods' for accessing help and source code
-   : [1] head.array*      head.data.frame* head.default*    head.ftable*     head.function*   head.matrix     
+   : [1] head.array*      head.data.frame* head.default*    head.ftable*     head.function*   head.matrix
    : see '?methods' for accessing help and source code
 
 9. How can you see all currently available datasets?
@@ -2203,7 +2203,7 @@ Open a terminal. Open R.
 - [X] 2nd sprint review
 - [X] DataCamp lesson: ~factor~ vectors (important!)
 - [X] Quick review: exp vs. log
-- [X] Special values and special functions in R 
+- [X] Special values and special functions in R
 - [X] Popquiz: Vectors and matrices
 - [X] Home assignment: Vectors and factors
 - [X] Logical values and logical functions in R
@@ -2317,7 +2317,7 @@ GDrive. *You may need to update the link to your GDrive in Canvas.*
   showing a decrease due to training load management) and long-term
   fixture congestion may have no effect on overall injury rates.
   #+end_quote
-  
+
 - *Shaksham, Surendra, Jeniz:* How will your methodology be structured -
   will you collect data related to the three factors, or are you
   mining for broader, more qualitative insights, and how will you do
@@ -2455,22 +2455,22 @@ Answer: 2 pages (printout provided) - 1,000 words.
    sexual categories, ="male"= and ="female"=. The number of males and
    females is not boudned but it is not continous, it's a discrete
    numeric variable (a count). Real-valued measurements of males and
-   females (=height=, =weight=, =income=) are continuous. 
+   females (=height=, =weight=, =income=) are continuous.
    #+end_quote
 
 3. How do you create a factor from a ~character~ vector? Example?
    #+begin_src R :session *R* :results output :exports both
      c("Italy","Germany","France","Austria","Italy") -> roundtrip
      roundtrip
-     factor(roundtrip) 
+     factor(roundtrip)
    #+end_src
 
    #+RESULTS:
    : [1] "Italy"   "Germany" "France"  "Austria" "Italy"
-   : [1] Italy   Germany France  Austria Italy  
+   : [1] Italy   Germany France  Austria Italy
    : Levels: Austria France Germany Italy
 
-4. What are ~factor~ ~levels~? Example? 
+4. What are ~factor~ ~levels~? Example?
    #+begin_quote
    The distinct categories or unique values that make up a factor.
    #+end_quote
@@ -2492,9 +2492,9 @@ Answer: 2 pages (printout provided) - 1,000 words.
    : Levels: female
 
    #+begin_quote
-     When you check ~help(factor)~ you see that the 2nd argument is
-     ~levels~, and the ~factor~ element is ="male"=. When R checks for a
-     level "female", it cannot find it and assigns NA to the factor.
+   When you check ~help(factor)~ you see that the 2nd argument is
+   ~levels~, and the ~factor~ element is ="male"=. When R checks for a
+   level "female", it cannot find it and assigns NA to the factor.
    #+end_quote
 
 6. What is the difference between *nominal* and *ordinal* factors?
@@ -2505,14 +2505,14 @@ Answer: 2 pages (printout provided) - 1,000 words.
    #+end_quote
 
    #+begin_src R :session *R* :results output :exports both
-     sex <- factor(c("male","female","male","male")) # nominal factor 
+     sex <- factor(c("male","female","male","male")) # nominal factor
      sex
      quality <- factor(c("bad","good"), ordered=TRUE) # ordinal factor
      quality
    #+end_src
 
    #+RESULTS:
-   : [1] male   female male   male  
+   : [1] male   female male   male
    : Levels: female male
    : [1] bad  good
    : Levels: bad < good
@@ -2521,28 +2521,28 @@ Answer: 2 pages (printout provided) - 1,000 words.
    #+begin_src R :session *R* :results output :exports both
      (factor(roundtrip) -> roundtripFactor)
      levels(roundtripFactor) <- c("AT","F","D","IT")
-     roundtripFactor     
+     roundtripFactor
    #+end_src
 
    #+RESULTS:
-   : [1] Italy   Germany France  Austria Italy  
+   : [1] Italy   Germany France  Austria Italy
    : Levels: Austria France Germany Italy
    : [1] IT D  F  AT IT
    : Levels: AT F D IT
-   
+
 8. What function gives you a quick summary of the contents of a
    factor?
    #+begin_src R :session *R* :results output :exports both
      summary(roundtripFactor)
-     summary(roundtrip)     
+     summary(roundtrip)
    #+end_src
 
    #+RESULTS:
-   : AT  F  D IT 
+   : AT  F  D IT
    :  1  1  1  2
-   : Length     Class      Mode 
+   : Length     Class      Mode
    :         5 character character
-   
+
 9. Can you compare elements of an unordered (nominal) factor using `>`
    or `<`?
    #+begin_quote
@@ -2558,7 +2558,7 @@ Answer: 2 pages (printout provided) - 1,000 words.
    : Warning message:
    : In Ops.factor(sex[1], sex[2]) : ‘<’ not meaningful for factors
    : [1] TRUE
-   
+
 10. How do turn an existing ~factor~ into an ordinal one?
     #+begin_src R :session *R* :results output :exports both
       foo <- c("low","medium","high")
@@ -2569,13 +2569,13 @@ Answer: 2 pages (printout provided) - 1,000 words.
     #+end_src
 
     #+RESULTS:
-    : [1] low    medium high  
+    : [1] low    medium high
     : Levels: high < low < medium
-    : [1] medium high   low   
+    : [1] medium high   low
     : Levels: low < medium < high
-    
-* Week 10: Line and scatter ~plot~, and ~data.frame~
-#+attr_html: :width 600px :float nil: 
+
+* DONE Week 10: Line and scatter ~plot~, and ~data.frame~
+#+attr_html: :width 600px :float nil:
 [[../img/islands.jpg]]
 
 ** DONE Sprint review coming up (Nov 14)
@@ -2598,25 +2598,276 @@ Answer: 2 pages (printout provided) - 1,000 words.
 - Download the starter code, upload it to datalab & code along:
   [[https://tinyurl.com/plotting-practice-nb][tinyurl.com/plotting-practice-nb]]
 
-** IN PROGRESS Review practice: plotting vectors lab (Wed/Fri)
+** DONE Review practice: plotting vectors lab (Wed/Fri)
 
 - Vector operations and plotting for different built-in datasets
-  
+
 - Get the starter code here: [[https://tinyurl.com/vectors-plotting-ipynb][tinyurl.com/vectors-plotting-ipynb]]
 
 - Download to PC, upload to datalab
 
 - Submit URL to completed datalab notebook to Canvas.
 
-
-** NEXT DataCamp review practice: data frames (Fri)
+** IN PROGRESS DataCamp review practice: data frames (Fri)
 
 - Data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]] - "Space Objects"
 
   + Do *not* "tell [the] AI what to do" but try it yourself.
   + We will go through the exercise together at the end of class.
   + Submit the URL to your practice file in Canvas ("Space Objects")
-  
+
 - A new home exercise is available (deadline Nov 4). It is based
   on the in-class practice exercise.
+
+* Week 11: Lists / EDA / plotting with ~ggplot2~
+
+- [ ] Home assignments (Nov 9):
+  1) Review of data frames with a Fantasy Creatures dataset
+  2) Review of base R plotting with a Census dataset
+
+- [ ] New DataCamp lesson (Nov 14): EDA and Plotting Categories
+  + Prerequisites: R stats and introduction to ~ggplot2~
+  + Lesson has videos (yay!) and downloadable slides
+  + Uses the "Tidyverse" language
+  + Uses the popular ~ggplot2~ graphics package
+  + Uses pipelines extensively (~%>%~)
+  + Course culminates in an email spam analysis case study
+
+- [ ] Popquiz: DataCamp review - Lists and Plots
+
+  1) Sign your quiz at the top (readable).
+  2) Complete the quiz (30 min)
+  3) Follow the explanations.
+  4) Grade yourself.
+  5) Hand in your graded sheet.
+
+- [ ] Continue the data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]] -
+  independent code along.
+
+- [ ] Introduction to ~ggplot2~ (Wednesday)
+
+- [ ] List lab (Friday)
+
+** DataCamp review: Lists and Plots
+
+Popquiz with solutions:
+
+1. In R, what is a ~list~, and how does it differ from a vector in
+   terms of data types and structure?
+   #+begin_quote
+   A ~list~ is a collection of objects that can have different data
+   types and structures.
+   #+end_quote
+
+2. What function is used to create a list in R, and what types of
+   objects can it contain?
+   #+begin_quote
+   It can contain numbers, characters, Booleans, vectors,
+   matrices, data frames, or other lists, which themselves can
+   contain other lists (no nesting limit).
+   #+end_quote
+   #+begin_src R :session *R* :results none :exports both
+     l <- list(1, "hello world", c(100,200), Nile, options())
+   #+end_src
+
+3. If you have a list my_list with three components and want to assign
+   names "vec", "mat", and "df" after creation, how would you do it?
+   #+begin_src R :session *R* :results output :exports both
+     l <- list(c(100,200,300), matrix(1:9,nrow=3), ToothGrowth)
+     names(l) <- c("vec", "mat", "df")
+     names(l)
+   #+end_src
+
+   #+RESULTS:
+   : [1] "vec" "mat" "df"
+
+4. Given a ~list~ =movie_list= containing a character vector, a ~numeric~
+   vector, and a data frame, how do you select the first list
+   component?
+   #+begin_src R :session *R* :results output :exports both
+     ## Step 1: Create the vectors 
+     scores <- c(4.5, 5.0, 4.8)
+     comments <- c("Great!", "Amazing!", "Loved it!")
+
+     ## Step 2: Create the data frame of reviews 
+     movie_reviews <- data.frame(scores, comments)
+
+     ## Step 3: Calculate the average score (question 9)
+     avg_score <- mean(scores)
+
+     ## Step 4: Create the movie_list (question 10)
+     movie_list <- list(
+       title = "Star Wars",             # character
+       actors = c("Actor1", "Actor2"),  # vector
+       reviews = movie_reviews,         # data.frame
+       avg = avg_score                  # numeric
+     )
+
+     ## Print the list to verify
+     movie_list
+
+     ## Select first list component
+     movie_list[[1]]
+     movie_list[1][[1]]     
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   $title
+   [1] "Star Wars"
+
+   $actors
+   [1] "Actor1" "Actor2"
+
+   $reviews
+     scores  comments
+   1    4.5    Great!
+   2    5.0  Amazing!
+   3    4.8 Loved it!
+
+   $avg
+   [1] 4.766667
+   [1] "Star Wars"
+   [1] "Star Wars"
+   #+end_example
+
+5. In a list =movie_list= with named components "title", "scores", and
+   "reviews", how can you select the "reviews" component using two
+   different methods?
+   #+begin_src R :session *R* :results output :exports both
+     movie_list$reviews
+     movie_list[["reviews"]]     
+   #+end_src
+
+   #+RESULTS:
+   :   scores  comments
+   : 1    4.5    Great!
+   : 2    5.0  Amazing!
+   : 3    4.8 Loved it!
+   : scores  comments
+   : 1    4.5    Great!
+   : 2    5.0  Amazing!
+   : 3    4.8 Loved it!
+
+6. Suppose movie_list has a component that is a vector of actor names
+   named "actors". How would you select the second actor from this
+   component?
+   #+begin_src R :session *R* :results output :exports both
+     movie_list[["actors"]][2]
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Actor2"
+   
+7. You have a vector =scores <- c(4.5, 5.0, 4.8)= and a vector =comments
+   <- c("Great!", "Amazing!", "Loved it!")=. How would you create a
+   nested list named =movie_reviews= that contains these vectors as
+   components named =ratings= and =feedback=, within a sublist named =data=?
+   #+begin_src R :session *R* :results output :exports both
+     ## Define the vectors
+     scores <- c(4.5, 5.0, 4.8)
+     comments <- c("Great!", "Amazing!", "Loved it!")
+
+     ## Create the nested list
+     movie_reviews2 <-                      # store list
+       list(data =                         # `data` sublist
+              list(ratings = scores,       # ratings component
+                   feedback = comments))   # feedback component
+     movie_reviews2
+   #+end_src
+
+   #+RESULTS:
+   : $data
+   : $data$ratings
+   : [1] 4.5 5.0 4.8
+   : 
+   : $data$feedback
+   : [1] "Great!"    "Amazing!"  "Loved it!"
+
+8. You have a list =movie_list <- list(title = "Star Wars", scores =
+   c(4.5, 5.0, 4.8, 4.2, 4.9))=. How would you create a histogram of
+   the =scores= component using base R?
+
+   #+begin_src R :file ../img/movieHist.png :session *R* :results graphics output file :exports both
+     movie_list2 <- list(title = "Star Wars", scores = c(4.5, 5.0, 4.8,
+     4.2, 4.9))
+     hist(movie_list2$scores)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/movieHist.png]]
+
+9. You have a list:
+   #+begin_src R :session *R* :results output :exports both
+     movies <- list(title = "Star Wars",
+                        years =   c(2020, 2021, 2022, 2023, 2024),
+                        ratings = c(4.5, 4.7, 4.8, 4.6, 4.9))
+     movies
+   #+end_src
+
+   How would you create a line plot of ratings versus years (base R)?
+
+   #+begin_src R :file ../img/moviesLine.png :session *R* :results graphics output file :exports both
+     plot(movies$ratings ~ movies$years, type="b")
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/moviesLine.png]]
+
+10. If you have a list with two vector members runtime and ratings of
+    differing lengths, can you create a scatter plot of ratings
+    vs. runtime?
+    
+    #+begin_quote
+    No, you cannot because ~plot~ requires its input vectors to be of
+    equal length.
+    #+end_quote
+
+** Lists are tricky - an example
+
+Here is an example problem:
+
+- ~l~ is a ~list~ of five elements, one of which is the ~Nile~ time
+  series. How can I get its ~list~ index?
+
+- Where is ~Nile~ in the list?
+  #+begin_src R :session *R* :results output :exports both
+    str(l[[4]])
+  #+end_src
+
+  #+RESULTS:
+  :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+  
+- You might be tempted to write =which(l == Nile)= - worked for vectors
+  and data frames, right?
+
+  #+begin_src R :session *R* :results output :exports both
+    which(l==Nile) # error message
+  #+end_src
+
+  #+RESULTS:
+  : Error in NextMethod(.Generic) : 
+  :   'list' object cannot be coerced to type 'double'
+
+- To do this, you need more tools: ~sapply~ and lambda (anonymous)
+  functions:
+
+  #+begin_src R :session *R* :results output :exports both
+    which(sapply(l, function(x) identical(x,Nile)))
+  #+end_src
+
+  #+RESULTS:
+  : [1] 4
+
+- Explanation:
+  #+begin_quote
+  1. =sapply(X,FUN)= applies the function =FUN= to =X=, going through
+     element after element.
+  2. =function(x)= is an anonymous (unnamed) function.
+  3. =function(x)= tests if =x= is =Nile= or not.
+  4. If the function returns ~TRUE~ when ~which~ returns the corresponding
+     index value.
+
+  This is stuff for DSC 205 Introduction to advanced data science!
+  #+end_quote  
 
