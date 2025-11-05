@@ -2646,6 +2646,16 @@ Answer: 2 pages (printout provided) - 1,000 words.
 
 - [ ] Introduction to ~ggplot2~ (Wednesday)
 
-- [ ] List lab (Friday)
+- [ ] List lab - DataCamp review - pepquiz (Friday)
 
+** Very quick introduction to ~ggplot2~
+
+Open this notebook in datalab and *make a copy to code along*:
+
+https://tinyurl.com/ggplot2-intro
+
+This is ready for you to run cell by cell.
+
+
+  
 
