@@ -2619,21 +2619,27 @@ Answer: 2 pages (printout provided) - 1,000 words.
 - A new home exercise is available (deadline Nov 4). It is based
   on the in-class practice exercise.
 
-* Week 11: Lists / EDA / plotting with ~ggplot2~
+* DONE Week 11: Lists / EDA / intro to ~ggplot2~
 
-- [ ] Home assignments (Nov 9):
+- [X] Home assignments (Nov 9):
   1) Review of data frames with a Fantasy Creatures dataset
-  2) Review of base R plotting with a Census dataset
+  2) Review of base R plotting with a Census dataset (~uspop~)
 
-- [ ] New DataCamp lesson (Nov 14): EDA and Plotting Categories
+- [X] If you have questions on your project: Prepare me! Or send me an
+  email with your question.
+
+- [X] New DataCamp lesson (Nov 14): EDA and Plotting Categories
   + Prerequisites: R stats and introduction to ~ggplot2~
   + Lesson has videos (yay!) and downloadable slides
-  + Uses the "Tidyverse" language
+  + Uses the "Tidyverse" language (data.frame -> "tibbles")
   + Uses the popular ~ggplot2~ graphics package
   + Uses pipelines extensively (~%>%~)
   + Course culminates in an email spam analysis case study
 
-- [ ] Popquiz: DataCamp review - Lists and Plots
+- [X] Continue the data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]] -
+  independent code along.
+
+- [X] Pepquiz: DataCamp review - Lists and Plots
 
   1) Sign your quiz at the top (readable).
   2) Complete the quiz (30 min)
@@ -2641,12 +2647,7 @@ Answer: 2 pages (printout provided) - 1,000 words.
   4) Grade yourself.
   5) Hand in your graded sheet.
 
-- [ ] Continue the data frame practice: [[https://tinyurl.com/data-frame-ipynb][tinyurl.com/data-frame-ipynb]] -
-  independent code along.
-
-- [ ] Introduction to ~ggplot2~ (Wednesday)
-
-- [ ] List lab - DataCamp review - pepquiz (Friday)
+- [X] Introduction to ~ggplot2~ (Wednesday)
 
 ** Very quick introduction to ~ggplot2~
 
@@ -2654,8 +2655,232 @@ Open this notebook in datalab and *make a copy to code along*:
 
 https://tinyurl.com/ggplot2-intro
 
+Or download the raw .ipynb file and import it to datalab:
+
+https://tinyurl.com/ggplot2-intro-ipynb
+
 This is ready for you to run cell by cell.
 
+** DataCamp review: Lists and Plots
 
+Popquiz with solutions:
+
+1. In R, what is a ~list~, and how does it differ from a vector in
+   terms of data types and structure?
+   #+begin_quote
+   A ~list~ is a collection of objects that can have different data
+   types and structures.
+   #+end_quote
+
+2. What function is used to create a list in R, and what types of
+   objects can it contain?
+   #+begin_quote
+   It can contain numbers, characters, Booleans, vectors,
+   matrices, data frames, or other lists, which themselves can
+   contain other lists (no nesting limit).
+   #+end_quote
+   #+begin_src R :session *R* :results none :exports both
+     l <- list(1, "hello world", c(100,200), Nile, options())
+   #+end_src
+
+3. If you have a list my_list with three components and want to assign
+   names "vec", "mat", and "df" after creation, how would you do it?
+   #+begin_src R :session *R* :results output :exports both
+     l <- list(c(100,200,300), matrix(1:9,nrow=3), ToothGrowth)
+     names(l) <- c("vec", "mat", "df")
+     names(l)
+   #+end_src
+
+   #+RESULTS:
+   : [1] "vec" "mat" "df"
+
+4. Given a ~list~ =movie_list= containing a character vector, a ~numeric~
+   vector, and a data frame, how do you select the first list
+   component?
+   #+begin_src R :session *R* :results output :exports both
+     ## Step 1: Create the vectors 
+     scores <- c(4.5, 5.0, 4.8)
+     comments <- c("Great!", "Amazing!", "Loved it!")
+
+     ## Step 2: Create the data frame of reviews 
+     movie_reviews <- data.frame(scores, comments)
+
+     ## Step 3: Calculate the average score (question 9)
+     avg_score <- mean(scores)
+
+     ## Step 4: Create the movie_list (question 10)
+     movie_list <- list(
+       title = "Star Wars",             # character
+       actors = c("Actor1", "Actor2"),  # vector
+       reviews = movie_reviews,         # data.frame
+       avg = avg_score                  # numeric
+     )
+
+     ## Print the list to verify
+     movie_list
+
+     ## Select first list component
+     movie_list[[1]]
+     movie_list[1][[1]]     
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   $title
+   [1] "Star Wars"
+
+   $actors
+   [1] "Actor1" "Actor2"
+
+   $reviews
+     scores  comments
+   1    4.5    Great!
+   2    5.0  Amazing!
+   3    4.8 Loved it!
+
+   $avg
+   [1] 4.766667
+   [1] "Star Wars"
+   [1] "Star Wars"
+   #+end_example
+
+5. In a list =movie_list= with named components "title", "scores", and
+   "reviews", how can you select the "reviews" component using two
+   different methods?
+   #+begin_src R :session *R* :results output :exports both
+     movie_list$reviews
+     movie_list[["reviews"]]     
+   #+end_src
+
+   #+RESULTS:
+   :   scores  comments
+   : 1    4.5    Great!
+   : 2    5.0  Amazing!
+   : 3    4.8 Loved it!
+   : scores  comments
+   : 1    4.5    Great!
+   : 2    5.0  Amazing!
+   : 3    4.8 Loved it!
+
+6. Suppose movie_list has a component that is a vector of actor names
+   named "actors". How would you select the second actor from this
+   component?
+   #+begin_src R :session *R* :results output :exports both
+     movie_list[["actors"]][2]
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Actor2"
+   
+7. You have a vector =scores <- c(4.5, 5.0, 4.8)= and a vector =comments
+   <- c("Great!", "Amazing!", "Loved it!")=. How would you create a
+   nested list named =movie_reviews= that contains these vectors as
+   components named =ratings= and =feedback=, within a sublist named =data=?
+   #+begin_src R :session *R* :results output :exports both
+     ## Define the vectors
+     scores <- c(4.5, 5.0, 4.8)
+     comments <- c("Great!", "Amazing!", "Loved it!")
+
+     ## Create the nested list
+     movie_reviews2 <-                      # store list
+       list(data =                         # `data` sublist
+              list(ratings = scores,       # ratings component
+                   feedback = comments))   # feedback component
+     movie_reviews2
+   #+end_src
+
+   #+RESULTS:
+   : $data
+   : $data$ratings
+   : [1] 4.5 5.0 4.8
+   : 
+   : $data$feedback
+   : [1] "Great!"    "Amazing!"  "Loved it!"
+
+8. You have a list =movie_list <- list(title = "Star Wars", scores =
+   c(4.5, 5.0, 4.8, 4.2, 4.9))=. How would you create a histogram of
+   the =scores= component using base R?
+
+   #+begin_src R :file ../img/movieHist.png :session *R* :results graphics output file :exports both
+     movie_list2 <- list(title = "Star Wars", scores = c(4.5, 5.0, 4.8,
+     4.2, 4.9))
+     hist(movie_list2$scores)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/movieHist.png]]
+
+9. You have a list:
+   #+begin_src R :session *R* :results output :exports both
+     movies <- list(title = "Star Wars",
+                        years =   c(2020, 2021, 2022, 2023, 2024),
+                        ratings = c(4.5, 4.7, 4.8, 4.6, 4.9))
+     movies
+   #+end_src
+
+   How would you create a line plot of ratings versus years (base R)?
+
+   #+begin_src R :file ../img/moviesLine.png :session *R* :results graphics output file :exports both
+     plot(movies$ratings ~ movies$years, type="b")
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/moviesLine.png]]
+
+10. If you have a list with two vector members runtime and ratings of
+    differing lengths, can you create a scatter plot of ratings
+    vs. runtime?
+    
+    #+begin_quote
+    No, you cannot because ~plot~ requires its input vectors to be of
+    equal length.
+    #+end_quote
+
+** Lists are tricky - an example
+
+Here is an example problem:
+
+- ~l~ is a ~list~ of five elements, one of which is the ~Nile~ time
+  series. How can I get its ~list~ index?
+
+- Where is ~Nile~ in the list?
+  #+begin_src R :session *R* :results output :exports both
+    str(l[[4]])
+  #+end_src
+
+  #+RESULTS:
+  :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
   
+- You might be tempted to write =which(l == Nile)= - worked for vectors
+  and data frames, right?
+
+  #+begin_src R :session *R* :results output :exports both
+    which(l==Nile) # error message
+  #+end_src
+
+  #+RESULTS:
+  : Error in NextMethod(.Generic) : 
+  :   'list' object cannot be coerced to type 'double'
+
+- To do this, you need more tools: ~sapply~ and lambda (anonymous)
+  functions:
+
+  #+begin_src R :session *R* :results output :exports both
+    which(sapply(l, function(x) identical(x,Nile)))
+  #+end_src
+
+  #+RESULTS:
+  : [1] 4
+
+- Explanation:
+  #+begin_quote
+  1. =sapply(X,FUN)= applies the function =FUN= to =X=, going through
+     element after element.
+  2. =function(x)= is an anonymous (unnamed) function.
+  3. =function(x)= tests if =x= is =Nile= or not.
+  4. If the function returns ~TRUE~ when ~which~ returns the corresponding
+     index value.
+
+  This is stuff for DSC 205 Introduction to advanced data science!
+  #+end_quote  
 
