@@ -2619,7 +2619,7 @@ Answer: 2 pages (printout provided) - 1,000 words.
 - A new home exercise is available (deadline Nov 4). It is based
   on the in-class practice exercise.
 
-* DONE Week 11: Lists / EDA / intro to ~ggplot2~
+* DONE Week 11: ~data.frame~ practice / Lists / intro to ~ggplot2~
 
 - [X] Home assignments (Nov 9):
   1) Review of data frames with a Fantasy Creatures dataset
@@ -2884,3 +2884,32 @@ Here is an example problem:
   This is stuff for DSC 205 Introduction to advanced data science!
   #+end_quote  
 
+* Week 12: DataCamp: EDA - Categorical data 
+
+- [ ] This week you'll be working on Exploratory Data Analysis in
+  DataCamp, and on more and different plot types and datasets to plot
+  in class. There is an overlap of perhaps 30% between these. All the
+  DataCamp examples are using ~ggplot2~ and ~dplyr~, while mine use ~base R~
+  and ~data.frame~, with the occasional ~ggplot2~ example for contrast.
+
+- [ ] *There will be a written test in class next Monday (on EDA I)*!
+
+- [ ] *There is no class meeting on Wed: Work on your term projects!*
+
+** Term projects
+
+Remember:
+1) Satisfy all assignment requirements.
+2) Look at some examples for abstracts (linked).
+3) Make sure you have references.
+4) Make sure your references are complete and consistent.
+5) Make sure that you're reporting on your results (+/-).
+
+
+* Week 13:
+
+* Week 14:
+
+* Week 15:
+
+* Week 16:
