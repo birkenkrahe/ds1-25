@@ -2886,30 +2886,76 @@ Here is an example problem:
 
 * Week 12: DataCamp: EDA - Categorical data 
 
-- [ ] This week you'll be working on Exploratory Data Analysis in
+- [X] This week you'll be working on Exploratory Data Analysis in
   DataCamp, and on more and different plot types and datasets to plot
   in class. There is an overlap of perhaps 30% between these. All the
   DataCamp examples are using ~ggplot2~ and ~dplyr~, while mine use ~base R~
   and ~data.frame~, with the occasional ~ggplot2~ example for contrast.
+- [X] There is no class meeting on Wed: Work on your term projects!
 
-- [ ] *There will be a written test in class next Monday (on EDA I)*!
+- [ ] Give a short account of your term project progress now!
 
-- [ ] *There is no class meeting on Wed: Work on your term projects!*
+- [ ] Written test in class next Monday (on EDA 1st lesson).
 
-** Term projects
+- [ ] Home assignment based on this week:
+  [[https://tinyurl.com/piccolo-problems-ipynb][tinyurl.com/piccolo-problems-ipynb]]
+
+  -> Download raw .ipynb file and upload it to a datalab notebook
+
+  -> Submit the URL of the completed file from datalab
+
+- [ ] Solutions to the "Simple plotting" exercise are in GitHub:
+  [[https://tinyurl.com/simple-plotting-solutions][tinyurl.com/simple-plotting-solutions]] (PDF)
+
+** IN PROGRESS Term projects
 
 Remember:
-1) Satisfy all assignment requirements.
-2) Look at some examples for abstracts (linked).
-3) Make sure you have references.
-4) Make sure your references are complete and consistent.
-5) Make sure that you're reporting on your results (+/-).
+1) Work on your term projects this Wednesday (no class).
+2) Satisfy all assignment requirements.
+3) Look at some examples for abstracts (linked).
+4) Make sure you have references.
+5) Make sure your references are complete and consistent.
+6) Make sure that you're reporting on your results (+/-).
+7) Make sure you've got 250 words minimum.
 
 
 * Week 13:
+
+** TODO EDA test
+
+- Time: 30 minutes.
+- Write the R code and the interpretation on paper.
+- Experiment at will using R.
+- For the interpretation ("what does this mean?"), either make a
+  general statement or (if you run code) use a data example.
+
+  Question: Create a summary of the =supp= variable of the =ToothGrowth=
+  data frame (with values "OJ" and "VC"). What does the output mean?
+
+  Answer:
+  #+begin_src R :session *R* :results output :exports both
+    summary(ToothGrowth$supp)
+  #+end_src
+
+  #+RESULTS:
+  : OJ VC 
+  : 30 30
+
+  If you don't run this as code, you could write:
+  #+begin_quote
+  The output shows how many guinea pigs received a supply (=supp=) of
+  Orange Juice (=OJ=) and how many received a supply of Vitamin C (=VC=).
+  #+end_quote
+
+  If you did run the code, you could write:
+  #+begin_quote
+  The output shows that 30 guinea pigs received a supply (=supp=) of
+  Orange Juice (=OJ=) and that 30 received a supply of Vitamin C (=VC=).
+  #+end_quote
+- Sample data for the test: [[https://tinyurl.com/comics-csv][tinyurl.com/comics-csv]]
 
 * Week 14:
 
 * Week 15:
 
-* Week 16:
+* Week 16: Final presentations
