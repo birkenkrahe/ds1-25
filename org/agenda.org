@@ -1,4 +1,4 @@
-#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
+g#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2025
 #+STARTUP: overview hideblocks indent entitiespretty:
@@ -2917,7 +2917,7 @@ Remember:
 6) Make sure that you're reporting on your results (+/-).
 7) Make sure you've got 250 words minimum.
 
-* Week 13: DataCamp: EDA - Numerical data
+* Week 13: DataCamp: EDA Test / EDA for numerical data
 #+attr_html: :width 400px :float nil:
 #+caption: Turkey dinner: Thanksgiving in the US
 [[../img/turkey.jpg]]
@@ -2938,7 +2938,7 @@ Remember:
 - For the interpretation ("what does this mean?"), either make a
   general statement or (if you run code) use a data example.
 
-  Question: Create a summary of the =supp= variable of the =ToothGrowth=
+  Question: Create a summary of the =supp= ~factor~ of the =ToothGrowth=
   data frame (with values "OJ" and "VC"). What does the output mean?
 
   Answer:
@@ -2946,14 +2946,10 @@ Remember:
     summary(ToothGrowth$supp)
   #+end_src
 
-  #+RESULTS:
-  : OJ VC 
-  : 30 30
-
   If you don't run this as code, you could write:
   #+begin_quote
-  The output shows how many guinea pigs received a supply (=supp=) of
-  Orange Juice (=OJ=) and how many received a supply of Vitamin C (=VC=).
+  Since =supp= is a ~factor~, the output is a table showing how many
+  records are in each of the ~levels~ of =supp=.
   #+end_quote
 
   If you did run the code, you could write:
@@ -2963,7 +2959,6 @@ Remember:
   #+end_quote
 
 - Sample data for the test: [[https://tinyurl.com/comics-csv][tinyurl.com/comics-csv]]
-
 
 ** TODO Plotting review questions
 
