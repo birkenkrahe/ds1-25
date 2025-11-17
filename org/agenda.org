@@ -2884,30 +2884,29 @@ Here is an example problem:
   This is stuff for DSC 205 Introduction to advanced data science!
   #+end_quote  
 
-* Week 12: DataCamp: EDA - Categorical data 
+* DONE Week 12: DataCamp: EDA - Categorical data
 
 - [X] This week you'll be working on Exploratory Data Analysis in
   DataCamp, and on more and different plot types and datasets to plot
   in class. There is an overlap of perhaps 30% between these. All the
   DataCamp examples are using ~ggplot2~ and ~dplyr~, while mine use ~base R~
   and ~data.frame~, with the occasional ~ggplot2~ example for contrast.
+
 - [X] There is no class meeting on Wed: Work on your term projects!
 
-- [ ] Give a short account of your term project progress now!
-
-- [ ] Written test in class next Monday (on EDA 1st lesson).
-
-- [ ] Home assignment based on this week:
+- [X] Home assignment based on this week:
   [[https://tinyurl.com/piccolo-problems-ipynb][tinyurl.com/piccolo-problems-ipynb]]
+  + --> Download raw .ipynb file and upload it to a datalab notebook
+  + --> Submit the URL of the completed file from datalab
 
-  -> Download raw .ipynb file and upload it to a datalab notebook
-
-  -> Submit the URL of the completed file from datalab
-
-- [ ] Solutions to the "Simple plotting" exercise are in GitHub:
+- [X] Solutions to the "Simple plotting" exercise are in GitHub:
   [[https://tinyurl.com/simple-plotting-solutions][tinyurl.com/simple-plotting-solutions]] (PDF)
 
-** IN PROGRESS Term projects
+- [X] Written test in class next Monday (on EDA 1st lesson).
+
+- [X] Give a short account of your term project progress now!
+
+** Term projects
 
 Remember:
 1) Work on your term projects this Wednesday (no class).
@@ -2918,14 +2917,24 @@ Remember:
 6) Make sure that you're reporting on your results (+/-).
 7) Make sure you've got 250 words minimum.
 
+* Week 13: DataCamp: EDA - Numerical data
+#+attr_html: :width 400px :float nil:
+#+caption: Turkey dinner: Thanksgiving in the US
+[[../img/turkey.jpg]]
 
-* Week 13:
+- [ ] DataCamp review: EDA test - categorical data
+- [ ] Annotating and building stacked/dodged barplots
+- [ ] Numerical plots: Histograms, boxplots, scatterplots
+- [ ] Introduction to the fourth (last) sprint review
 
-** TODO EDA test
+** TODO EDA test (self-graded)
 
 - Time: 30 minutes.
+
 - Write the R code and the interpretation on paper.
+
 - Experiment at will using R.
+
 - For the interpretation ("what does this mean?"), either make a
   general statement or (if you run code) use a data example.
 
@@ -2952,10 +2961,14 @@ Remember:
   The output shows that 30 guinea pigs received a supply (=supp=) of
   Orange Juice (=OJ=) and that 30 received a supply of Vitamin C (=VC=).
   #+end_quote
+
 - Sample data for the test: [[https://tinyurl.com/comics-csv][tinyurl.com/comics-csv]]
+
+
+** TODO Plotting review questions
+
+** TODO Final presentation
 
 * Week 14:
 
-* Week 15:
-
-* Week 16: Final presentations
+* Week 15: Final presentations
