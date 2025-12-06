@@ -1,4 +1,4 @@
-g#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
+#+TITLE: AGENDA - INTRODUCTION TO DATA SCIENCE
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2025
 #+STARTUP: overview hideblocks indent entitiespretty:
@@ -2698,11 +2698,11 @@ Popquiz with solutions:
    vector, and a data frame, how do you select the first list
    component?
    #+begin_src R :session *R* :results output :exports both
-     ## Step 1: Create the vectors 
+     ## Step 1: Create the vectors
      scores <- c(4.5, 5.0, 4.8)
      comments <- c("Great!", "Amazing!", "Loved it!")
 
-     ## Step 2: Create the data frame of reviews 
+     ## Step 2: Create the data frame of reviews
      movie_reviews <- data.frame(scores, comments)
 
      ## Step 3: Calculate the average score (question 9)
@@ -2721,7 +2721,7 @@ Popquiz with solutions:
 
      ## Select first list component
      movie_list[[1]]
-     movie_list[1][[1]]     
+     movie_list[1][[1]]
    #+end_src
 
    #+RESULTS:
@@ -2749,7 +2749,7 @@ Popquiz with solutions:
    different methods?
    #+begin_src R :session *R* :results output :exports both
      movie_list$reviews
-     movie_list[["reviews"]]     
+     movie_list[["reviews"]]
    #+end_src
 
    #+RESULTS:
@@ -2771,7 +2771,7 @@ Popquiz with solutions:
 
    #+RESULTS:
    : [1] "Actor2"
-   
+
 7. You have a vector =scores <- c(4.5, 5.0, 4.8)= and a vector =comments
    <- c("Great!", "Amazing!", "Loved it!")=. How would you create a
    nested list named =movie_reviews= that contains these vectors as
@@ -2793,7 +2793,7 @@ Popquiz with solutions:
    : $data
    : $data$ratings
    : [1] 4.5 5.0 4.8
-   : 
+   :
    : $data$feedback
    : [1] "Great!"    "Amazing!"  "Loved it!"
 
@@ -2803,7 +2803,7 @@ Popquiz with solutions:
 
    #+begin_src R :file ../img/movieHist.png :session *R* :results graphics output file :exports both
      movie_list2 <- list(title = "Star Wars", scores = c(4.5, 5.0, 4.8,
-     4.2, 4.9))
+                                                         4.2, 4.9))
      hist(movie_list2$scores)
    #+end_src
 
@@ -2813,8 +2813,8 @@ Popquiz with solutions:
 9. You have a list:
    #+begin_src R :session *R* :results output :exports both
      movies <- list(title = "Star Wars",
-                        years =   c(2020, 2021, 2022, 2023, 2024),
-                        ratings = c(4.5, 4.7, 4.8, 4.6, 4.9))
+                    years =   c(2020, 2021, 2022, 2023, 2024),
+                    ratings = c(4.5, 4.7, 4.8, 4.6, 4.9))
      movies
    #+end_src
 
@@ -2830,7 +2830,7 @@ Popquiz with solutions:
 10. If you have a list with two vector members runtime and ratings of
     differing lengths, can you create a scatter plot of ratings
     vs. runtime?
-    
+
     #+begin_quote
     No, you cannot because ~plot~ requires its input vectors to be of
     equal length.
@@ -2850,7 +2850,7 @@ Here is an example problem:
 
   #+RESULTS:
   :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
-  
+
 - You might be tempted to write =which(l == Nile)= - worked for vectors
   and data frames, right?
 
@@ -2859,7 +2859,7 @@ Here is an example problem:
   #+end_src
 
   #+RESULTS:
-  : Error in NextMethod(.Generic) : 
+  : Error in NextMethod(.Generic) :
   :   'list' object cannot be coerced to type 'double'
 
 - To do this, you need more tools: ~sapply~ and lambda (anonymous)
@@ -2882,7 +2882,7 @@ Here is an example problem:
      index value.
 
   This is stuff for DSC 205 Introduction to advanced data science!
-  #+end_quote  
+  #+end_quote
 
 * DONE Week 12: DataCamp: EDA - Categorical data
 
@@ -2917,17 +2917,20 @@ Remember:
 6) Make sure that you're reporting on your results (+/-).
 7) Make sure you've got 250 words minimum.
 
-* Week 13: DataCamp: EDA Test / EDA for numerical data
-#+attr_html: :width 400px :float nil:
-#+caption: Turkey dinner: Thanksgiving in the US
-[[../img/turkey.jpg]]
+* DONE Week 14: DataCamp: EDA Test / EDA for numerical data
 
-- [ ] DataCamp review: EDA test - categorical data
-- [ ] Annotating and building stacked/dodged barplots
-- [ ] Numerical plots: Histograms, boxplots, scatterplots
-- [ ] Introduction to the fourth (last) sprint review
+- [X] DataCamp review: EDA test - categorical data
+- [X] Final presentation (4th sprint review): two new rubrics
+- [X] Review: 10 piccolo plotting problems
+- [X] Annotating and building stacked/dodged barplots
+- [X] Introduction to the fourth (last) sprint review
 
-** TODO EDA test (self-graded)
+- [X] *Please fill in the course evaluation now! (5 min)*
+- [X] Datalab folder contains the solution to "10 piccolo problems"
+- [X] Give an introduction to Minto's Pyramid Principles
+- [X] Numerical plots: +Histograms+, boxplots, scatterplots
+
+** EDA test (self-graded)
 
 - Time: 30 minutes.
 
@@ -2946,6 +2949,10 @@ Remember:
     summary(ToothGrowth$supp)
   #+end_src
 
+  #+RESULTS:
+  : OJ VC
+  : 30 30
+
   If you don't run this as code, you could write:
   #+begin_quote
   Since =supp= is a ~factor~, the output is a table showing how many
@@ -2960,10 +2967,306 @@ Remember:
 
 - Sample data for the test: [[https://tinyurl.com/comics-csv][tinyurl.com/comics-csv]]
 
-** TODO Plotting review questions
+** Final presentation
 
-** TODO Final presentation
+- Schedule your presentation date in Canvas
+- Two new rubrics available
+- Graded: oral communication skills
+- Graded: problem solving skills
+- Send me your stuff before if you want a pre-view
+- Submit all material to your GDrive no later than 12 Dec
 
-* Week 14:
+** 10 piccolo plotting exercises with ~mtcars~
+
+- Download the notebook file from here: [[https://tinyurl.com/piccolo-problems][tinyurl.com/piccolo-problems]].
+- Let's complete it together to get back in the saddle.
+- Let's move on to more plotting practice (code along).
+- The Datalab folder now also contains the solutions.
+
+** Storytelling & Presenting with Minto method
+#+attr_html: :width 400px :float nil:
+[[../img/pyramids.jpg]]
+
+- Main messages of the video:
+  #+begin_quote
+  1) "You need to tell a story in order to succeed [as a leader]."
+  2) Communicating a story is hard.
+  3) Minto's "pyramid principle" convinces rational audiences.
+  4) Story = S[ituation] + C[omplication] + Q[uestion] + A[nswer].
+  5) Presentation = Arguments and evidence supporting the Answer.
+  6) What does not support the Answer must be eliminated.
+  7) This is not grade school: no points for completeness.
+  8) Using this principle will make spreadsheet people love you.
+  9) The success of a presentation is about being understood.
+  10) You can structure every argument that way.
+  #+end_quote
+
+- Additional MECE principle (to structure arguments on each level):
+  When separating a concept into subsets, the items should be mutually
+  exclusive (ME) and collectively exhaustive (CE).
+
+- Example: Final degrees decompose into: BSc, BA, MSc, MA, PhD.
+
+- Extended example: A University Coffee Shop (Thank you, Gemini)
+
+  1. *Situation* (The Status Quo): The Daily Grind has been the primary
+     coffee provider for students and faculty for over 10 years.
+     - We possess a loyal customer base.
+     - We hold a central location on campus.
+     - Revenue has remained steady at $500,000 annually for the last
+       three years.
+
+  2. *Complication* (The Disruption): However, a major competitor,
+     "Star-Brew," is opening a location across the street next
+     semester.
+     - Their prices are 10% lower than ours.
+     - They offer a mobile ordering app, which we currently lack.
+     - /Risk:/ Surveys suggest 40% of our student customers may switch
+       for the app's convenience.
+
+  3. *Question* (The Pivot): Given this new competitive threat and our
+     lack of digital infrastructure, how can The Daily Grind retain
+     its customer base and protect its revenue?
+
+  4. *Answer* (The Main Idea / Solution): We must immediately launch a
+     proprietary "Skip-the-Line" mobile app integrated with a loyalty
+     program.
+     - *Goal:* Neutralize Star-Brew's convenience advantage.
+     - *Mechanism:* Leverage existing brand loyalty to lock in
+       customers before the competitor opens.
+
+- Challenge: Take 10 minutes to identify SCQA for your project, then
+  let's hear some examples and discuss them.
+
+- Why are my lectures not SCQA structured? Actually, the scripts are
+  totally structured that way but the delivery is focused on
+  interactivity and learning, not on presenting (research) results.
+
+** Review: SCQA Practice Exercise
+
+- Complication and Question often were not aligned:
+  1) C: Short rest between games increases stress.
+  2) Q: Does higher workload increase injury risk?
+
+  This question just repeats the complication. A better complication
+  would be: "It is not clear how in-between game rests and injury risk
+  are related."
+
+  This leads to the question: "How are they related". Your
+  presentation gives the answer.
+
+- Since your project is finished, keep the Question and fit the
+  complication to the question that you already worked on.
+
+- Good questions ask for "HOW" and not "IF":
+  1) "Can data analysis reveal patterns...?" worse than
+  2) "How can data analysis reveal patterns?"
+
+- Here is a perfect example for an SCQA (Ava Rose):
+  #+begin_quote
+  S = The Titanic was a tragedy that killed hundreds of people.
+
+  C = There were many uncontrollable factors that influenced one's
+  survival rate.
+
+  Q = What were the factors that most influenced the survival rates of
+  the Titanic passengers?
+
+  A = The most influential factors were age, gender, and economic
+  status.
+  #+end_quote
+
+** DataCamp review: Exploring Numerical Data
+
+Open a new datalab notebook to code along during this review.
+
+1) What R function from *ggplot2* creates a dotplot of a single
+   numerical variable?
+
+   #+begin_src R :session *R* :results output :exports both
+     str(cars) # speed of cars and distance required to stop at that speed
+   #+end_src
+
+   #+begin_src R :file plot.png :session *R* :results graphics output file :exports both
+     library(ggplot2) # load graphics library `ggplot2`
+     data(cars)       # load numeric `cars` dataset
+     ggplot(cars,
+            aes(x = speed)) +
+       geom_dotplot() 
+   #+end_src
+
+2) How would you deal with the ~binwidth~ warning?
+   #+begin_src R :file plot1.png :session *R* :results graphics output file :exports both
+     library(ggplot2)
+     data(cars)
+     ggplot(cars,
+            aes(x = speed)) +
+       geom_dotplot(binwidth=1,
+                    dotsize=0.5)
+   #+end_src
+
+3) Does the =count= scale on the y-axis show frequency of observations?
+   #+begin_quote
+   No. The ~geo_dotplot()~ function scales the height of the stacks
+   proportionally. Each dot represents a constant density (a ratio),
+   not one observation. To show counts, use ~method="histodot"~ (though
+   you may not see a change at all but the dots are now observations).
+   #+end_quote
+
+   #+begin_src R :file plot1b.png :session *R* :results graphics output file :exports both
+     ggplot(cars,
+            aes(x = speed)) +
+       geom_dotplot(binwidth=1,
+                    dotsize=0.5,
+                    method="histodot")
+   #+end_src
+
+4) Compare with a histogram with specific ~binwidth~.
+   #+begin_src R :file plot4.png :session *R* :results graphics output file :exports both
+     ## The width of each bin, which affects the histogram’s resolution.
+     ggplot(cars, aes(x=speed)) +
+       geom_histogram(binwidth=2,
+                      color="white",
+                      fill="purple")
+   #+end_src
+
+5) In a *density plot*, what does the curve represent?
+   #+begin_src R :file plot5a.png :session *R* :results graphics output file :exports both
+     ## Density = smoothed estimate of the distribution of the variable.
+     ggplot(cars, aes(x=speed)) +
+       geom_density()
+   #+end_src
+   
+   Compare with base R using ~density()~:
+   #+begin_src R :file plot5b.png :session *R* :results graphics output file :exports both
+     plot(density(x=cars$speed)) # a lot more information and grace
+   #+end_src
+
+6) How do you flip the orientation of a boxplot in ggplot?
+   #+begin_src R :file plot6a.png :session *R* :results graphics output file :exports both
+     ## To flip, add ~coord_flip()~ to the ggplot call.
+     ggplot(cars,
+            aes(y=speed)) +
+       geom_boxplot() +
+       coord_flip()
+   #+end_src
+
+   Contrast this with base R's ~boxplot()~:
+   #+begin_src R :file plot6b.png :session *R* :results graphics output file :exports both
+     boxplot(cars$speed,
+             ylab="Car speed [mph]")
+   #+end_src
+
+   #+RESULTS:
+   [[file:plot6b.png]]
+
+7) What summary statistics define the box portion of a ~boxplot~?
+   #+begin_src R :session *R* :results output :exports both
+     ## Boxplot: first quartile, median, and third quartile (the IQR)
+     summary(cars)
+     IQR(cars$speed) # determines outliers - none in this dataset
+   #+end_src
+
+8) What is the difference between a marginal and a conditional
+   distribution?
+   #+begin_quote
+   Marginal uses all data; conditional subsets by a grouping variable.
+   #+end_quote
+
+   #+begin_src R :file plot8.png :session *R* :results graphics output file :exports both
+     ## Filtering data before plotting
+     cars2 <- subset(cars, speed < 15)
+     ggplot(cars2, aes(x = speed)) +
+       geom_histogram(color="white",fill="blue",binwidth=2)
+   #+end_src
+
+9) What ggplot function is used to create faceted plots for comparing
+   distributions across groups?
+   #+begin_quote
+   ~facet_wrap()~ or ~facet_grid()~.
+   #+end_quote
+
+   #+begin_src R :file plot9.png :session *R* :results graphics output file :exports both
+     cars$fast <- cars$speed > 15
+     ggplot(cars,aes(x=dist)) +
+       geom_histogram(color="white",fill="green", binwidth=20) +
+       facet_wrap( ~ fast)
+   #+end_src
+
+   #+RESULTS:
+   [[file:plot9.png]]
+
+   What is shown here?
+   #+begin_quote
+   - =fast= is a ~logical~ variable we created. It has two ~levels~.
+     1. ~FALSE~: ~cars~ with =speed= <= 15
+     2. ~TRUE~: ~cars~ with =speed= > 15
+   - ~facet_wrap~ makes separate histograms for each value of =fast=.
+   - Each panel shows the distribution of stopping distances within
+     that subgroup: slow cars on the left, fast cars on the right.
+   #+end_quote
+
+10) What does filtering data (e.g., =filter(eng_size < 2.0)=) accomplish
+    before plotting?
+    #+begin_quote
+    Filtering restricts the visualization to a subset of observations,
+    or a subset of data frame rows.
+    #+end_quote
+
+    #+begin_src R :file plot10.png :session *R* :results graphics output file :exports both
+      ## Faceted density plot using two categorical variables
+      cars$fast <- cars$speed > 15
+      cars$short_stop <- cars$dist < 50
+
+      ggplot(cars, aes(x = speed)) +
+        geom_density() +
+        facet_grid(fast ~ short_stop)
+    #+end_src
+
+    #+RESULTS:
+    [[file:plot10.png]]
+
+    Explanation:
+    1. Upper left panel (fast = FALSE, short_stop = FALSE)
+       #+begin_quote
+       Slow cars with long stopping distances.
+       These cars were not moving fast but still required a long distance to stop,
+       which makes them atypical. The density peak around 12–14 mph reflects slow
+       cars that stopped surprisingly slowly.
+       #+end_quote
+
+    2. Upper right panel (fast = FALSE, short_stop = TRUE)
+       #+begin_quote
+       Slow cars with short stopping distances.
+       This is the normal scenario: low speeds and short braking distances.
+       The density here represents the bulk of the dataset’s slower observations.
+       #+end_quote
+
+    3. Lower left panel (fast = TRUE, short_stop = FALSE)
+       #+begin_quote
+       Fast cars with long stopping distances.
+       This is expected: higher speeds usually produce longer braking distances.
+       The density shows speeds clustered around 17–22 mph.
+       #+end_quote
+
+    4. Lower right panel (fast = TRUE, short_stop = TRUE)
+       #+begin_quote
+       Fast cars with short stopping distances.
+       These are unusual observations: cars moving quickly but stopping quickly.
+       This panel has fewer cases, with a density hump around 18–22 mph.
+       #+end_quote
+
+11) In a side-by-side boxplot, why must the x-variable often be
+    converted to a factor?
+    #+begin_quote
+    Because boxplots require discrete grouping levels on the x-axis.
+    #+end_quote
+
+12) In a faceted density plot with two logical variables, what does
+    each panel represent?
+    #+begin_quote
+    The conditional distribution for one combination of the two
+    logical variables.
+    #+end_quote
 
 * Week 15: Final presentations
