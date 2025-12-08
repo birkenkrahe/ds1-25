@@ -3042,6 +3042,7 @@ Remember:
   totally structured that way but the delivery is focused on
   interactivity and learning, not on presenting (research) results.
 
+
 ** Review: SCQA Practice Exercise
 
 - Complication and Question often were not aligned:
@@ -3270,3 +3271,10 @@ Open a new datalab notebook to code along during this review.
     #+end_quote
 
 * Week 15: Final presentations
+#+attr_html: :width 400px :float nil:
+[[../img/last_week.png]]
+
+- [ ] Schedule optional final oral exam in my office for Thu Dec 18.
+- [ ] Last quiz with 50 questions on distributed computing (Dec 12).
+- [ ] Remember to put the link to your materials into the Canvas page.
+- [ ] I will only grade projects whose materials I can access (Dec 12)
